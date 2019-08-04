@@ -13,9 +13,12 @@ Customer view:
 ·	Customer can browse products within each seller/branch’s product list;
 ·	Customer can browse/search products without caring where they come from.
 Seller view:
-·	 Seller’s own products and own transactions.
-For student from 1B: 
-In addition to above requirements, please consider following requirements:
+·	 Seller’s own products and own transactions.  
+
+For student from 1B:   
+
+In addition to above requirements, please consider following requirements:  
+
 5.	How to secure the credit card payment. 
 6.	Website testing, proposing comprehensive testing cases. 
 7.	Purchase recommendation: recommend new devices to customers according to his/her historical purchases, or peer’s purchases. 
