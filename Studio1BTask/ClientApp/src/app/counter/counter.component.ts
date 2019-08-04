@@ -10,4 +10,12 @@ export class CounterComponent {
   public incrementCounter() {
     this.currentCount++;
   }
+
+  public decrementCounter() {
+    this.currentCount--;
+  }
+
+  public multiplyCounter(n:number) {
+    this.currentCount*=n;
+  }
 }
