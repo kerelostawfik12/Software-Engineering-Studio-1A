@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -52,7 +53,9 @@ namespace Studio1BTask.Controllers
                 });
                 
                 context.SaveChanges();
+
             }
+            
         }
 
         public class WeatherForecast

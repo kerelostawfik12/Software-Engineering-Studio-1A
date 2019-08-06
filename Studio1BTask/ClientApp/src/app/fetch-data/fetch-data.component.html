@@ -2,7 +2,7 @@
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading...</em></p>
+<p *ngIf="!forecasts"><em>Loading forecasts...</em></p>
 
 <table class='table table-striped' *ngIf="forecasts">
   <thead>
@@ -20,5 +20,41 @@
       <td>{{ forecast.temperatureF }}</td>
       <td>{{ forecast.summary }}</td>
     </tr>
+  </tbody>
+</table>
+
+<p *ngIf="!testModels"><em>Loading database test shiz...</em></p>
+<table class='table table-striped' *ngIf="testModels">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>ANumber</th>
+    <th>AString</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let testModel of testModels">
+    <td>{{ testModel.id }}</td>
+    <td>{{ testModel.aNumber }}</td>
+    <td>{{ testModel.aString }}</td>
+  </tr>
+  </tbody>
+</table>
+
+<p *ngIf="!foreignKeyTests"><em>Loading foreign key database test shiz...</em></p>
+<table class='table table-striped' *ngIf="foreignKeyTests">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>TestModelId</th>
+    <th>TestModelString</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let foreignKeyTest of foreignKeyTests">
+    <td>{{ foreignKeyTest.id }}</td>
+    <td>{{ foreignKeyTest.testModelId }}</td>
+    <td>{{ foreignKeyTest.testModel.aString }}</td>
+  </tr>
   </tbody>
 </table>

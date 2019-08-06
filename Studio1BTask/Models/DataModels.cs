@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
 
 namespace Studio1BTask.Models
@@ -73,7 +74,10 @@ namespace Studio1BTask.Models
     public class ForeignKeyTest
     {
         [Key] public int Id { get; set; }
-        public TestModel TestModel { get; set; }
+        
+        // Note: To actually have objects like this filled, you will need to use Include(), or manually 
+        // join the tables. See https://docs.microsoft.com/en-us/ef/core/querying/related-data
+        public virtual TestModel TestModel { get; set; }
         [ForeignKey("TestModel")] public int TestModelId { get; set;}
         
     }
