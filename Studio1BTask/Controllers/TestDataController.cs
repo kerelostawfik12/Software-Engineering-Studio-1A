@@ -21,7 +21,7 @@ namespace Studio1BTask.Controllers
                 return context.TestModels.ToList();
             }
         }
-        
+         
         [HttpGet("[action]")]
         public IEnumerable<ForeignKeyTest> ForeignKeyTests()
         {
