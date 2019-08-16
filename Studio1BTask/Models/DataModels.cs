@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -12,6 +13,8 @@ namespace Studio1BTask.Models
         // Remember to add any new tables here. Be careful not to mix the name of the table and the name of the class up.
         public DbSet<TestModel> TestModels { get; set; }
         public DbSet<ForeignKeyTest> ForeignKeyTests { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
         
         public DbContext()
         {
@@ -32,7 +35,7 @@ namespace Studio1BTask.Models
     
     /*
      
-    Creating a new table involves three steps. You can complete these steps in any order you want, but don't forget
+    Creating a new table involves four steps. You can complete these steps in any order you want, but don't forget
     to complete them all. It will help a lot to use the existing tables/classes as a guide.
     
     1. Create the class, with all columns in the database given public getters and setters. You must add the 
@@ -61,7 +64,8 @@ namespace Studio1BTask.Models
         "ANumber" integer,
         "AString" varchar(20)
     );
-        
+    
+    4. If the entities are to be fully exposed to the frontend, add them to data-models.ts.
     */
     
     public class TestModel
@@ -79,6 +83,28 @@ namespace Studio1BTask.Models
         // join the tables. See https://docs.microsoft.com/en-us/ef/core/querying/related-data
         public virtual TestModel TestModel { get; set; }
         [ForeignKey("TestModel")] public int TestModelId { get; set;}
+        
+    }
+    
+    
+    public class Item
+    {
+        [Key] public int Id { get; set; }
+        
+        public virtual Seller Seller { get; set; }
+        [ForeignKey("Seller")] public int SellerId { get; set;}
+        
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        
+    }
+    
+    public class Seller
+    {
+        [Key] public int Id { get; set; }
+        
+        public string Name { get; set; }
         
     }
 }

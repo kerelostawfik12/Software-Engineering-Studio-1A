@@ -1,6 +1,30 @@
-<h1>Weather forecast</h1>
+<h1>Fetch data test</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<p>This component demonstrates fetching data from the database and server.</p>
+
+<p *ngIf="!items"><em>Loading items...</em></p>
+
+<table class='table table-striped' *ngIf="items">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Seller</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td>{{ item.id }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.description }}</td>
+    <td>{{ item.price }}</td>
+    <td>{{ item.seller.name }}</td>
+  </tr>
+  </tbody>
+</table>
+
 
 <p *ngIf="!forecasts"><em>Loading forecasts...</em></p>
 
@@ -23,38 +47,3 @@
   </tbody>
 </table>
 
-<p *ngIf="!testModels"><em>Loading database test shiz...</em></p>
-<table class='table table-striped' *ngIf="testModels">
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>ANumber</th>
-    <th>AString</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let testModel of testModels">
-    <td>{{ testModel.id }}</td>
-    <td>{{ testModel.aNumber }}</td>
-    <td>{{ testModel.aString }}</td>
-  </tr>
-  </tbody>
-</table>
-
-<p *ngIf="!foreignKeyTests"><em>Loading foreign key database test shiz...</em></p>
-<table class='table table-striped' *ngIf="foreignKeyTests">
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>TestModelId</th>
-    <th>TestModelString</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let foreignKeyTest of foreignKeyTests">
-    <td>{{ foreignKeyTest.id }}</td>
-    <td>{{ foreignKeyTest.testModelId }}</td>
-    <td>{{ foreignKeyTest.testModel.aString }}</td>
-  </tr>
-  </tbody>
-</table>
