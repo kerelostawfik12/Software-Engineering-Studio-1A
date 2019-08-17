@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="psksfvff@topsy.db.elephantsql.com" uuid="9a320631-6984-4b21-8cba-e3c6d62346d1">
-      <driver-ref>postgresql</driver-ref>
+    <data-source source="LOCAL" name="@studio1btask.database.windows.net" uuid="2bd2e247-cc23-41ff-ad93-dcb88cf7798e">
+      <driver-ref>azure.ms</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://topsy.db.elephantsql.com:5432/psksfvff</jdbc-url>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://studio1btask.database.windows.net:1433</jdbc-url>
+      <driver-properties>
+        <property name="loginTimeout" value="30" />
+        <property name="trustServerCertificate" value="false" />
+        <property name="encrypt" value="true" />
+        <property name="hostNameInCertificate" value="*.database.windows.net" />
+        <property name="applicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="main@studio1btask.database.windows.net" uuid="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9">
+      <driver-ref>azure.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://studio1btask.database.windows.net:1433;database=main</jdbc-url>
+      <driver-properties>
+        <property name="loginTimeout" value="30" />
+        <property name="trustServerCertificate" value="false" />
+        <property name="encrypt" value="true" />
+        <property name="hostNameInCertificate" value="*.database.windows.net" />
+        <property name="applicationName" value="DataGrip" />
+      </driver-properties>
     </data-source>
   </component>
 </project>

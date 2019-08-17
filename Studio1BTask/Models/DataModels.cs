@@ -1,10 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
 
 namespace Studio1BTask.Models
 {
@@ -22,8 +19,8 @@ namespace Studio1BTask.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = File.ReadAllText("../postgres-credentials.txt");
-            optionsBuilder.UseNpgsql(connectionString);
+            var connectionString = File.ReadAllText("../database-credentials.txt");
+            optionsBuilder.UseSqlServer(connectionString);
             base.OnConfiguring(optionsBuilder);
         }
 
