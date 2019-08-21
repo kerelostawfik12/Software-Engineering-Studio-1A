@@ -12,12 +12,13 @@ body {
   font-family : 'Roboto' , sans-serif;
 }
 
+
 .shopping-cart {
   width : 750px;
   height :450px;
   margin : 80px auto;
   background : rgb(255, 255, 255);
-  box-shadow : 1px 2px 3px 0px rgba(0,0,0, 0.10);
+  box-shadow : 1px 2px 3px 0 rgba(0,0,0, 0.10);
   border-radius: 6px;
 
   display: flex;
