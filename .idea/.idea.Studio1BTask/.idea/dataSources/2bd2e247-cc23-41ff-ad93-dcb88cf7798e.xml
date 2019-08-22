@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@studio1btask.database.windows.net">
+  <database-model serializer="dbm" dbms="AZURE" family-id="AZURE" format-version="4.15">
+    <root id="1">
+      <ServerVersion>12.0.1600</ServerVersion>
+      <Dbms>AZURE</Dbms>
+    </root>
+    <database id="2" parent="1" name="main">
+      <ObjectId>6</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="4" parent="1" name="studio1btask">
+      <ObjectId>5</ObjectId>
+    </database>
+  </database-model>
+</dataSource>
