@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.IO;
 using Microsoft.EntityFrameworkCore;
 
 namespace Studio1BTask.Models
@@ -19,7 +18,9 @@ namespace Studio1BTask.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = File.ReadAllText("../database-credentials.txt");
+            //var connectionString = File.ReadAllText("../database-credentials.txt");
+            var connectionString =
+                "Server=studio1btask.database.windows.net;Database=main;User Id=studio1btask;Password=Mango420;Trusted_Connection=false";
             optionsBuilder.UseSqlServer(connectionString);
             base.OnConfiguring(optionsBuilder);
         }
