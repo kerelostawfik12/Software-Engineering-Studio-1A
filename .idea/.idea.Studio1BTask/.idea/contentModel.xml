@@ -113,6 +113,12 @@
                 <e p="cart.component.spec.ts" t="Include" />
                 <e p="cart.component.ts" t="Include" />
               </e>
+              <e p="cart-item" t="Include">
+                <e p="cart-item.component.css" t="Include" />
+                <e p="cart-item.component.html" t="Include" />
+                <e p="cart-item.component.spec.ts" t="Include" />
+                <e p="cart-item.component.ts" t="Include" />
+              </e>
               <e p="component-test-zone" t="Include">
                 <e p="component-test-zone.component.css" t="Include" />
                 <e p="component-test-zone.component.html" t="Include" />
