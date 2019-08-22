@@ -11,6 +11,7 @@ import {CounterComponent} from './counter/counter.component';
 import {FetchDataComponent} from './fetch-data/fetch-data.component';
 import {CartComponent} from './cart/cart.component';
 import {ComponentTestZoneComponent} from './component-test-zone/component-test-zone.component';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ComponentTestZoneComponent} from './component-test-zone/component-test-z
     CounterComponent,
     FetchDataComponent,
     CartComponent,
-    ComponentTestZoneComponent
+    ComponentTestZoneComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

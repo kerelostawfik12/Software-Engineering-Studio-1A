@@ -44,5 +44,16 @@ namespace Studio1BTask.Controllers
                 return items;
             }
         }
+        
+        [HttpGet("[action]")]
+        public IEnumerable<Item> ItemsInCart()
+        {
+            using (var context = new DbContext())
+            {
+                var items = context.Items.Include(item => item.Seller).ToList();
+                return items;
+            }
+        }
+        
     }
 }
