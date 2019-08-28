@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="main@studio1btask.database.windows.net">
+  <database-model serializer="dbm" dbms="AZURE" family-id="AZURE" format-version="4.15">
+    <root id="1">
+      <ServerVersion>12.0.1600</ServerVersion>
+      <Dbms>AZURE</Dbms>
+    </root>
+    <database id="2" parent="1" name="main">
+      <ObjectId>6</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <Fingerprint>6.43692/E0A15E5A-9FDD-4517-90F4-78568A827988@studio1btask</Fingerprint>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+    </database>
+    <schema id="4" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2019-08-18.00:27:27.767</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="15" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="17" parent="14" name="ForeignKeyTests">
+      <ObjectId>1253579504</ObjectId>
+      <CreatedTimestamp>2019-08-17.21:58:39.900</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-17.22:00:24.910</ModifiedTimestamp>
+    </table>
+    <table id="18" parent="14" name="Items">
+      <ObjectId>1237579447</ObjectId>
+      <CreatedTimestamp>2019-08-17.21:35:49.820</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-18.00:27:27.070</ModifiedTimestamp>
+    </table>
+    <table id="19" parent="14" name="Sellers">
+      <ObjectId>1221579390</ObjectId>
+      <CreatedTimestamp>2019-08-17.21:35:37.813</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-18.00:27:27.070</ModifiedTimestamp>
+    </table>
+    <table id="20" parent="14" name="TestModels">
+      <ObjectId>1285579618</ObjectId>
+      <CreatedTimestamp>2019-08-17.21:59:34.513</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-17.22:02:41.560</ModifiedTimestamp>
+    </table>
+    <column id="21" parent="17" name="Id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="17" name="TestModelId">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="23" parent="17" name="&quot;ForeignKeyTests&quot;_&quot;Id&quot;_uindex">
+      <Position>2</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="24" parent="17" name="&quot;ForeignKeyTests&quot;_pk">
+      <Position>3</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="17" name="&quot;ForeignKeyTests&quot;_pk">
+      <ObjectId>1269579561</ObjectId>
+      <CreatedTimestamp>2019-08-17.21:58:39.997</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-17.21:58:39.997</ModifiedTimestamp>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>&quot;ForeignKeyTests&quot;_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="26" parent="17" name="ForeignKeyTests_TestModel_Id_fk">
+      <ObjectId>1317579732</ObjectId>
+      <CreatedTimestamp>2019-08-17.22:00:24.910</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-17.22:00:24.910</ModifiedTimestamp>
+      <ColNames>TestModelId</ColNames>
+      <RefTableId>1285579618</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>TestModel</RefTableName>
+      <RefKeyName>&quot;TestModel&quot;_pk</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="27" parent="18" name="SellerId">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="28" parent="18" name="Name">
+      <Position>3</Position>
+      <DataType>varchar(200 char)|0s</DataType>
+    </column>
+    <column id="29" parent="18" name="Description">
+      <Position>4</Position>
+      <DataType>varchar(max)|0s</DataType>
+    </column>
+    <column id="30" parent="18" name="Price">
+      <Position>5</Position>
+      <DataType>decimal(32,2)|0s</DataType>
+    </column>
+    <column id="31" parent="18" name="Id">
+      <Position>6</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="32" parent="18" name="Items_&quot;Id&quot;_uindex">
+      <Position>5</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="33" parent="18" name="Items_pk">
+      <Position>7</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="18" name="Items_pk">
+      <ObjectId>1349579846</ObjectId>
+      <CreatedTimestamp>2019-08-18.00:02:42.957</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-18.00:02:42.957</ModifiedTimestamp>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Items_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="18" name="Items_Sellers_Id_fk">
+      <ObjectId>1381579960</ObjectId>
+      <CreatedTimestamp>2019-08-18.00:27:27.070</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-18.00:27:27.070</ModifiedTimestamp>
+      <ColNames>SellerId</ColNames>
+      <RefTableId>1221579390</RefTableId>
+      <RefSchemaName>dbo</RefSchemaName>
+      <RefTableName>Sellers</RefTableName>
+      <RefKeyName>Sellers_pk</RefKeyName>
+      <RefColNames>Id</RefColNames>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="36" parent="19" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(200 char)|0s</DataType>
+    </column>
+    <column id="37" parent="19" name="Id">
+      <Position>3</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="38" parent="19" name="Sellers_&quot;Id&quot;_uindex">
+      <Position>2</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="39" parent="19" name="Sellers_pk">
+      <Position>3</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="19" name="Sellers_pk">
+      <ObjectId>1365579903</ObjectId>
+      <CreatedTimestamp>2019-08-18.00:03:12.480</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-18.00:03:12.480</ModifiedTimestamp>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Sellers_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="20" name="Id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="20" name="ANumber">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="43" parent="20" name="AString">
+      <Position>3</Position>
+      <DataType>varchar(20 char)|0s</DataType>
+    </column>
+    <index id="44" parent="20" name="&quot;TestModel&quot;_Id_uindex">
+      <Position>2</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="45" parent="20" name="&quot;TestModel&quot;_pk">
+      <Position>3</Position>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="46" parent="20" name="&quot;TestModel&quot;_pk">
+      <ObjectId>1301579675</ObjectId>
+      <CreatedTimestamp>2019-08-17.21:59:34.583</CreatedTimestamp>
+      <ModifiedTimestamp>2019-08-17.21:59:34.583</ModifiedTimestamp>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>&quot;TestModel&quot;_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

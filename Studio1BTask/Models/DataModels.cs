@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
@@ -19,7 +20,8 @@ namespace Studio1BTask.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = File.ReadAllText("../database-credentials.txt");
+            
+            var connectionString = @Environment.GetEnvironmentVariable("SQLAZURECONNSTR_DefaultConnection") ?? File.ReadAllText("../database-credentials.txt");
             optionsBuilder.UseSqlServer(connectionString);
             base.OnConfiguring(optionsBuilder);
         }
