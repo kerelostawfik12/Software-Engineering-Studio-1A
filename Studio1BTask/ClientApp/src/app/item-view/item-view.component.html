@@ -1,0 +1,28 @@
+<h1>All Item View</h1>
+<button (click)="switchView()">Switch Item View</button>
+<div class="row" *ngIf="viewSetting === 0">
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Item Description</th>
+        <th>Item Price</th>
+        <th>Seller</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>HDD</td>
+        <td>This is a harddrive.</td>
+        <td>$100</td>
+        <td>A Person</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="row" *ngIf="viewSetting === 1">
+  <p>The Button Works</p>
+</div>
