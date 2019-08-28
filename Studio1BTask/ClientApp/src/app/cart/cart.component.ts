@@ -1,5 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, Inject, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -15,6 +15,9 @@ export class CartComponent implements OnInit {
     http.get<Item[]>(baseUrl + 'api/Data/AllItems').subscribe(result => {
       this.items = result;
     }, error => console.error(error));
+
+
+
   }
 
   ngOnInit() {
