@@ -24,4 +24,5 @@ export class NavbarComponent implements OnInit {
     const bepis : CustomerAccountForm = {email:"bepis123@bepismail.com" + 100 * Math.random(), firstName: "joseph", lastName: "smith", password: "qwertyPassword123"};
     this.httpClient.post(this.baseUrl + 'api/Account/CreateCustomerAccount', bepis).subscribe();
   }
+  
 }

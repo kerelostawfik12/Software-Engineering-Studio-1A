@@ -36,6 +36,11 @@ nav {
   color: #FFFFFF;
 }
 
+
+a {
+  color: white;
+}
+
 #logo {
   /* NotAmazon.com */
 
@@ -75,11 +80,20 @@ nav {
   overflow: hidden;
 }
 
+#search-input {
+  padding-left: 8px;
+}
+
 input[type="text"]
 {
+
   width: 100%;
   background: rgba(0, 0, 0, 0);
   border: none;
+}
+::placeholder
+{
+  font-style: italic;
 }
 
 #menu {
@@ -109,6 +123,14 @@ input[type="text"]
   color: #FFFFFF;
 }
 
+#cart img {
+  width: 26px;
+  height: 26px;
+  right: 90px;
+  padding-right: 7px;
+  top: 21px;
+}
+
 #login-or-register {
   /* Login or Register */
 
@@ -126,6 +148,10 @@ input[type="text"]
 
   color: #FFFFFF;
 }
+
+#login-or-register a {
+  color: white;
+}
 #search-button  {
   -webkit-user-drag: none;
   user-select: none;
@@ -133,7 +159,7 @@ input[type="text"]
   width: 18px;
   height: 18px;
   right: 4px;
-  top: 7px;
+  top: 6px;
 }
 
 #search-bar a:hover {
