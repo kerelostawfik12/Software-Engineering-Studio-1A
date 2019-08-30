@@ -7,11 +7,14 @@
     </a>
     <div id="search">
       <div id="search-bar">
+        <form (submit)="search()">
         <label for="search-input"></label><input id="search-input" type="text" placeholder="Search all items..."
                                                  name="firstname">
         <a (click)="search()">
           <img src="assets/icons/search.svg" alt="Search" draggable="false" id="search-button"/>
         </a>
+        <button type="submit" style="display:none">hidden submit</button>
+        </form>
       </div>
 
     </div>
