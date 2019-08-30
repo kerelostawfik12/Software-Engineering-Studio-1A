@@ -108,7 +108,7 @@ input[type="text"]
 
 #cart {
   position: absolute;
-  width: 96.29px;
+  width: 96px;
   height: 22px;
   right: 30px;
   top: 23px;
@@ -125,7 +125,6 @@ input[type="text"]
 
 #cart img {
   width: 26px;
-  height: 26px;
   right: 90px;
   padding-right: 7px;
   top: 21px;

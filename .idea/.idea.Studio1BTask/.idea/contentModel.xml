@@ -161,6 +161,7 @@
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
               <e p="icons" t="Include">
+                <e p="cart.svg" t="Include" />
                 <e p="search.svg" t="Include" />
               </e>
             </e>
