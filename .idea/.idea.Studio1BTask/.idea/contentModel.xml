@@ -135,6 +135,7 @@
                 <e p="fetch-data.component.html" t="Include" />
                 <e p="fetch-data.component.ts" t="Include" />
               </e>
+              <e p="form-models.ts" t="Include" />
               <e p="home" t="Include">
                 <e p="home.component.html" t="Include" />
                 <e p="home.component.ts" t="Include" />
@@ -144,9 +145,24 @@
                 <e p="nav-menu.component.html" t="Include" />
                 <e p="nav-menu.component.ts" t="Include" />
               </e>
+              <e p="navbar" t="Include">
+                <e p="navbar.component.css" t="Include" />
+                <e p="navbar.component.html" t="Include" />
+                <e p="navbar.component.spec.ts" t="Include" />
+                <e p="navbar.component.ts" t="Include" />
+              </e>
+              <e p="new-item-form-component" t="Include">
+                <e p="new-item-form-component.component.css" t="Include" />
+                <e p="new-item-form-component.component.html" t="Include" />
+                <e p="new-item-form-component.component.spec.ts" t="Include" />
+                <e p="new-item-form-component.component.ts" t="Include" />
+              </e>
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
+              <e p="icons" t="Include">
+                <e p="search.svg" t="Include" />
+              </e>
             </e>
             <e p="browserslist" t="Include" />
             <e p="environments" t="Include">
@@ -168,11 +184,13 @@
           <e p="tslint.json" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
           <e p="DataController.cs" t="Include" />
           <e p="SampleDataController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="DataModels.cs" t="Include" />
+          <e p="FormModels.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
