@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a592c411-5461-4e2c-9295-ddcbceb59d8c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" afterDir="false" />
-    </list>
+    <list default="true" id="a592c411-5461-4e2c-9295-ddcbceb59d8c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,6 +222,7 @@
       <workItem from="1566974472472" duration="303000" />
       <workItem from="1566974858995" duration="1243000" />
       <workItem from="1566976314155" duration="2440000" />
+      <workItem from="1567424644894" duration="350000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1564901658186</created>
@@ -371,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566478804616</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Updated View Items Page / Created Item Page Component">
+      <created>1567424728623</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1567424728623</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +410,8 @@
     <MESSAGE value="Added test zone" />
     <MESSAGE value="merge" />
     <MESSAGE value="Should now get connection string from Azure DevOps when deployed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Should now get connection string from Azure DevOps when deployed" />
+    <MESSAGE value="Updated View Items Page / Created Item Page Component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated View Items Page / Created Item Page Component" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
