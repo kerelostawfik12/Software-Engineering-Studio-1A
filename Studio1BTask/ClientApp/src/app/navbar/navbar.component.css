@@ -9,8 +9,8 @@ nav {
 }
 
 #content {
-
-  width: 1866px;
+  overflow-x: hidden;
+  width: 100vw;
   height: 62px;
   left: 24px;
   top: 18px;
