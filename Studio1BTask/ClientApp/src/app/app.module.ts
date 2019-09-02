@@ -12,8 +12,8 @@ import {FetchDataComponent} from './fetch-data/fetch-data.component';
 import {CartComponent} from './cart/cart.component';
 import {ComponentTestZoneComponent} from './component-test-zone/component-test-zone.component';
 import {CartItemComponent} from './cart-item/cart-item.component';
-import {ItemPageComponent} from './item-page/item-page.component';
-import {ItemViewComponent} from './item-view/item-view.component';
+import {NewItemFormComponentComponent} from './new-item-form-component/new-item-form-component.component';
+import {NavbarComponent} from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +25,8 @@ import {ItemViewComponent} from './item-view/item-view.component';
     CartComponent,
     ComponentTestZoneComponent,
     CartItemComponent,
-    ItemPageComponent,
-    ItemViewComponent
+    NewItemFormComponentComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,8 +38,6 @@ import {ItemViewComponent} from './item-view/item-view.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'cart', component: CartComponent },
       { path: 'component-test-zone', component: ComponentTestZoneComponent },
-      { path: 'item-view', component: ItemViewComponent },
-      { path: 'item/:id', component: ItemPageComponent }
     ])
   ],
   providers: [],

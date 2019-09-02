@@ -13,6 +13,8 @@ namespace Studio1BTask.Models
         public DbSet<ForeignKeyTest> ForeignKeyTests { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Seller> Sellers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Account> Accounts { get; set; }
         
         public DbContext()
         {
@@ -105,6 +107,23 @@ namespace Studio1BTask.Models
         
         public string Name { get; set; }
         
+    }
+    
+    public class Customer
+    {
+        [Key] public int Id { get; set; }
+        
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        
+    }
+    
+    public class Account
+    {
+        [Key] public int Id { get; set; }
+        public char Type { get; set; }
+        public string Email { get; set; }
+        public string PasswordHash { get; set; }
     }
     
 }

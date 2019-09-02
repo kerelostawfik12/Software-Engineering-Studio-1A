@@ -60,7 +60,7 @@ body {
 .delete-btn{
   width : 75px;
   height: 20px;
-  background: brown;
+  background: rgba(255, 67, 67, 0);
 }
 
 .like-btn{
@@ -111,7 +111,7 @@ body {
 .Description span:last-child {
   font-weight: bold;
   margin-top: 8px;
-  color: brown;
+  color: rgba(255, 65, 65, 0);
 }
 
 .Quantity {
@@ -124,7 +124,7 @@ body {
   text-align: center;
   width: 32px;
   font-size: 16px;
-  color: brown;
+  color: #030703;
   font-weight: 300;
 }
 

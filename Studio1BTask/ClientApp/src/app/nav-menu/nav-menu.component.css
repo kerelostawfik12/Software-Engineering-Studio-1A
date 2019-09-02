@@ -2,17 +2,22 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  font-size: 10px;
+  color: white;
+}
+
+nav {
+  font-size: 10px;
+  /* Navbar */
+  background-color:black;
+  height: 20px;
+  left: 0px;
+  overflow: hidden;
 }
 
 html {
-  font-size: 14px;
+  overflow: hidden;
 }
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.nav-item {
+  color: white;
 }

@@ -1,0 +1,41 @@
+<nav>
+  <div id="content">
+
+    <a [routerLink]='["/"]'>
+    <div id="logo">
+      NotAmazon.com
+    </div>
+    </a>
+
+    <div id="search">
+      <div id="search-bar">
+        <form (submit)="search()">
+        <label for="search-input"></label>
+          <input id="search-input" type="text" placeholder="Search all items..." name="firstname">
+        <a (click)="search()">
+          <img src="assets/icons/search.svg" alt="Search" draggable="false" id="search-button"/>
+        </a>
+        <button type="submit" style="display:none">hidden submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="menu">
+      <div id="cart"><a [routerLink]='["/cart"]'><img src="assets/icons/cart.svg" alt="Cart">Cart (0)</a></div>
+      <div id="login-or-register"><a href="/login">Login</a> or <a href="/register">Register</a></div>
+    </div>
+    <div id="categories">
+      <a href="">Desktop PCs</a> &nbsp;&nbsp;
+      <a href="">Laptops</a> &nbsp;&nbsp;
+      <a href="">Tablets</a> &nbsp;&nbsp;
+      <a href="">Notebooks</a> &nbsp;&nbsp;
+      <a href="">Mousepads</a> &nbsp;&nbsp;
+      <a href="">PC Cases</a> &nbsp;&nbsp;
+      <a href="">Graphics Cards</a> &nbsp;&nbsp;
+      <a href="">CPUs</a> &nbsp;&nbsp;
+      <a href="">Phone Cases</a> &nbsp;&nbsp;
+      <a href="">Fortnite</a>
+    </div>
+  </div>
+
+</nav>
