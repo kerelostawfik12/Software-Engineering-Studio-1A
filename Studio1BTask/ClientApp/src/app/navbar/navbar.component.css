@@ -9,22 +9,16 @@ nav {
 }
 
 #content {
-
-  width: 1866px;
-  height: 62px;
+  overflow-x: hidden;
   left: 24px;
   top: 18px;
-
 }
 
 #categories {
-  /* Desktop PCs Laptops Tablets Notebooks Mousepads PC Cases Graphics Cards CPUs Phone Cases Fortnite */
 
-  position: absolute;
-  width: 1490px;
+  position: relative;
   height: 22px;
-  left: calc(50% - 1490px/2);
-  top: 58px;
+  margin: 36px;
 
   font-family: Noto Sans, sans-serif;
   font-style: normal;
@@ -134,9 +128,9 @@ input[type="text"]
   /* Login or Register */
 
   position: absolute;
-  width: 124.37px;
+  width: 124px;
   height: 22px;
-  right: 126.29px;
+  right: 126px;
   top: 23px;
 
   font-family: Noto Sans, sans-serif;
