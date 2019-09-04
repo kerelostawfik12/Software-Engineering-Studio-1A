@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="253f4bf2-ff00-4015-bb83-e06126dfcde1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="253f4bf2-ff00-4015-bb83-e06126dfcde1" name="Default Changelist" comment="" />
     <ignored path="C:\Users\Helena\RiderProjects\Studio1BTask\.idea\.idea.Studio1BTask\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,15 +62,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="345">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -88,11 +86,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -390,7 +406,7 @@
       <workItem from="1565359797295" duration="7909000" />
       <workItem from="1565933564354" duration="19086000" />
       <workItem from="1566468318390" duration="11321000" />
-      <workItem from="1567577341922" duration="761000" />
+      <workItem from="1567577341922" duration="1162000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1564901658186</created>
@@ -581,11 +597,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567435883874</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Removed horizontal scrollbar">
+      <created>1567578326381</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1567578326381</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37098000" />
+    <option name="totallyTimeSpent" value="37499000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -760,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/icons/search.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -906,20 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <marker date="1566468389463" expanded="false" signature="6:223" ph="..." />
-            <marker date="1566468389463" expanded="true" signature="358:1845" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="365:566" ph="/* NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. ... */" />
-            <marker date="1566468389463" expanded="true" signature="643:1843" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="730:880" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="803:870" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="981:1241" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="1054:1231" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="1324:1533" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="1397:1523" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="1619:1828" ph="{...}" />
-            <marker date="1566468389463" expanded="true" signature="1692:1818" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,20 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1090,6 +1078,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1097,20 +1106,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="390">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
