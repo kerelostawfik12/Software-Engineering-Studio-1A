@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61f46054-d33e-42b6-a3bd-9759b9e139df" name="Default Changelist" comment="">
+    <list default="true" id="253f4bf2-ff00-4015-bb83-e06126dfcde1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" afterDir="false" />
     </list>
+    <ignored path="C:\Users\Helena\RiderProjects\Studio1BTask\.idea\.idea.Studio1BTask\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,20 +51,6 @@
         <item name="main@studio1btask.database.windows.net" type="feb32156:DbDataSourceImpl" />
         <item name="main: database" type="ccb7ac2a:MsImplModel$Database" />
         <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
-        <item name="Accounts: table" type="63ab2ba1:MsImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="main@studio1btask.database.windows.net" type="feb32156:DbDataSourceImpl" />
-        <item name="main: database" type="ccb7ac2a:MsImplModel$Database" />
-        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
-        <item name="Customers: table" type="63ab2ba1:MsImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="main@studio1btask.database.windows.net" type="feb32156:DbDataSourceImpl" />
-        <item name="main: database" type="ccb7ac2a:MsImplModel$Database" />
-        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
         <item name="Items: table" type="63ab2ba1:MsImplModel$Table" />
       </path>
       <path>
@@ -77,104 +66,24 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="uml://DATABASE/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.SCHEMA:main.dbo">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>DATABASE</ID>
-              <OriginalElement>23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.SCHEMA:main.dbo</OriginalElement>
-              <nodes>
-                <node x="0.0" y="746.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ForeignKeyTests</node>
-                <node x="0.0" y="599.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ItemCategories</node>
-                <node x="474.0" y="599.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerCartItems</node>
-                <node x="433.4861111111111" y="195.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers</node>
-                <node x="679.4861111111111" y="0.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TestModels</node>
-                <node x="277.6111111111111" y="0.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Accounts</node>
-                <node x="323.76388888888886" y="390.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerTransactions</node>
-                <node x="101.93055555555554" y="209.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Sellers</node>
-                <node x="212.0" y="585.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TransactionItems</node>
-                <node x="79.93055555555554" y="362.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerCartItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers">
-                  <point x="39.5" y="-44.0" />
-                  <point x="592.5" y="337.0" />
-                  <point x="584.2361111111111" y="337.0" />
-                  <point x="50.25" y="58.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Sellers" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Accounts">
-                  <point x="0.0" y="-44.5" />
-                  <point x="190.93055555555554" y="170.0" />
-                  <point x="338.1111111111111" y="170.0" />
-                  <point x="-60.5" y="72.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Accounts">
-                  <point x="0.0" y="-58.5" />
-                  <point x="533.9861111111111" y="170.0" />
-                  <point x="459.1111111111111" y="170.0" />
-                  <point x="60.5" y="72.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TransactionItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerTransactions">
-                  <point x="60.5" y="-58.0" />
-                  <point x="393.5" y="565.0" />
-                  <point x="413.26388888888886" y="565.0" />
-                  <point x="0.0" y="58.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerTransactions" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers">
-                  <point x="0.0" y="-58.5" />
-                  <point x="413.26388888888886" y="337.0" />
-                  <point x="483.7361111111111" y="337.0" />
-                  <point x="-50.25" y="58.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ItemCategories" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items">
-                  <point x="0.0" y="-44.0" />
-                  <point x="96.0" y="565.0" />
-                  <point x="116.93055555555554" y="565.0" />
-                  <point x="-74.0" y="86.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TransactionItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items">
-                  <point x="-60.5" y="-58.0" />
-                  <point x="272.5" y="565.0" />
-                  <point x="190.93055555555554" y="565.0" />
-                  <point x="0.0" y="86.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerCartItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items">
-                  <point x="-39.5" y="-44.0" />
-                  <point x="513.5" y="555.0" />
-                  <point x="264.93055555555554" y="555.0" />
-                  <point x="74.0" y="86.5" />
-                </edge>
-                <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Sellers">
-                  <point x="0.0" y="-86.5" />
-                  <point x="0.0" y="44.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.8999999999999997" x="-38.916426262300774" y="159.77777777777783" />
-              <SelectedNodes>
-                <node>23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ForeignKeyTests</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Key columns</Category>
-                <Category>Columns</Category>
-              </Categories>
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="240">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -182,30 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="195">
               <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Accounts">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="f57fb52a-cbf5-4117-8b53-85a36c1491ee">
-              <filtering>
-                <filter text="" />
-              </filtering>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Customers">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state projectRestartId="f57fb52a-cbf5-4117-8b53-85a36c1491ee">
-              <filtering>
-                <filter text="" />
-              </filtering>
             </state>
           </provider>
         </entry>
@@ -236,10 +123,15 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/493C4F14-8583-4DEF-9B17-03F3F9730341/6/NpgsqlDbContextOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0629A952-D07C-4608-B75F-6E6CCECBF430/ad/07609b63/ForeignKeyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6BCDFAAE-EEF5-425B-99B4-BFDE66161A46/14/b07cf208/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/app.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/dataSources/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/storage_v2/_src_/database/main.uQUzAA/schema/dbo.sYMBAA.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -284,14 +176,16 @@
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-74" />
-    <option name="y" value="33" />
-    <option name="width" value="2097" />
-    <option name="height" value="1377" />
+    <option name="x" value="-75" />
+    <option name="y" value="30" />
+    <option name="width" value="2100" />
+    <option name="height" value="1380" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -384,11 +278,17 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.rider.remote" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="ts.external.directory.path" value="C:\Users\jamie\RiderProjects\Studio1BTask\Studio1BTask\ClientApp\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
@@ -403,7 +303,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Studio1BTask">
+  <component name="RunManager" selected="JavaScript Debug.app.component.html">
+    <configuration name="app.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/app.component.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="home.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/home/home.component.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="nav-menu.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="navbar.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="new-item-form-component.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="Studio1BTask" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Studio1BTask/Studio1BTask.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
@@ -434,6 +349,15 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.app.component.html" />
+        <item itemvalue="JavaScript Debug.home.component.html" />
+        <item itemvalue="JavaScript Debug.nav-menu.component.html" />
+        <item itemvalue="JavaScript Debug.navbar.component.html" />
+        <item itemvalue="JavaScript Debug.new-item-form-component.component.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -466,6 +390,7 @@
       <workItem from="1565359797295" duration="7909000" />
       <workItem from="1565933564354" duration="19086000" />
       <workItem from="1566468318390" duration="11321000" />
+      <workItem from="1567577341922" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1564901658186</created>
@@ -660,13 +585,21 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35860000" />
+    <option name="totallyTimeSpent" value="37098000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18977228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20590208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Azure Explorer" order="3" />
@@ -674,7 +607,7 @@
       <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.49780264" weight="0.32991317" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" sideWeight="0.4990012" weight="0.32991317" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.46264482" visible="true" weight="0.32833466" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.46264482" weight="0.32823366" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4970036" weight="0.39936858" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -687,15 +620,15 @@
       <window_info anchor="bottom" id="Unit Tests" order="14" />
       <window_info anchor="bottom" id="REST Client" order="15" />
       <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.4874151" weight="0.32438833" />
-      <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.5373552" side_tool="true" visible="true" weight="0.32833466" />
-      <window_info anchor="bottom" id="Build" order="18" sideWeight="0.4290851" weight="0.32833466" />
+      <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.5373552" side_tool="true" visible="true" weight="0.32777777" />
+      <window_info anchor="bottom" id="Build" order="18" sideWeight="0.4290851" weight="0.32777777" />
       <window_info anchor="bottom" id="Azure Activity Log" order="19" weight="0.32991317" />
       <window_info anchor="bottom" id="TypeScript" order="20" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32960448" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18337995" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18846412" />
       <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.32960448" />
     </layout>
   </component>
@@ -745,36 +678,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database-credentials.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/appsettings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/appsettings.Development.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <marker date="1564899773072" expanded="false" signature="6:255" ph="..." />
-            <marker date="1564899773072" expanded="true" signature="279:606" ph="{...}" />
-            <marker date="1564899773072" expanded="true" signature="306:604" ph="{...}" />
-            <marker date="1564899773072" expanded="true" signature="359:433" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/navbar/navbar.component.html" />
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/navbar/navbar.component.ts" />
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/environments/environment.ts">
@@ -1023,24 +926,8 @@
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/fetch-data/fetch-data.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Customers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f57fb52a-cbf5-4117-8b53-85a36c1491ee">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Accounts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="f57fb52a-cbf5-4117-8b53-85a36c1491ee">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Customers" />
+    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Accounts" />
     <entry file="file://$PROJECT_DIR$/Studio1BTask/Controllers/AccountController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1281">
@@ -1081,13 +968,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/icons/cart.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="uml://DATABASE/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.SCHEMA:main.dbo">
       <provider selected="true" editor-type-id="UmlEditorProvider">
@@ -1161,7 +1041,7 @@
               <point x="0.0" y="44.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.8999999999999997" x="-38.916426262300774" y="159.77777777777783" />
+          <settings layout="Hierarchic Group" zoom="0.8999999999999997" x="-39.0" y="160.0" />
           <SelectedNodes>
             <node>23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ForeignKeyTests</node>
           </SelectedNodes>
@@ -1169,6 +1049,7 @@
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -1193,9 +1074,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/cart/cart.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="195">
           <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
