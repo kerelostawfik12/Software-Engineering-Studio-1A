@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Studio1BTask.Models;
 using Microsoft.EntityFrameworkCore;
+using Studio1BTask.Models;
 using DbContext = Studio1BTask.Models.DbContext;
+
 // See data-models.ts for the client-side version of these classes (make sure they are consistent)
 
 namespace Studio1BTask.Controllers
@@ -22,7 +22,7 @@ namespace Studio1BTask.Controllers
                 return context.TestModels.ToList();
             }
         }
-         
+
         [HttpGet("[action]")]
         public IEnumerable<ForeignKeyTest> ForeignKeyTests()
         {
@@ -34,7 +34,7 @@ namespace Studio1BTask.Controllers
                 return fkts;
             }
         }
-        
+
         [HttpGet("[action]")]
         public IEnumerable<Item> AllItems()
         {
@@ -44,7 +44,7 @@ namespace Studio1BTask.Controllers
                 return items;
             }
         }
-        
+
         [HttpGet("[action]")]
         public IEnumerable<Item> ItemsInCart()
         {
@@ -54,6 +54,5 @@ namespace Studio1BTask.Controllers
                 return items;
             }
         }
-        
     }
 }

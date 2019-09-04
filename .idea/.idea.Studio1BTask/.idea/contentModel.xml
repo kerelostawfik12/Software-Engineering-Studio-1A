@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Cameron\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Cameron\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Studio1BTask.-1388058482.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Cameron\Documents\University Work\2019\Spring Semester 2019\Software Engineering Studio 1B\Project" t="IncludeFlat">
+    <e p="C:\Users\jamie\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\jamie\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\jamie\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\jamie\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Studio1BTask.1015127787.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jamie\RiderProjects\Studio1BTask" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Studio1BTask" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
@@ -35,28 +37,17 @@
           <e p="node_modules\@angular\platform-browser-dynamic" t="IncludeRecursive" />
           <e p="node_modules\@angular\platform-server" t="IncludeRecursive" />
           <e p="node_modules\@angular\router" t="IncludeRecursive" />
-          <e p="node_modules\@angular-devkit\architect" t="IncludeRecursive" />
           <e p="node_modules\@angular-devkit\build-angular" t="IncludeRecursive" />
-          <e p="node_modules\@angular-devkit\build-optimizer" t="IncludeRecursive" />
-          <e p="node_modules\@angular-devkit\core" t="IncludeRecursive" />
-          <e p="node_modules\@angular-devkit\schematics" t="IncludeRecursive" />
-          <e p="node_modules\@ngtools\webpack" t="IncludeRecursive" />
           <e p="node_modules\@nguniversal\module-map-ngfactory-loader" t="IncludeRecursive" />
           <e p="node_modules\@types" t="IncludeRecursive">
             <e p="jasmine" t="IncludeRecursive" />
             <e p="jasminewd2" t="IncludeRecursive" />
             <e p="node" t="IncludeRecursive" />
           </e>
-          <e p="node_modules\ajv" t="IncludeRecursive" />
           <e p="node_modules\aspnet-prerendering" t="IncludeRecursive" />
-          <e p="node_modules\blocking-proxy" t="IncludeRecursive" />
           <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
-          <e p="node_modules\commander" t="IncludeRecursive" />
           <e p="node_modules\core-js" t="IncludeRecursive" />
-          <e p="node_modules\domino" t="IncludeRecursive" />
-          <e p="node_modules\es6-promise" t="IncludeRecursive" />
-          <e p="node_modules\fast-deep-equal" t="IncludeRecursive" />
           <e p="node_modules\jasmine-core" t="IncludeRecursive" />
           <e p="node_modules\jasmine-spec-reporter" t="IncludeRecursive" />
           <e p="node_modules\jquery" t="IncludeRecursive" />
@@ -65,18 +56,11 @@
           <e p="node_modules\karma-coverage-istanbul-reporter" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine" t="IncludeRecursive" />
           <e p="node_modules\karma-jasmine-html-reporter" t="IncludeRecursive" />
-          <e p="node_modules\license-webpack-plugin" t="IncludeRecursive" />
+          <e p="node_modules\node-sass" t="IncludeRecursive" />
           <e p="node_modules\popper.js" t="IncludeRecursive" />
-          <e p="node_modules\portfinder" t="IncludeRecursive" />
-          <e p="node_modules\postcss" t="IncludeRecursive" />
           <e p="node_modules\protractor" t="IncludeRecursive" />
-          <e p="node_modules\reflect-metadata" t="IncludeRecursive" />
           <e p="node_modules\rxjs" t="IncludeRecursive" />
-          <e p="node_modules\symbol-observable" t="IncludeRecursive" />
-          <e p="node_modules\tree-kill" t="IncludeRecursive" />
           <e p="node_modules\ts-node" t="IncludeRecursive" />
-          <e p="node_modules\tsickle" t="IncludeRecursive" />
-          <e p="node_modules\tslib" t="IncludeRecursive" />
           <e p="node_modules\tslint" t="IncludeRecursive" />
           <e p="node_modules\typescript\lib\lib.d.ts" t="IncludeRecursive" />
           <e p="node_modules\typescript\lib\lib.dom.d.ts" t="IncludeRecursive" />
@@ -112,8 +96,6 @@
           <e p="node_modules\typescript\lib\lib.esnext.promise.d.ts" t="IncludeRecursive" />
           <e p="node_modules\typescript\lib\lib.scripthost.d.ts" t="IncludeRecursive" />
           <e p="node_modules\typescript\lib\lib.webworker.d.ts" t="IncludeRecursive" />
-          <e p="node_modules\uri-js" t="IncludeRecursive" />
-          <e p="node_modules\webdriver-js-extender" t="IncludeRecursive" />
           <e p="node_modules\zone.js" t="IncludeRecursive" />
           <e p="package-lock.json" t="Include" />
           <e p="package.json" t="Include" />
@@ -157,18 +139,6 @@
               <e p="home" t="Include">
                 <e p="home.component.html" t="Include" />
                 <e p="home.component.ts" t="Include" />
-              </e>
-              <e p="item-page" t="Include">
-                <e p="item-page.component.css" t="Include" />
-                <e p="item-page.component.html" t="Include" />
-                <e p="item-page.component.spec.ts" t="Include" />
-                <e p="item-page.component.ts" t="Include" />
-              </e>
-              <e p="item-view" t="Include">
-                <e p="item-view.component.css" t="Include" />
-                <e p="item-view.component.html" t="Include" />
-                <e p="item-view.component.spec.ts" t="Include" />
-                <e p="item-view.component.ts" t="Include" />
               </e>
               <e p="nav-menu" t="Include">
                 <e p="nav-menu.component.css" t="Include" />
