@@ -20,13 +20,8 @@ export class ItemViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  switchView() {
-    if (this.viewSetting === 0) {
-      this.viewSetting = 1;
-    }
-    else {
-      this.viewSetting = 0;
-    }
+  delete() {
+
   }
 
 }

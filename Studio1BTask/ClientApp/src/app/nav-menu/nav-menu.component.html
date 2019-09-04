@@ -21,8 +21,10 @@
             <a class="nav-link text-white" [routerLink]='["/fetch-data"]'>Fetch data test</a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/item-view"]' class="nav-link text-white">View Items</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
-
           </li>
         </ul>
       </div>

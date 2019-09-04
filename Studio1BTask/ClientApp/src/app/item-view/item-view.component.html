@@ -8,6 +8,8 @@
         <th>Item Description</th>
         <th>Item Price</th>
         <th>Seller</th>
+        <th>Actions</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -16,8 +18,10 @@
         <td>{{ item.name }}</td>
         <td>{{ item.description }}</td>
         <td>{{ item.price }}</td>
-        <td>{{ item.seller }}</td>
+        <td>{{ item.seller.name }}</td>
         <td><a routerLink="/item/{{ item.id }}">View Item Details</a></td>
+        <td>
+          <button (click)="delete()">Delete</button>
       </tr>
     </tbody>
   </table>
