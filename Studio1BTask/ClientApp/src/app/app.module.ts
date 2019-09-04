@@ -38,6 +38,7 @@ import {NavbarComponent} from './navbar/navbar.component';
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'cart', component: CartComponent },
       { path: 'component-test-zone', component: ComponentTestZoneComponent },
+      {path: 'new-item-form-component', component: NewItemFormComponentComponent},
     ])
   ],
   providers: [],
