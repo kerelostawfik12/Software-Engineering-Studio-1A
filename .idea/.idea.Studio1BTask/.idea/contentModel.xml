@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Helena\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Helena\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Studio1BTask.1421666222.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Helena\RiderProjects\Studio1BTask" t="IncludeFlat">
+    <e p="C:\Users\jamie\.Rider2019.1\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\jamie\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\jamie\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\jamie\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Studio1BTask.1015127787.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jamie\RiderProjects\Studio1BTask" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Studio1BTask" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />

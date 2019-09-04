@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="253f4bf2-ff00-4015-bb83-e06126dfcde1" name="Default Changelist" comment="Updated new-item-form-component">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts" afterDir="false" />
-    </list>
-    <ignored path="C:\Users\Helena\RiderProjects\Studio1BTask\.idea\.idea.Studio1BTask\.idea\shelf/" />
+    <list default="true" id="61f46054-d33e-42b6-a3bd-9759b9e139df" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +44,20 @@
         <item name="main@studio1btask.database.windows.net" type="feb32156:DbDataSourceImpl" />
         <item name="main: database" type="ccb7ac2a:MsImplModel$Database" />
         <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+        <item name="Accounts: table" type="63ab2ba1:MsImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="main@studio1btask.database.windows.net" type="feb32156:DbDataSourceImpl" />
+        <item name="main: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+        <item name="Customers: table" type="63ab2ba1:MsImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="main@studio1btask.database.windows.net" type="feb32156:DbDataSourceImpl" />
+        <item name="main: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
         <item name="Items: table" type="63ab2ba1:MsImplModel$Table" />
       </path>
       <path>
@@ -64,106 +70,8 @@
     </expand>
     <select />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding>
-                <marker date="1567578323456" expanded="false" signature="6:197" ph="..." />
-                <marker date="1567578323456" expanded="true" signature="333:1786" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="340:541" ph="/* NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. ... */" />
-                <marker date="1567578323456" expanded="true" signature="618:1784" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="705:855" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="778:845" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="947:1207" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="1020:1197" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="1282:1491" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="1355:1481" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="1569:1778" ph="{...}" />
-                <marker date="1567578323456" expanded="true" signature="1642:1768" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="40" column="82" lean-forward="true" selection-start-line="40" selection-start-column="82" selection-end-line="40" selection-end-column="82" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/fetch-data/fetch-data.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/counter/counter.component.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FavoritesManager">
+    <favorites_list name="Studio1BTask" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -189,15 +97,19 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/app.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/.editorconfig" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/dataSources/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/storage_v2/_src_/database/main.uQUzAA/schema/dbo.sYMBAA.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/app.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -224,7 +136,9 @@
         <option value="$PROJECT_DIR$/database-credentials.txt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/console.sql" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.ts" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.css" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/search.svg" />
         <option value="$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" />
@@ -240,170 +154,16 @@
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css" />
-        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css" />
-        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" />
-        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" />
-        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-75" />
-    <option name="y" value="30" />
-    <option name="width" value="2100" />
-    <option name="height" value="1380" />
+    <option name="x" value="-74" />
+    <option name="y" value="33" />
+    <option name="width" value="2097" />
+    <option name="height" value="1377" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="FileSystemExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Studio1BTask" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Studio1BTask" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Studio1BTask" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="cart" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="cart-item" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="component-test-zone" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="counter" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="fetch-data" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="home" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="nav-menu" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="navbar" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="new-item-form-component" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Controllers" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql&#10;postgresql&#10;azure" />
@@ -414,18 +174,12 @@
     <property name="database.console.LAST_STATE" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="C:\Users\Helena\RiderProjects\Studio1BTask\Studio1BTask\ClientApp\node_modules\typescript\lib" />
+    <property name="settings.editor.selected.configurable" value="reference.idesettings.debugger.rider.remote" />
+    <property name="ts.external.directory.path" value="C:\Users\jamie\RiderProjects\Studio1BTask\Studio1BTask\ClientApp\node_modules\typescript\lib" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -440,21 +194,6 @@
     </option>
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Studio1BTask">
-    <configuration name="app.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/app.component.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="home.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/home/home.component.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="nav-menu.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="navbar.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="new-item-form-component.component.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Studio1BTask/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <configuration name="Studio1BTask" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Studio1BTask/Studio1BTask.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
@@ -485,15 +224,6 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JavaScript Debug.nav-menu.component.html" />
-        <item itemvalue="JavaScript Debug.new-item-form-component.component.html" />
-        <item itemvalue="JavaScript Debug.app.component.html" />
-        <item itemvalue="JavaScript Debug.home.component.html" />
-        <item itemvalue="JavaScript Debug.navbar.component.html" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
@@ -526,8 +256,6 @@
       <workItem from="1565359797295" duration="7909000" />
       <workItem from="1565933564354" duration="19086000" />
       <workItem from="1566468318390" duration="11321000" />
-      <workItem from="1567577341922" duration="1162000" />
-      <workItem from="1567578543798" duration="2672000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1564901658186</created>
@@ -718,78 +446,8 @@
       <option name="project" value="LOCAL" />
       <updated>1567435883874</updated>
     </task>
-    <task id="LOCAL-00028" summary="Removed horizontal scrollbar">
-      <created>1567578326381</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1567578326381</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Removed horizontal scrollbar">
-      <created>1567578668004</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1567578668004</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Updated new-item-form-component">
-      <created>1567578883423</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1567578883423</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="28" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40171000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20858485" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="Azure Explorer" order="3" />
-      <window_info anchor="bottom" id="SQL Generator" order="0" sideWeight="0.4994007" weight="0.32991317" />
-      <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.49780264" weight="0.32991317" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" sideWeight="0.4990012" weight="0.32991317" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.46264482" visible="true" weight="0.32777777" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4970036" weight="0.39936858" />
-      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="8" weight="0.32991317" />
-      <window_info anchor="bottom" id="NuGet" order="9" sideWeight="0.49780264" weight="0.32991317" />
-      <window_info anchor="bottom" id="Performance Profiler" order="10" sideWeight="0.4994007" weight="0.32991317" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49780264" weight="0.32991317" />
-      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unit Tests" order="14" />
-      <window_info anchor="bottom" id="REST Client" order="15" />
-      <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.4874151" weight="0.32438833" />
-      <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.5714286" side_tool="true" weight="0.32777777" />
-      <window_info anchor="bottom" id="Build" order="18" sideWeight="0.42857143" weight="0.32777777" />
-      <window_info anchor="bottom" id="Azure Activity Log" order="19" weight="0.32991317" />
-      <window_info anchor="bottom" id="TypeScript" order="20" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32960448" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.18846412" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.32960448" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -817,9 +475,7 @@
     <MESSAGE value="Fixed shopping cart height" />
     <MESSAGE value="Enter now works in search bar" />
     <MESSAGE value="Removed horizontal scrollbar" />
-    <MESSAGE value="Update new-item-form-component" />
-    <MESSAGE value="Updated new-item-form-component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated new-item-form-component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed horizontal scrollbar" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -837,467 +493,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.server.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/icons/search.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Customer" />
-    <entry file="file://$PROJECT_DIR$/Studio1BTask.sln">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Studio1BTask.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/data-models.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Startup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-          <folding>
-            <marker date="1567179243681" expanded="true" signature="6:271" ph="..." />
-            <marker date="1567179243681" expanded="true" signature="295:2447" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="322:2445" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="381:444" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="667:1111" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="1299:2439" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="1346:1423" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="1440:1694" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="1852:2005" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="2051:2427" ph="{...}" />
-            <marker date="1567179243681" expanded="true" signature="2069:2215" ph="/* To learn more about options for serving an Angular SPA from ASP.NET Core, ... */" />
-            <marker date="1567179243681" expanded="true" signature="2312:2413" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <marker date="1566043813144" expanded="false" signature="6:125" ph="..." />
-            <marker date="1566043813144" expanded="true" signature="161:1817" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="246:1815" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="311:442" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="537:931" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="715:919" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="967:1467" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="1040:1444" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="1106:1176" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="1311:1372" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="1505:1809" ph="{...}" />
-            <marker date="1566043813144" expanded="true" signature="1704:1799" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding>
-            <marker date="1567179731538" expanded="true" signature="29:213" ph="{...}" />
-            <marker date="1567179731538" expanded="true" signature="68:206" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
-          <folding>
-            <marker date="1567171183122" expanded="true" signature="6:164" ph="..." />
-            <marker date="1567171183122" expanded="true" signature="195:4953" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="266:1317" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="760:780" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="867:1167" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="1243:1311" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="1327:3432" ph="/* Creating a new table involves four steps. You can complete these steps in any order you want, but don't forget ... */" />
-            <marker date="1567171183122" expanded="true" signature="3464:3600" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="3637:4036" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="3703:3894" ph="/* Note: To actually have objects like this filled, you will need to use Include(), or manually ... */" />
-            <marker date="1567171183122" expanded="true" signature="4068:4396" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="4425:4538" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="4569:4732" ph="{...}" />
-            <marker date="1567171183122" expanded="true" signature="4762:4946" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/form-models.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Items">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e9a97c20-d52d-4562-8145-ee5fae84db3d">
-          <filtering>
-            <filter text="" />
-          </filtering>
-          <column-attributes>
-            <column name="SellerId" position="2" />
-            <column name="Name" position="3" />
-            <column name="Description" position="4" />
-            <column name="Price" position="5" />
-            <column name="Id" position="1" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Sellers">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="e9a97c20-d52d-4562-8145-ee5fae84db3d">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/fetch-data/fetch-data.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Customers" />
-    <entry file="das://23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/database/main/schema/dbo/table/Accounts" />
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Controllers/AccountController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/icons/cart.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="uml://DATABASE/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.SCHEMA:main.dbo">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.SCHEMA:main.dbo</OriginalElement>
-          <nodes>
-            <node x="0.0" y="746.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ForeignKeyTests</node>
-            <node x="0.0" y="599.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ItemCategories</node>
-            <node x="474.0" y="599.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerCartItems</node>
-            <node x="433.4861111111111" y="195.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers</node>
-            <node x="679.4861111111111" y="0.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TestModels</node>
-            <node x="277.6111111111111" y="0.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Accounts</node>
-            <node x="323.76388888888886" y="390.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerTransactions</node>
-            <node x="101.93055555555554" y="209.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Sellers</node>
-            <node x="212.0" y="585.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TransactionItems</node>
-            <node x="79.93055555555554" y="362.0">23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerCartItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers">
-              <point x="39.5" y="-44.0" />
-              <point x="592.5" y="337.0" />
-              <point x="584.2361111111111" y="337.0" />
-              <point x="50.25" y="58.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Sellers" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Accounts">
-              <point x="0.0" y="-44.5" />
-              <point x="190.93055555555554" y="170.0" />
-              <point x="338.1111111111111" y="170.0" />
-              <point x="-60.5" y="72.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Accounts">
-              <point x="0.0" y="-58.5" />
-              <point x="533.9861111111111" y="170.0" />
-              <point x="459.1111111111111" y="170.0" />
-              <point x="60.5" y="72.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TransactionItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerTransactions">
-              <point x="60.5" y="-58.0" />
-              <point x="393.5" y="565.0" />
-              <point x="413.26388888888886" y="565.0" />
-              <point x="0.0" y="58.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerTransactions" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Customers">
-              <point x="0.0" y="-58.5" />
-              <point x="413.26388888888886" y="337.0" />
-              <point x="483.7361111111111" y="337.0" />
-              <point x="-50.25" y="58.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ItemCategories" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items">
-              <point x="0.0" y="-44.0" />
-              <point x="96.0" y="565.0" />
-              <point x="116.93055555555554" y="565.0" />
-              <point x="-74.0" y="86.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.TransactionItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items">
-              <point x="-60.5" y="-58.0" />
-              <point x="272.5" y="565.0" />
-              <point x="190.93055555555554" y="565.0" />
-              <point x="0.0" y="86.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.CustomerCartItems" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items">
-              <point x="-39.5" y="-44.0" />
-              <point x="513.5" y="555.0" />
-              <point x="264.93055555555554" y="555.0" />
-              <point x="74.0" y="86.5" />
-            </edge>
-            <edge source="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Items" target="23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.Sellers">
-              <point x="0.0" y="-86.5" />
-              <point x="0.0" y="44.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.8999999999999997" x="-39.0" y="160.0" />
-          <SelectedNodes>
-            <node>23e2dc26-cf1f-4a49-9022-5ff4e940b8d9.TABLE:main.dbo.ForeignKeyTests</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/dotnet/sdk/2.2.401/Microsoft.Common.CurrentVersion.targets">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="5056" column="4" selection-start-line="5056" selection-start-column="4" selection-end-line="5056" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/cart/cart.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/cart/cart.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/cart/cart.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/environments/environment.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/counter/counter.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/counter/counter.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/cart-item/cart-item.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/cart/cart.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/component-test-zone/component-test-zone.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/component-test-zone/component-test-zone.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Controllers/DataController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <marker date="1567578323456" expanded="false" signature="6:197" ph="..." />
-            <marker date="1567578323456" expanded="true" signature="333:1786" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="340:541" ph="/* NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. ... */" />
-            <marker date="1567578323456" expanded="true" signature="618:1784" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="705:855" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="778:845" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="947:1207" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="1020:1197" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="1282:1491" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="1355:1481" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="1569:1778" ph="{...}" />
-            <marker date="1567578323456" expanded="true" signature="1642:1768" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/counter/counter.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="40" column="82" lean-forward="true" selection-start-line="40" selection-start-column="82" selection-end-line="40" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/fetch-data/fetch-data.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
