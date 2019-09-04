@@ -43,7 +43,8 @@ import {ItemPageComponent} from "./item-page/item-page.component";
       { path: 'cart', component: CartComponent },
       { path: 'component-test-zone', component: ComponentTestZoneComponent },
       {path: 'item-view', component: ItemViewComponent},
-      {path: 'item/:id', component: ItemPageComponent}
+      {path: 'item/:id', component: ItemPageComponent},
+      {path: 'new-item-form-component', component: NewItemFormComponentComponent},
     ])
   ],
   providers: [],
