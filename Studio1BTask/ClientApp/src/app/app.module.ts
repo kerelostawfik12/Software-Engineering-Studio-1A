@@ -15,6 +15,8 @@ import {CartItemComponent} from './cart-item/cart-item.component';
 import {NewItemFormComponentComponent} from './new-item-form-component/new-item-form-component.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {RegisterComponent} from './register/register.component';
+import {ItemPageComponent} from "./item-page/item-page.component";
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import {RegisterComponent} from './register/register.component';
     NavbarComponent,
     RegisterComponent
 
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,6 +46,8 @@ import {RegisterComponent} from './register/register.component';
       { path: 'cart', component: CartComponent },
       { path: 'component-test-zone', component: ComponentTestZoneComponent },
       {path: 'register', component: RegisterComponent},
+      {path: 'item/:id', component: ItemPageComponent},
+      {path: 'new-item-form-component', component: NewItemFormComponentComponent},
     ])
   ],
   providers: [],
