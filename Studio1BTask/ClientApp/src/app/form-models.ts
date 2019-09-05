@@ -4,3 +4,10 @@ interface CustomerAccountForm {
   firstName : string;
   lastName : string;
 }
+
+interface NewItemForm {
+  name: string;
+  description: string;
+  price: string;
+}
+

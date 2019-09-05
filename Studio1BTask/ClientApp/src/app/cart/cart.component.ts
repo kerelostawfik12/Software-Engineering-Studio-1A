@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   public items : Item[];
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
 
-    http.get<Item[]>(baseUrl + 'api/Data/AllItems').subscribe(result => {
+    http.get<Item[]>(baseUrl + 'api/Item/AllItems').subscribe(result => {
       this.items = result;
     }, error => console.error(error));
 

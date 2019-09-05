@@ -9,19 +9,17 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./item-page.component.css']
 })
 export class ItemPageComponent implements OnInit {
-  items: Item[];
   item: Item;
   id: number;
 
-  constructor(
-    http: HttpClient, @Inject('BASE_URL') baseUrl: string,
-    private route: ActivatedRoute) {
-    http.get<Item[]>(baseUrl + 'api/Data/AllItems').subscribe(result => {
-      this.items = result;
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute) {
+    this.id = parseInt(this.route.snapshot.paramMap.get('id'));
+    http.get<Item>(baseUrl + 'api/Item/GetItem', {params: {id: String(this.id)}}).subscribe(result => {
+      this.item = result;
     }, error => console.error(error));
   }
 
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
+
   }
 }

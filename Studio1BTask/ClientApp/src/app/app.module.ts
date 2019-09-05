@@ -18,7 +18,6 @@ import {RegisterComponent} from './register/register.component';
 import {ItemPageComponent} from "./item-page/item-page.component";
 import {ItemViewComponent} from "./item-view/item-view.component";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +32,8 @@ import {ItemViewComponent} from "./item-view/item-view.component";
     NavbarComponent,
     RegisterComponent,
     ItemPageComponent,
-    ItemViewComponent
+    ItemViewComponent,
+    
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),

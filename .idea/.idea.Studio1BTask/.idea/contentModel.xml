@@ -45,6 +45,7 @@
             <e p="node" t="IncludeRecursive" />
           </e>
           <e p="node_modules\aspnet-prerendering" t="IncludeRecursive" />
+          <e p="node_modules\awesome-notifications" t="IncludeRecursive" />
           <e p="node_modules\bootstrap" t="IncludeRecursive" />
           <e p="node_modules\codelyzer" t="IncludeRecursive" />
           <e p="node_modules\core-js" t="IncludeRecursive" />
@@ -204,7 +205,7 @@
         </e>
         <e p="Controllers" t="Include">
           <e p="AccountController.cs" t="Include" />
-          <e p="DataController.cs" t="Include" />
+          <e p="ItemController.cs" t="Include" />
           <e p="SampleDataController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

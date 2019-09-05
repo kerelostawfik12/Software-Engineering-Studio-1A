@@ -1,4 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-new-item-form-component',
@@ -7,10 +9,28 @@ import {Component} from '@angular/core';
 })
 export class NewItemFormComponentComponent {
 
-  public submit() {
+  private httpClient: HttpClient;
+  private baseUrl: string;
+  private router: Router;
+
+  constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+    this.httpClient = http;
+    this.baseUrl = baseUrl;
+    this.router = router;
   }
 
-  constructor() { }
+  public submit() {
+    const newItemForm: NewItemForm = {
+      name: (document.getElementById("name") as HTMLInputElement).value,
+      description: (document.getElementById("description") as HTMLInputElement).value,
+      price: (document.getElementById("price") as HTMLInputElement).value,
+    };
+    this.httpClient.post(this.baseUrl + 'api/Item/CreateItem', newItemForm).subscribe(result => {
+      const newItemId = (result as Item).id;
+      this.router.navigateByUrl('/item/' + newItemId);
+    }, error => console.error(error));
+  }
+
 
   ngOnInit() {
   }

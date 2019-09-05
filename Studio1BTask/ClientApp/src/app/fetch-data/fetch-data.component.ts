@@ -1,5 +1,5 @@
-import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, Inject} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-fetch-data',
@@ -17,7 +17,7 @@ export class FetchDataComponent {
     }, error => console.error(error));
 
 
-    http.get<Item[]>(baseUrl + 'api/Data/AllItems').subscribe(result => {
+    http.get<Item[]>(baseUrl + 'api/Item/AllItems').subscribe(result => {
       this.items = result;
     }, error => console.error(error));
 

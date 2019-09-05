@@ -21,8 +21,10 @@
         <td>{{ item.seller.name }}</td>
         <td><a routerLink="/item/{{ item.id }}">View Item Details</a></td>
         <td>
-          <button (click)="delete()">Delete</button>
+          <button (click)="delete(item)" class="btn btn-danger">Delete</button>
       </tr>
     </tbody>
   </table>
 </div>
+
+
