@@ -22,7 +22,7 @@
 
     <div id="menu">
       <div id="cart"><a [routerLink]='["/cart"]'><img src="assets/icons/cart.svg" alt="Cart">Cart (0)</a></div>
-      <div id="login-or-register"><a href="/login">Login</a> or <a href="/register">Register</a></div>
+      <div id="login-or-register"><a href="/login">Login</a> or <a [routerLink]="['/register']">Register</a></div>
     </div>
     <div id="categories">
       <a href="">Desktop PCs</a> &nbsp;&nbsp;

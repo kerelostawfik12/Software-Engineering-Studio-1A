@@ -12,10 +12,18 @@
     <database id="3" parent="1" name="master">
       <ObjectId>1</ObjectId>
       <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <Substituted>1</Substituted>
     </database>
     <database id="4" parent="1" name="studio1btask">
       <ObjectId>5</ObjectId>
       <Current>1</Current>
+      <Visible>1</Visible>
     </database>
+    <schema id="5" parent="3" name="INFORMATION_SCHEMA">
+      <Substituted>1</Substituted>
+    </schema>
+    <schema id="6" parent="3" name="sys">
+      <Substituted>1</Substituted>
+    </schema>
   </database-model>
 </dataSource>
