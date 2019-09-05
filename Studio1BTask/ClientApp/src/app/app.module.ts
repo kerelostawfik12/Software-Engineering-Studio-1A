@@ -16,6 +16,7 @@ import {NewItemFormComponentComponent} from './new-item-form-component/new-item-
 import {NavbarComponent} from './navbar/navbar.component';
 import {RegisterComponent} from './register/register.component';
 import {ItemPageComponent} from "./item-page/item-page.component";
+import {ItemViewComponent} from "./item-view/item-view.component";
 
 
 @NgModule({
@@ -30,27 +31,29 @@ import {ItemPageComponent} from "./item-page/item-page.component";
     CartItemComponent,
     NewItemFormComponentComponent,
     NavbarComponent,
-    RegisterComponent
-
-
+    RegisterComponent,
+    ItemPageComponent,
+    ItemViewComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'cart', component: CartComponent },
-      { path: 'component-test-zone', component: ComponentTestZoneComponent },
+      {path: '', component: HomeComponent, pathMatch: 'full'},
+      {path: 'counter', component: CounterComponent},
+      {path: 'fetch-data', component: FetchDataComponent},
+      {path: 'cart', component: CartComponent},
+      {path: 'component-test-zone', component: ComponentTestZoneComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'item/:id', component: ItemPageComponent},
       {path: 'new-item-form-component', component: NewItemFormComponentComponent},
+      {path: 'item-view', component: ItemViewComponent},
     ])
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
