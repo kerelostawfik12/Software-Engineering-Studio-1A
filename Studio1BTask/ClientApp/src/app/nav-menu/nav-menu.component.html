@@ -21,9 +21,15 @@
             <a class="nav-link text-white" [routerLink]='["/fetch-data"]'>Fetch data test</a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
-
+            <a [routerLink]='["/item-view"]' class="nav-link text-white">View Items</a>
           </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="new-item-form">
+            <a [routerLink]='["/new-item-form-component"]' class="nav-link text-white">New Item Form</a>
+          </li>
+
         </ul>
       </div>
     </div>
