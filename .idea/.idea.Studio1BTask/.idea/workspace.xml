@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61f46054-d33e-42b6-a3bd-9759b9e139df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.ts" afterDir="false" />
     </list>
     <list id="725e3c2c-ff06-409c-8496-3d4e86200c98" name="Added Customer Account Create Page (routed to register)" comment="" />
@@ -95,18 +94,19 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/ItemController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/dataSources/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/storage_v2/_src_/database/main.uQUzAA/schema/dbo.sYMBAA.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/app.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/.editorconfig" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/Error.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Pages/_ViewImports.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/dataSources/23e2dc26-cf1f-4a49-9022-5ff4e940b8d9/storage_v2/_src_/database/main.uQUzAA/schema/dbo.sYMBAA.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -141,7 +141,6 @@
         <option value="$PROJECT_DIR$/Studio1BTask/Startup.cs" />
         <option value="$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/form-models.ts" />
-        <option value="$PROJECT_DIR$/Studio1BTask/Controllers/AccountController.cs" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/icons/cart.svg" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.css" />
@@ -149,9 +148,11 @@
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/new-item-form-component/new-item-form-component.component.ts" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.html" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/Studio1BTask/Controllers/AccountController.cs" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.ts" />
       </list>
     </option>
@@ -233,12 +234,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4d0b01f3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@74043d45" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@4d0b01f3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3f44fa82" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3b7cff40" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -275,7 +271,7 @@
       <workItem from="1567738503678" duration="84000" />
       <workItem from="1567738605557" duration="150000" />
       <workItem from="1567747933137" duration="56000" />
-      <workItem from="1567748932773" duration="1704000" />
+      <workItem from="1567748932773" duration="6705000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1564901658186</created>
@@ -473,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567439644603</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="trying to make the register button make an account, pushed so jamie could help debug.">
+      <created>1567755661717</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1567755661718</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +519,8 @@
     <MESSAGE value="Enter now works in search bar" />
     <MESSAGE value="Removed horizontal scrollbar" />
     <MESSAGE value="Removed horizontal scrollbar properly (no workarounds this time)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed horizontal scrollbar properly (no workarounds this time)" />
+    <MESSAGE value="trying to make the register button make an account, pushed so jamie could help debug." />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to make the register button make an account, pushed so jamie could help debug." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -524,14 +528,14 @@
   <component name="WindowStateProjectService">
     <state x="-1506" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" />
     <state x="-1506" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.1080/1920.1080" />
-    <state width="1293" height="281" key="GridCell.Tab.0.bottom" />
-    <state width="1293" height="281" key="GridCell.Tab.0.bottom/1920.1080/1920.1080" />
-    <state width="1293" height="281" key="GridCell.Tab.0.center" />
-    <state width="1293" height="281" key="GridCell.Tab.0.center/1920.1080/1920.1080" />
-    <state width="1293" height="281" key="GridCell.Tab.0.left" />
-    <state width="1293" height="281" key="GridCell.Tab.0.left/1920.1080/1920.1080" />
-    <state width="1293" height="281" key="GridCell.Tab.0.right" />
-    <state width="1293" height="281" key="GridCell.Tab.0.right/1920.1080/1920.1080" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/1920.1080/1920.1080" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/1920.1080/1920.1080" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/1920.1080/1920.1080" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/1920.1080/1920.1080" />
     <state width="932" height="347" key="GridCell.Tab.1.bottom" />
     <state width="932" height="347" key="GridCell.Tab.1.bottom/1920.1080/1920.1080" />
     <state width="932" height="347" key="GridCell.Tab.1.center" />
@@ -568,6 +572,8 @@
     <state x="-1736" y="85" key="MergeDialog/1920.1080/1920.1080" />
     <state x="-1248" y="235" key="MultipleFileMergeDialog" />
     <state x="-1248" y="235" key="MultipleFileMergeDialog/1920.1080/1920.1080" />
+    <state x="-1284" y="248" key="Vcs.Push.Dialog" />
+    <state x="-1284" y="248" key="Vcs.Push.Dialog/1920.1080/1920.1080" />
     <state x="450" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate" />
     <state x="450" y="299" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate/1366.768" />
     <state x="-1282" y="190" width="644" height="660" key="find.popup" />

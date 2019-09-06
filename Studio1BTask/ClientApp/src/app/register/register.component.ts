@@ -10,14 +10,17 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  private http: HttpClient;
+  private httpClient: HttpClient;
   private baseUrl: string;
 
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
+    http: HttpClient,
     @Inject('BASE_URL') baseUrl: string
   ) {
+    this.httpClient = http;
+    this.baseUrl = baseUrl;
     /*this.registerForm = this.formBuilder.group({
       firstName: '',
       lastName: '',
@@ -28,14 +31,14 @@ export class RegisterComponent {
 
   }
 
-  onSubmit() {
+  public onSubmit() {
     const customerAccountForm: CustomerAccountForm = {
       firstName: (document.getElementById("firstName") as HTMLInputElement).value,
       lastName: (document.getElementById("lastName") as HTMLInputElement).value,
       password: (document.getElementById("password") as HTMLInputElement).value,
       email: (document.getElementById("email") as HTMLInputElement).value,
     };
-    this.http.post(this.baseUrl + 'api/Account/CreateAccountForm', customerAccountForm).subscribe();
+    this.httpClient.post(this.baseUrl + 'api/Account/CreateCustomerAccount', customerAccountForm).subscribe();
     window.alert("Look at the Console (Right Click -> inspect)");
   }
 
