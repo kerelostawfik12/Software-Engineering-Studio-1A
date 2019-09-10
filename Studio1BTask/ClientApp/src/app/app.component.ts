@@ -11,8 +11,8 @@ export class AppComponent {
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     // Warm up database
-    http.get<Item[]>(baseUrl + 'api/Item/GetItem', {params: {id: '1'}}).subscribe(result => {
-      console.log("Warmed up database")
+    http.get<Item>(baseUrl + 'api/Item/GetItem', {params: {id: '1'}}).subscribe(result => {
+      console.log("Warmed up database: \n" + (result as Item).name)
     }, error => console.error(error));
   }
 }
