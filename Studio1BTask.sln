@@ -1,6 +1,5 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studio1BTask", "Studio1BTask\Studio1BTask.csproj", "{FA439D00-7B49-4ED3-ACC8-5668F383C1D9}"
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Studio1BTask.csproj", "{FA439D00-7B49-4ED3-ACC8-5668F383C1D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
