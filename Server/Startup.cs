@@ -1,3 +1,6 @@
+using System;
+using System.Linq;
+using System.Net.NetworkInformation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,11 +27,10 @@ namespace Studio1BTask
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "../Client/dist"; });
-            
+
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<DbContext>()
                 .BuildServiceProvider();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,8 +54,8 @@ namespace Studio1BTask
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    "default",
+                    "{controller}/{action=Index}/{id?}");
             });
 
             app.UseSpa(spa =>
@@ -65,9 +67,31 @@ namespace Studio1BTask
 
                 if (env.IsDevelopment())
                 {
-                    spa.UseAngularCliServer(npmScript: "start");
+                    var existingPort = 4200;
+
+                    // If an existing angular server is running, use that. (TODO: Make this work for different ports)
+                    if (IsPortInUse(existingPort))
+                    {
+                        spa.UseProxyToSpaDevelopmentServer("http://localhost:" + existingPort);
+                        Console.WriteLine("Trying to use existing angular server on port " + existingPort);
+                    }
+                    else
+                    {
+                        spa.UseAngularCliServer("start");
+                        Console.WriteLine("Could not find angular server on port " + existingPort +
+                                          " - starting one up now");
+                    }
                 }
             });
+        }
+
+        private static bool IsPortInUse(int port)
+
+        {
+            var ipProperties = IPGlobalProperties.GetIPGlobalProperties();
+            var ipEndPoints = ipProperties.GetActiveTcpListeners();
+
+            return ipEndPoints.Any(endPoint => endPoint.Port == port);
         }
     }
 }
