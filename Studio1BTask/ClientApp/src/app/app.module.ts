@@ -18,6 +18,7 @@ import {RegisterComponent} from './register/register.component';
 import {ItemPageComponent} from "./item-page/item-page.component";
 import {ItemViewComponent} from "./item-view/item-view.component";
 import {ViewCustomersComponent} from './view-customers/view-customers.component';
+import {BrowseItemsComponent} from './browse-items/browse-items.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {ViewCustomersComponent} from './view-customers/view-customers.component'
     ItemPageComponent,
     ItemViewComponent,
     ViewCustomersComponent,
+    BrowseItemsComponent,
 
   ],
   imports: [
@@ -52,6 +54,7 @@ import {ViewCustomersComponent} from './view-customers/view-customers.component'
       {path: 'item/:id', component: ItemPageComponent},
       {path: 'new-item-form-component', component: NewItemFormComponentComponent},
       {path: 'item-view', component: ItemViewComponent},
+      {path: 'browse', component: BrowseItemsComponent},
     ])
   ],
   providers: [],

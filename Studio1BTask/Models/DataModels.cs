@@ -1,6 +1,4 @@
 using System;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,21 +7,15 @@ namespace Studio1BTask.Models
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         // Remember to add any new tables here. Be careful not to mix the name of the table and the name of the class up.
-        public DbSet<TestModel> TestModels { get; set; }
-        public DbSet<ForeignKeyTest> ForeignKeyTests { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Account> Accounts { get; set; }
-        
-        public DbContext()
-        {
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
-            var connectionString = @Environment.GetEnvironmentVariable("SQLAZURECONNSTR_DefaultConnection") ?? File.ReadAllText("../database-credentials.txt");
+            var connectionString = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_DefaultConnection") ??
+                                   File.ReadAllText("../database-credentials.txt");
             optionsBuilder.UseSqlServer(connectionString);
             base.OnConfiguring(optionsBuilder);
         }
@@ -33,7 +25,7 @@ namespace Studio1BTask.Models
             base.OnModelCreating(modelBuilder);
         }
     }
-    
+
     /*
      
     Creating a new table involves four steps. You can complete these steps in any order you want, but don't forget
@@ -68,62 +60,4 @@ namespace Studio1BTask.Models
     
     4. If the entities are to be fully exposed to the frontend, add them to data-models.ts.
     */
-    
-    public class TestModel
-    {
-        [Key] public int Id { get; set;}
-        public int ANumber { get; set;}
-        public string AString { get; set;}
-    }
-    
-    public class ForeignKeyTest
-    {
-        [Key] public int Id { get; set; }
-        
-        // Note: To actually have objects like this filled, you will need to use Include(), or manually 
-        // join the tables. See https://docs.microsoft.com/en-us/ef/core/querying/related-data
-        public virtual TestModel TestModel { get; set; }
-        [ForeignKey("TestModel")] public int TestModelId { get; set;}
-        
-    }
-    
-    
-    public class Item
-    {
-        [Key] public int Id { get; set; }
-        
-        public virtual Seller Seller { get; set; }
-        [ForeignKey("Seller")] public int SellerId { get; set;}
-        
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        
-    }
-    
-    public class Seller
-    {
-        [Key] public int Id { get; set; }
-        
-        public string Name { get; set; }
-        
-    }
-    
-    public class Customer
-    {
-        [Key] public int Id { get; set; }
-        
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        
-    }
-    
-    public class Account
-    {
-        [Key] public int Id { get; set; }
-        public char Type { get; set; }
-        public string Email { get; set; }
-        public string PasswordHash { get; set; }
-    }
-    
 }
