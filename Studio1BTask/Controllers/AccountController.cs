@@ -7,7 +7,8 @@ namespace Studio1BTask.Controllers
     [Route("api/[controller]")]
     public class AccountController
     {
-        private AccountService _service;
+        // TODO: Use a better way of injecting stuff
+        private readonly AccountService _service = new AccountService();
 
         [HttpPost("[action]")]
         public void CreateCustomerAccount([FromBody] CustomerAccountForm form)
