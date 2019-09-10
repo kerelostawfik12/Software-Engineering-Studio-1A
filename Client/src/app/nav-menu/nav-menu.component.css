@@ -1,0 +1,23 @@
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  font-size: 10px;
+  color: white;
+}
+
+nav {
+  font-size: 10px;
+  /* Navbar */
+  background-color:black;
+  height: 20px;
+  left: 0px;
+  overflow: hidden;
+}
+
+html {
+  overflow: hidden;
+}
+.nav-item {
+  color: white;
+}

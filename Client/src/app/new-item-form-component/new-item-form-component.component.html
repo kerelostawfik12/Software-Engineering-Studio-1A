@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<form>
+  <div class="container">
+
+    <h2>New Item Form</h2>
+
+    <label for="name"><b>Name</b></label>
+    <br>
+    <input class="form-control" id="name" name="item_name" required type="text">
+    <br>
+
+    <label for="description"><b>Description</b></label>
+    <br>
+    <input class="form-control" id="description" name="item_description" required type="text">
+    <br>
+
+    <label for="price"><b>Price</b></label>
+    <br>
+    <input class="form-control" id="price" name="item_price" required type="text">
+    <br>
+    <br>
+
+    <button (click)="submit()" class="btn btn-primary" type="submit">Submit</button>
+
+  </div>
+</form>

@@ -1,0 +1,36 @@
+<h2>Register</h2>
+
+
+<form>
+  <div class="col-md-3 mb-3">
+    <label for="firstName">
+      First Name:
+    </label>
+    <input class="form-control" formControlName="firstName" id="firstName" required type="text" value="John">
+  </div>
+
+  <div class="col-md-3 mb-3">
+    <label for="lastName">
+      Last Name:
+    </label>
+    <input class="form-control" formControlName="lastName" id="lastName" type="text">
+  </div>
+
+
+  <div class="col-md-3 mb-3">
+    <label for="email">
+      Email Address
+    </label>
+    <input class="form-control" formControlName="email" id="email" type="text">
+  </div>
+
+
+  <div class="col-md-3 mb-3">
+    <label for="password">
+      Password
+    </label>
+    <input class="form-control" formControlName="password" id="password" type="text">
+  </div>
+  <Button (click)="onSubmit()" class="btn btn-primary" type="submit">Sign up</Button>
+</form>
+
