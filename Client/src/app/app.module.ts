@@ -12,7 +12,7 @@ import {FetchDataComponent} from './fetch-data/fetch-data.component';
 import {CartComponent} from './cart/cart.component';
 import {ComponentTestZoneComponent} from './component-test-zone/component-test-zone.component';
 import {CartItemComponent} from './cart-item/cart-item.component';
-import {NewItemFormComponentComponent} from './new-item-form-component/new-item-form-component.component';
+import {NewItemFormComponent} from './new-item-form/new-item-form.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {RegisterComponent} from './register/register.component';
 import {ItemPageComponent} from "./item-page/item-page.component";
@@ -30,7 +30,7 @@ import {BrowseItemsComponent} from './browse-items/browse-items.component';
     CartComponent,
     ComponentTestZoneComponent,
     CartItemComponent,
-    NewItemFormComponentComponent,
+    NewItemFormComponent,
     NavbarComponent,
     RegisterComponent,
     ItemPageComponent,
@@ -52,7 +52,7 @@ import {BrowseItemsComponent} from './browse-items/browse-items.component';
       {path: 'component-test-zone', component: ComponentTestZoneComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'item/:id', component: ItemPageComponent},
-      {path: 'new-item-form-component', component: NewItemFormComponentComponent},
+      {path: 'new-item-form', component: NewItemFormComponent},
       {path: 'item-view', component: ItemViewComponent},
       {path: 'browse', component: BrowseItemsComponent},
     ])
