@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61f46054-d33e-42b6-a3bd-9759b9e139df" name="Default Changelist" comment="Merge">
-      <change afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studio1BTask/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="61f46054-d33e-42b6-a3bd-9759b9e139df" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Studio1BTask/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Studio1BTask/Studio1BTask.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Studio1BTask/Studio1BTask.csproj" afterDir="false" />
     </list>
     <list id="725e3c2c-ff06-409c-8496-3d4e86200c98" name="Added Customer Account Create Page (routed to register)" comment="" />
     <ignored path="C:\Users\jamie\RiderProjects\Studio1BTask\.idea\.idea.Studio1BTask\.idea\shelf/" />
@@ -92,17 +90,121 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <folding>
+                <marker date="1567709183714" expanded="true" signature="29:534" ph="{...}" />
+                <marker date="1567709183714" expanded="true" signature="68:206" ph="{...}" />
+                <marker date="1567709183714" expanded="true" signature="236:340" ph="{...}" />
+                <marker date="1567709183714" expanded="true" signature="346:467" ph="/* You can't just pass a simple variable in ASP, so wrapping primitives in an object is necessary. ... */" />
+                <marker date="1567709183714" expanded="true" signature="494:532" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1240">
+              <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Item.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="63" />
+              <folding>
+                <marker date="1568113062718" expanded="true" signature="6:96" ph="..." />
+                <marker date="1568113062718" expanded="true" signature="127:486" ph="{...}" />
+                <marker date="1568113062718" expanded="true" signature="156:484" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/data-models.ts">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
+              <folding>
+                <marker date="1568113054498" expanded="true" signature="6:164" ph="..." />
+                <marker date="1568113054498" expanded="true" signature="195:3312" ph="{...}" />
+                <marker date="1568113054498" expanded="true" signature="266:1193" ph="{...}" />
+                <marker date="1568113054498" expanded="true" signature="636:656" ph="{...}" />
+                <marker date="1568113054498" expanded="true" signature="743:1043" ph="{...}" />
+                <marker date="1568113054498" expanded="true" signature="1119:1187" ph="{...}" />
+                <marker date="1568113054498" expanded="true" signature="1203:3308" ph="/* Creating a new table involves four steps. You can complete these steps in any order you want, but don't forget ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Seller.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+              <folding>
+                <marker date="1568113043790" expanded="true" signature="6:96" ph="..." />
+                <marker date="1568113043790" expanded="true" signature="127:392" ph="{...}" />
+                <marker date="1568113043790" expanded="true" signature="158:390" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Account.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+              <folding>
+                <marker date="1568112969721" expanded="true" signature="75:289" ph="{...}" />
+                <marker date="1568112969721" expanded="true" signature="103:287" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Customer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+              <folding>
+                <marker date="1568113027466" expanded="true" signature="6:96" ph="..." />
+                <marker date="1568113027466" expanded="true" signature="127:437" ph="{...}" />
+                <marker date="1568113027466" expanded="true" signature="161:435" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -121,10 +223,14 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/Account.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/493C4F14-8583-4DEF-9B17-03F3F9730341/6/NpgsqlDbContextOptionsExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/Item.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0629A952-D07C-4608-B75F-6E6CCECBF430/ad/07609b63/ForeignKeyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/Seller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6BCDFAAE-EEF5-425B-99B4-BFDE66161A46/14/b07cf208/DbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/Customer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/SampleDataController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Controllers/ItemController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs" root0="FORCE_HIGHLIGHTING" />
@@ -166,7 +272,6 @@
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/assets/search.svg" />
-        <option value="$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" />
         <option value="$PROJECT_DIR$/Studio1BTask/Studio1BTask.csproj" />
         <option value="$PROJECT_DIR$/Studio1BTask/Startup.cs" />
         <option value="$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs" />
@@ -178,17 +283,23 @@
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/styles.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.css" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/nav-menu/nav-menu.component.html" />
-        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/register/register.component.ts" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.ts" />
+        <option value="$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/Studio1BTask/Models/Item.cs" />
+        <option value="$PROJECT_DIR$/Studio1BTask/Models/Account.cs" />
+        <option value="$PROJECT_DIR$/Studio1BTask/Models/Customer.cs" />
+        <option value="$PROJECT_DIR$/Studio1BTask/Models/Seller.cs" />
+        <option value="$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="251" />
-    <option name="y" value="316" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="2097" />
     <option name="height" value="1378" />
   </component>
@@ -256,6 +367,27 @@
               <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
               <item name="src" type="34e6ba20:FileSystemExplorerNode" />
               <item name="app" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="ClientApp" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="app" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="item-view" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Controllers" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Studio1BTask" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Models" type="34e6ba20:FileSystemExplorerNode" />
             </path>
           </expand>
           <select />
@@ -379,7 +511,7 @@
       <workItem from="1567738605557" duration="150000" />
       <workItem from="1567747933137" duration="56000" />
       <workItem from="1567748932773" duration="1704000" />
-      <workItem from="1568108302748" duration="1168000" />
+      <workItem from="1568108302748" duration="3895000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1564901658186</created>
@@ -577,11 +709,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567439644603</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Fixed frontend compile error">
+      <created>1568110446170</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1568110446170</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4023000" />
+    <option name="totallyTimeSpent" value="6750000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -593,10 +732,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="251" y="316" width="2097" height="1378" extended-state="0" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19426595" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18138234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Azure Explorer" order="3" />
@@ -604,7 +743,7 @@
       <window_info anchor="bottom" id="Database Console" order="1" sideWeight="0.49780264" weight="0.32991317" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" sideWeight="0.4990012" weight="0.32991317" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.45477015" visible="true" weight="0.33629748" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.4542549" visible="true" weight="0.32833466" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.4970036" weight="0.39936858" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -617,15 +756,15 @@
       <window_info anchor="bottom" id="Unit Tests" order="14" />
       <window_info anchor="bottom" id="REST Client" order="15" />
       <window_info anchor="bottom" id="Terminal" order="16" sideWeight="0.48621655" weight="0.32438833" />
-      <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.54522985" side_tool="true" visible="true" weight="0.33629748" />
-      <window_info anchor="bottom" id="Build" order="18" sideWeight="0.4210947" weight="0.32833466" />
+      <window_info anchor="bottom" id="Event Log" order="17" sideWeight="0.54574513" side_tool="true" visible="true" weight="0.32833466" />
+      <window_info anchor="bottom" id="Build" order="18" sideWeight="0.42066237" weight="0.32821342" />
       <window_info anchor="bottom" id="Azure Activity Log" order="19" weight="0.32991317" />
       <window_info anchor="bottom" id="TypeScript" order="20" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32960448" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.17745923" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.1434279" />
       <window_info anchor="right" id="Unit Tests Coverage" order="5" weight="0.32960448" />
     </layout>
   </component>
@@ -690,7 +829,8 @@
     <MESSAGE value="Removed horizontal scrollbar" />
     <MESSAGE value="Removed horizontal scrollbar properly (no workarounds this time)" />
     <MESSAGE value="Merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge" />
+    <MESSAGE value="Fixed frontend compile error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed frontend compile error" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -764,7 +904,6 @@
           <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
           <folding>
             <marker date="1567709183709" expanded="true" signature="6:197" ph="..." />
-            <marker date="1567709183709" expanded="true" signature="333:2437" ph="{...}" />
             <marker date="1567709183709" expanded="true" signature="340:541" ph="/* NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. ... */" />
             <marker date="1567709183709" expanded="true" signature="618:2435" ph="{...}" />
             <marker date="1567709183709" expanded="true" signature="702:896" ph="{...}" />
@@ -786,29 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <marker date="1567709183714" expanded="true" signature="68:206" ph="{...}" />
-            <marker date="1567709183714" expanded="true" signature="236:340" ph="{...}" />
-            <marker date="1567709183714" expanded="true" signature="346:467" ph="/* You can't just pass a simple variable in ASP, so wrapping primitives in an object is necessary. ... */" />
-            <marker date="1567709183714" expanded="true" signature="494:532" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#75#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -893,15 +1009,112 @@
     <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/view-customers/view-customers.component.ts">
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/data-models.ts">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/ClientApp/src/app/item-view/item-view.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/FormModels.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <marker date="1567709183714" expanded="true" signature="29:534" ph="{...}" />
+            <marker date="1567709183714" expanded="true" signature="68:206" ph="{...}" />
+            <marker date="1567709183714" expanded="true" signature="236:340" ph="{...}" />
+            <marker date="1567709183714" expanded="true" signature="346:467" ph="/* You can't just pass a simple variable in ASP, so wrapping primitives in an object is necessary. ... */" />
+            <marker date="1567709183714" expanded="true" signature="494:532" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Account.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <marker date="1568112969721" expanded="true" signature="75:289" ph="{...}" />
+            <marker date="1568112969721" expanded="true" signature="103:287" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Item.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="63" />
+          <folding>
+            <marker date="1568113062718" expanded="true" signature="6:96" ph="..." />
+            <marker date="1568113062718" expanded="true" signature="127:486" ph="{...}" />
+            <marker date="1568113062718" expanded="true" signature="156:484" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Customer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="65" lean-forward="true" selection-start-line="12" selection-start-column="65" selection-end-line="12" selection-end-column="65" />
+          <folding>
+            <marker date="1568113027466" expanded="true" signature="6:96" ph="..." />
+            <marker date="1568113027466" expanded="true" signature="127:437" ph="{...}" />
+            <marker date="1568113027466" expanded="true" signature="161:435" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/Seller.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <marker date="1568113043790" expanded="true" signature="6:96" ph="..." />
+            <marker date="1568113043790" expanded="true" signature="127:392" ph="{...}" />
+            <marker date="1568113043790" expanded="true" signature="158:390" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Studio1BTask/Models/DataModels.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="121" selection-start-line="10" selection-start-column="121" selection-end-line="10" selection-end-column="121" />
+          <folding>
+            <marker date="1568113054498" expanded="true" signature="6:164" ph="..." />
+            <marker date="1568113054498" expanded="true" signature="195:3312" ph="{...}" />
+            <marker date="1568113054498" expanded="true" signature="266:1193" ph="{...}" />
+            <marker date="1568113054498" expanded="true" signature="636:656" ph="{...}" />
+            <marker date="1568113054498" expanded="true" signature="743:1043" ph="{...}" />
+            <marker date="1568113054498" expanded="true" signature="1119:1187" ph="{...}" />
+            <marker date="1568113054498" expanded="true" signature="1203:3308" ph="/* Creating a new table involves four steps. You can complete these steps in any order you want, but don't forget ... */" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

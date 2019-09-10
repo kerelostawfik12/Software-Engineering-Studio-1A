@@ -108,6 +108,12 @@
               <e p="app.component.ts" t="Include" />
               <e p="app.module.ts" t="Include" />
               <e p="app.server.module.ts" t="Include" />
+              <e p="browse-items" t="Include">
+                <e p="browse-items.component.css" t="Include" />
+                <e p="browse-items.component.html" t="Include" />
+                <e p="browse-items.component.spec.ts" t="Include" />
+                <e p="browse-items.component.ts" t="Include" />
+              </e>
               <e p="cart" t="Include">
                 <e p="cart.component.css" t="Include" />
                 <e p="cart.component.html" t="Include" />
@@ -176,6 +182,12 @@
                 <e p="register.component.spec.ts" t="Include" />
                 <e p="register.component.ts" t="Include" />
               </e>
+              <e p="view-customers" t="Include">
+                <e p="view-customers.component.css" t="Include" />
+                <e p="view-customers.component.html" t="Include" />
+                <e p="view-customers.component.spec.ts" t="Include" />
+                <e p="view-customers.component.ts" t="Include" />
+              </e>
             </e>
             <e p="assets" t="Include">
               <e p=".gitkeep" t="Include" />
@@ -209,8 +221,12 @@
           <e p="SampleDataController.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="DataModels.cs" t="Include" />
+          <e p="Account.cs" t="Include" />
+          <e p="Customer.cs" t="Include" />
+          <e p="DbContext.cs" t="Include" />
           <e p="FormModels.cs" t="Include" />
+          <e p="Item.cs" t="Include" />
+          <e p="Seller.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
