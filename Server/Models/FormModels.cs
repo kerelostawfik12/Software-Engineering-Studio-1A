@@ -21,4 +21,29 @@ namespace Studio1BTask.Models
     {
         public int Value;
     }
+
+    public class SimpleFloat
+    {
+        public float Value;
+    }
+
+    public class SimpleDecimal
+    {
+        public decimal Value;
+    }
+
+    public class SimpleString
+    {
+        public string Value;
+    }
+
+    public class SimpleChar
+    {
+        public string Value;
+    }
+
+    public class SimpleBool
+    {
+        public bool Value;
+    }
 }
