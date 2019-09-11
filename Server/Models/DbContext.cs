@@ -11,6 +11,10 @@ namespace Studio1BTask.Models
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<CustomerCartItem> CustomerCartItems { get; set; }
+        public DbSet<CustomerTransaction> CustomerTransactions { get; set; }
+        public DbSet<ItemCategory> ItemCategories { get; set; }
+        public DbSet<TransactionItem> TransactionItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -23,6 +27,12 @@ namespace Studio1BTask.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // Composite primary keys need to be defined here.
+            modelBuilder.Entity<CustomerCartItem>()
+                .HasKey(x => new {x.CustomerId, x.ItemId});
+            modelBuilder.Entity<TransactionItem>()
+                .HasKey(x => new {x.TransactionId, x.ItemId});
         }
     }
 
