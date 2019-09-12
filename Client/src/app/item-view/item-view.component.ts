@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Notifications} from "../notifications";
 
 @Component({
   selector: 'app-item-view',
@@ -35,7 +36,11 @@ export class ItemViewComponent implements OnInit {
     }
     this.httpClient.post(this.baseUrl + 'api/Item/RemoveItem', {value: item.id}).subscribe(result => {
       this.refreshItems();
-    }, error => console.error(error));
+      Notifications.success("Successfully removed " + item.name + ".");
+    }, error => {
+      console.error(error);
+      Notifications.error("Could not delete the item.");
+    });
   }
 
 }

@@ -45,6 +45,9 @@
     <ItemGroup>
         <TypeScriptCompile Include="..\Client\src\app\data-models.ts" />
         <TypeScriptCompile Include="..\Client\src\app\form-models.ts" />
+        <TypeScriptCompile Include="..\Client\src\app\notifications.ts">
+            <Link>app\notifications.ts</Link>
+        </TypeScriptCompile>
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
