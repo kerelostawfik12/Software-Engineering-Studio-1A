@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4200",
+    "start-arbitrary-port": "ng serve",
     "build": "ng build",
     "build:ssr": "ng run Studio1BTask:server:dev",
     "test": "ng test",

@@ -77,7 +77,7 @@ namespace Studio1BTask
                     }
                     else
                     {
-                        spa.UseAngularCliServer("start");
+                        spa.UseAngularCliServer("start-arbitrary-port");
                         Console.WriteLine("Could not find angular server on port " + existingPort +
                                           " - starting one up now");
                     }

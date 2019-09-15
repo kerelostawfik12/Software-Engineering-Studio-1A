@@ -13,6 +13,7 @@ namespace Studio1BTask.Models
         public DbSet<Account> Accounts { get; set; }
         public DbSet<CustomerCartItem> CustomerCartItems { get; set; }
         public DbSet<CustomerTransaction> CustomerTransactions { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
         public DbSet<TransactionItem> TransactionItems { get; set; }
 
@@ -33,6 +34,8 @@ namespace Studio1BTask.Models
                 .HasKey(x => new {x.CustomerId, x.ItemId});
             modelBuilder.Entity<TransactionItem>()
                 .HasKey(x => new {x.TransactionId, x.ItemId});
+            modelBuilder.Entity<ItemCategory>()
+                .HasKey(x => new {x.ItemId, x.CategoryId});
         }
     }
 

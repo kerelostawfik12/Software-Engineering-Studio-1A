@@ -57,7 +57,9 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                var items = context.Items.Include(item => item.Seller).ToList();
+                var items = context.Items
+                    .Include(item => item.Seller)
+                    .ToList();
                 return items;
             }
         }
