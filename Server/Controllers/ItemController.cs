@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Studio1BTask.Models;
+using Studio1BTask.Services;
 using DbContext = Studio1BTask.Models.DbContext;
 
 // See data-models.ts for the client-side version of these classes (make sure they are consistent)
@@ -14,6 +15,9 @@ namespace Studio1BTask.Controllers
     [Route("api/[controller]")]
     public class ItemController : Controller
     {
+        // TODO: Use a better way of injecting stuff
+        private readonly SearchService _searchService = new SearchService();
+
         [HttpGet("[action]")]
         public Item GetItem([FromQuery] int id)
         {
@@ -61,6 +65,35 @@ namespace Studio1BTask.Controllers
                     .Include(item => item.Seller)
                     .ToList();
                 return items;
+            }
+        }
+
+        [HttpGet("[action]")]
+        public SearchItemResult SearchItems([FromQuery] string query)
+        {
+            // TODO: Pages
+            // TODO: Separate the search phrase when adding in filters
+            if (query == null)
+                query = "";
+            var searchPhrase = query.ToLower().Trim();
+            using (var context = new DbContext())
+            {
+                var q = context.Items as IQueryable<Item>;
+
+                // Include seller data from start so it can be searched
+                q = q.Include(item => item.Seller);
+
+                var words = _searchService.GetWordsFromPhrase(searchPhrase);
+                // This code just adds another "WHERE" query for each word in the search phrase.
+                // Rider really wanted to turn this into a LINQ expression, so I just let it do that lol
+                q = words.Select((t, i) => i)
+                    .Aggregate(q, (current, i) => current.Where(x =>
+                        x.Name.Contains(words[i]) ||
+                        x.Description.Contains(words[i]) ||
+                        x.Seller.Name.Contains(words[i])
+                    ));
+
+                return new SearchItemResult {Items = q.ToList()};
             }
         }
 

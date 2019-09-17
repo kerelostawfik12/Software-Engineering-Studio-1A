@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Studio1BTask.Models
 {
     public class CustomerAccountForm
@@ -13,6 +15,17 @@ namespace Studio1BTask.Models
         public string Description;
         public string Name;
         public string Price;
+    }
+
+
+    public class SearchItemResult
+    {
+        public dynamic Brands;
+        public dynamic Categories;
+        public IEnumerable<Item> Items;
+        public decimal MaxPrice;
+        public decimal MinPrice;
+        public dynamic Sellers;
     }
 
     // You can't just pass a simple variable in ASP, so wrapping primitives in an object is necessary.

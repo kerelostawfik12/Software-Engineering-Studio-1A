@@ -71,6 +71,6 @@ namespace Studio1BTask.Models
         "AString" varchar(20)
     );
     
-    4. If the entities are to be fully exposed to the frontend, add them to data-models.ts.
+    4. If the entities are to be fully exposed to the frontend, also add them to data-models.ts.
     */
 }

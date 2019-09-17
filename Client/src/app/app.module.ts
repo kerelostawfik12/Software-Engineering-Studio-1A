@@ -19,7 +19,7 @@ import {RegisterComponent} from './register/register.component';
 import {ItemPageComponent} from "./item-page/item-page.component";
 import {ItemViewComponent} from "./item-view/item-view.component";
 import {ViewCustomersComponent} from './view-customers/view-customers.component';
-import {BrowseItemsComponent} from './browse-items/browse-items.component';
+import {SearchItemsComponent} from './search-items/search-items.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import {BrowseItemsComponent} from './browse-items/browse-items.component';
     ItemPageComponent,
     ItemViewComponent,
     ViewCustomersComponent,
-    BrowseItemsComponent,
+    SearchItemsComponent,
 
   ],
   imports: [
@@ -56,7 +56,7 @@ import {BrowseItemsComponent} from './browse-items/browse-items.component';
       {path: 'item/:id', component: ItemPageComponent},
       {path: 'new-item-form', component: NewItemFormComponent},
       {path: 'item-view', component: ItemViewComponent},
-      {path: 'browse', component: BrowseItemsComponent},
+      {path: 'search/:query', component: SearchItemsComponent},
     ])
   ],
   providers: [],

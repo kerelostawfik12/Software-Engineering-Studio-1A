@@ -1,6 +1,7 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Notifications} from "./notifications";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 
 
 @Component({
@@ -9,10 +10,12 @@ import {Notifications} from "./notifications";
   styleUrls: ['./app.component.css'],
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'app';
+  router: Router;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute) {
+    this.router = router;
     // Warm up database
     http.get<Item>(baseUrl + 'api/Item/GetItem', {params: {id: '1'}}).subscribe(result => {
       console.log("Warmed up database: \n" + (result as Item).name)
@@ -22,6 +25,19 @@ export class AppComponent {
         Notifications.error("Could not connect to server.");
       else
         Notifications.error(error);
+    });
+  }
+
+  ngOnInit() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+
+    this.router.events.subscribe((evt) => {
+      if (evt instanceof NavigationEnd) {
+        this.router.navigated = false;
+        window.scrollTo(0, 0);
+      }
     });
   }
 }
