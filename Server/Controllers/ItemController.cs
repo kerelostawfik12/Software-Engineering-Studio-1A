@@ -100,7 +100,8 @@ namespace Studio1BTask.Controllers
                             x.Id == searchId
                         )
                         // Prioritise name and id matches
-                        .OrderBy(x => (x.Name.Contains(words[i]) ? 0 : 5)
+                        .OrderBy(x => (x.Name.Contains(words[i]) ? 0 : 5) +
+                                      (x.Name.StartsWith(words[i]) ? 0 : 6)
                                       + (x.Id == searchId ? 0 : 8))
                     );
 
