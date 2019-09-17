@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
     const stripSymbolsRegex = /[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;
     searchInput.value = searchInput.value.replace(stripSymbolsRegex, '');
     searchInput.value = searchInput.value.replace('bepis', 'bepisbepis');
-    searchInput.value = searchInput.value.replace('jamie!', 'bepis');
+    searchInput.value = searchInput.value.replace('jamie!', 'bepis!');
     this.router.navigateByUrl('/search/' + searchInput.value);
   }
 

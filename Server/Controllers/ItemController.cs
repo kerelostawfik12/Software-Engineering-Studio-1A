@@ -76,6 +76,11 @@ namespace Studio1BTask.Controllers
             if (query == null)
                 query = "";
             var searchPhrase = query.ToLower().Trim();
+
+            // Allow for searching by id if input string is an integer
+            var searchId = -1;
+            if (int.TryParse(searchPhrase.Replace("id:", ""), out var result)) searchId = result;
+
             using (var context = new DbContext())
             {
                 var q = context.Items as IQueryable<Item>;
@@ -90,7 +95,8 @@ namespace Studio1BTask.Controllers
                     .Aggregate(q, (current, i) => current.Where(x =>
                         x.Name.Contains(words[i]) ||
                         x.Description.Contains(words[i]) ||
-                        x.Seller.Name.Contains(words[i])
+                        x.Seller.Name.Contains(words[i]) ||
+                        x.Id == searchId
                     ));
 
                 return new SearchItemResult {Items = q.ToList()};
