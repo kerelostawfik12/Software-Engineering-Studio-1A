@@ -80,24 +80,29 @@ namespace Studio1BTask.Controllers
             // Allow for searching by id if input string is an integer
             var searchId = -1;
             if (int.TryParse(searchPhrase.Replace("id:", ""), out var result)) searchId = result;
-
+            var relevanceDict = new Dictionary<int, int>();
             using (var context = new DbContext())
             {
                 var q = context.Items as IQueryable<Item>;
-
+                relevanceDict[2] = 1;
                 // Include seller data from start so it can be searched
                 q = q.Include(item => item.Seller);
 
                 var words = _searchService.GetWordsFromPhrase(searchPhrase);
+
                 // This code just adds another "WHERE" query for each word in the search phrase.
                 // Rider really wanted to turn this into a LINQ expression, so I just let it do that lol
                 q = words.Select((t, i) => i)
                     .Aggregate(q, (current, i) => current.Where(x =>
-                        x.Name.Contains(words[i]) ||
-                        x.Description.Contains(words[i]) ||
-                        x.Seller.Name.Contains(words[i]) ||
-                        x.Id == searchId
-                    ));
+                            x.Name.Contains(words[i]) ||
+                            x.Description.Contains(words[i]) ||
+                            x.Seller.Name.Contains(words[i]) ||
+                            x.Id == searchId
+                        )
+                        // Prioritise name and id matches
+                        .OrderBy(x => (x.Name.Contains(words[i]) ? 0 : 5)
+                                      + (x.Id == searchId ? 0 : 8))
+                    );
 
                 return new SearchItemResult {Items = q.ToList()};
             }
