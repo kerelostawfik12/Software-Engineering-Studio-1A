@@ -1,6 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {User} from "../user";
+import {Notifications} from "../notifications";
 
 @Component({
   selector: 'app-navbar',
@@ -23,6 +25,10 @@ export class NavbarComponent implements OnInit {
     (document.getElementById('search-input') as HTMLInputElement).value = text;
   }
 
+  get user() {
+    return User.current;
+  }
+
   ngOnInit() {
     NavbarComponent.instance = this;
     document.getElementById('search-button').ondragstart = function() { return false; };
@@ -40,4 +46,14 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('/search/' + searchInput.value);
   }
 
+  public static getSearchText() {
+    return (document.getElementById('search-input') as HTMLInputElement).value;
+  }
+
+  logout() {
+    Notifications.success("Logging out...");
+    this.httpClient.post(this.baseUrl + 'api/Account/Logout', {}).subscribe(result => {
+      window.location.reload();
+    });
+  }
 }

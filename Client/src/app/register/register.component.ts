@@ -2,6 +2,8 @@ import {Component, Inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {FormBuilder} from '@angular/forms'
 import {HttpClient} from "@angular/common/http";
+import {Notifications} from "../notifications";
+import {User} from "../user";
 
 
 @Component({
@@ -25,13 +27,26 @@ export class RegisterComponent {
   }
 
   public onSubmit() {
+    if (User.current == null) {
+      Notifications.error("Please try again later.");
+      return;
+    }
+    if (User.current.isLoggedIn) {
+      Notifications.error("Please log out before registering a new account.");
+      return;
+    }
     const customerAccountForm: CustomerAccountForm = {
       firstName: (document.getElementById("firstName") as HTMLInputElement).value,
       lastName: (document.getElementById("lastName") as HTMLInputElement).value,
       password: (document.getElementById("password") as HTMLInputElement).value,
       email: (document.getElementById("email") as HTMLInputElement).value,
     };
-    this.httpClient.post(this.baseUrl + 'api/Account/CreateCustomerAccount', customerAccountForm).subscribe();
+    this.httpClient.post(this.baseUrl + 'api/Account/CreateCustomerAccount', customerAccountForm).subscribe(result => {
+      Notifications.success("Successfully created account.");
+      window.location.reload();
+    }, error => {
+      Notifications.error(error);
+    });
   }
 
 

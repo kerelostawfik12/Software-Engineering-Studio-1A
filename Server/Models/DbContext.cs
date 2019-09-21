@@ -11,6 +11,7 @@ namespace Studio1BTask.Models
         public DbSet<Seller> Sellers { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Session> Sessions { get; set; }
         public DbSet<CustomerCartItem> CustomerCartItems { get; set; }
         public DbSet<CustomerTransaction> CustomerTransactions { get; set; }
         public DbSet<Category> Categories { get; set; }

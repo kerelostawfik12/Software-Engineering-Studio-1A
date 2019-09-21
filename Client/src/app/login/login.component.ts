@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
+import {Notifications} from "../notifications";
 
 @Component({
   selector: 'app-login',
@@ -32,6 +33,16 @@ export class LoginComponent implements OnInit {
       "email" : (document.getElementById("email") as HTMLInputElement).value,
       "password": (document.getElementById("password") as HTMLInputElement).value
     };
-    this.httpClient.post(this.baseUrl + 'api/Account/Login', loginForm).subscribe();
+    document.body.style.cursor = "progress";
+    this.httpClient.post(this.baseUrl + 'api/Account/Login', loginForm).subscribe(result => {
+      const success = result as boolean;
+      if (success) {
+        Notifications.success("Logging in...");
+        window.location.reload();
+      } else {
+        Notifications.error("Invalid credentials.");
+        document.body.style.cursor = "default";
+      }
+    });
   }
 }

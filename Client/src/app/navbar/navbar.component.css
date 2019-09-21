@@ -142,6 +142,19 @@ input[type="text"]
   color: #FFFFFF;
 }
 
+#logged-in {
+  text-align: center;
+}
+
+#log-out {
+  font-size: 10px;
+}
+
+#log-out a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #login-or-register a {
   color: white;
 }

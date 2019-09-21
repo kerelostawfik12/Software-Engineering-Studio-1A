@@ -53,6 +53,9 @@
         <TypeScriptCompile Include="..\Client\src\app\notifications.ts">
             <Link>app\notifications.ts</Link>
         </TypeScriptCompile>
+        <TypeScriptCompile Include="..\Client\src\app\user.ts">
+            <Link>app\user.ts</Link>
+        </TypeScriptCompile>
     </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
