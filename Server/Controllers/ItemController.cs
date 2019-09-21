@@ -11,7 +11,7 @@ using DbContext = Studio1BTask.Models.DbContext;
 namespace Studio1BTask.Controllers
 {
     // NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. 
-    // See ForeignKeyTests() or https://docs.microsoft.com/en-us/ef/core/querying/related-data
+    // See https://docs.microsoft.com/en-us/ef/core/querying/related-data
     [Route("api/[controller]")]
     public class ItemController : Controller
     {
@@ -80,11 +80,11 @@ namespace Studio1BTask.Controllers
             // Allow for searching by id if input string is an integer
             var searchId = -1;
             if (int.TryParse(searchPhrase.Replace("id:", ""), out var result)) searchId = result;
-            var relevanceDict = new Dictionary<int, int>();
+
             using (var context = new DbContext())
             {
                 var q = context.Items as IQueryable<Item>;
-                relevanceDict[2] = 1;
+
                 // Include seller data from start so it can be searched
                 q = q.Include(item => item.Seller);
 

@@ -20,6 +20,7 @@ import {ItemPageComponent} from "./item-page/item-page.component";
 import {ItemViewComponent} from "./item-view/item-view.component";
 import {ViewCustomersComponent} from './view-customers/view-customers.component';
 import {SearchItemsComponent} from './search-items/search-items.component';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {SearchItemsComponent} from './search-items/search-items.component';
     ItemViewComponent,
     ViewCustomersComponent,
     SearchItemsComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -53,6 +55,7 @@ import {SearchItemsComponent} from './search-items/search-items.component';
       {path: 'cart', component: CartComponent},
       {path: 'component-test-zone', component: ComponentTestZoneComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'login', component: LoginComponent},
       {path: 'item/:id', component: ItemPageComponent},
       {path: 'new-item-form', component: NewItemFormComponent},
       {path: 'item-view', component: ItemViewComponent},

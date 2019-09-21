@@ -6,15 +6,20 @@ namespace Studio1BTask.Services
 {
     public class AccountService
     {
-        private const string ArgonHeaderStuff = "$argon2id$v=19$m=65536,t=3,p=1$";
+        private const int ArgonTimeCost = 1;
+        private const int ArgonMemoryCost = 65536;
+        private const string ArgonHeaderStuff = "$argon2id$v=19$m=65536,t=1,p=1$";
 
-        public bool ValidateCredentials(string email, string password)
+        public Account ValidateCredentials(string email, string password, DbContext context)
         {
-            using (var context = new DbContext())
-            {
-                var accountToValidate = context.Accounts.First(account => account.Email == email);
-                return ValidatePassword(password, accountToValidate);
-            }
+            var accountToValidate = context.Accounts.FirstOrDefault(account => account.Email == email);
+            if (accountToValidate == null)
+                return null;
+
+            if (ValidatePassword(password, accountToValidate))
+                return accountToValidate;
+
+            return null;
         }
 
         private string ObfuscatePassword(string password, Account account)
@@ -26,12 +31,13 @@ namespace Studio1BTask.Services
 
         public string HashPassword(string password, Account account)
         {
-            return Argon2.Hash(ObfuscatePassword(password, account)).Replace(ArgonHeaderStuff, "");
+            return Argon2.Hash(ObfuscatePassword(password, account), ArgonTimeCost).Replace(ArgonHeaderStuff, "");
         }
 
         private bool ValidatePassword(string password, Account account)
         {
-            return Argon2.Verify(ArgonHeaderStuff + account.PasswordHash, ObfuscatePassword(password, account));
+            var isValid = Argon2.Verify(ArgonHeaderStuff + account.PasswordHash, ObfuscatePassword(password, account));
+            return isValid;
         }
     }
 }

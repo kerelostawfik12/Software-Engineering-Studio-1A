@@ -10,6 +10,12 @@ namespace Studio1BTask.Models
         public string Password;
     }
 
+    public class LoginForm
+    {
+        public string Email;
+        public string Password;
+    }
+
     public class NewItemForm
     {
         public string Description;

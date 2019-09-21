@@ -8,5 +8,6 @@ namespace Studio1BTask.Models
         public char Type { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
+        public string AccessToken { get; set; }
     }
 }

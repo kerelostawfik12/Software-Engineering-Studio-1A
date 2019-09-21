@@ -21,13 +21,6 @@ export class RegisterComponent {
   ) {
     this.httpClient = http;
     this.baseUrl = baseUrl;
-    /*this.registerForm = this.formBuilder.group({
-      firstName: '',
-      lastName: '',
-      password: '',
-      emailAddress: '',
-    });
-    */
 
   }
 
@@ -39,7 +32,6 @@ export class RegisterComponent {
       email: (document.getElementById("email") as HTMLInputElement).value,
     };
     this.httpClient.post(this.baseUrl + 'api/Account/CreateCustomerAccount', customerAccountForm).subscribe();
-    window.alert("Look at the Console (Right Click -> inspect)");
   }
 
 
