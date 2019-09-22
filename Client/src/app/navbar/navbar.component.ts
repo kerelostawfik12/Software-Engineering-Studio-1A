@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {Notifications} from "../notifications";
 import {User, UserService} from "../user.service";
 
@@ -10,11 +10,12 @@ import {User, UserService} from "../user.service";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  private mode: string = "default";
   public static instance: NavbarComponent;
   private httpClient : HttpClient;
   private baseUrl : string;
   private router: Router;
-  public user: User;
+  private user: User;
 
   constructor(router: Router,
               http: HttpClient,
@@ -33,6 +34,11 @@ export class NavbarComponent implements OnInit {
     NavbarComponent.instance = this;
     document.getElementById('search-button').ondragstart = function() { return false; };
     this.getUser();
+    this.router.events.subscribe(x => {
+      if (x instanceof NavigationEnd) {
+        // TODO: SWITCH MODES
+      }
+    })
   }
 
   search() {

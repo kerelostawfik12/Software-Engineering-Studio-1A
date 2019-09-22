@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +15,8 @@ namespace Studio1BTask.Controllers
     [Route("api/[controller]")]
     public class ItemController : Controller
     {
+        private readonly AccountService _accountService = new AccountService();
+
         // TODO: Use a better way of injecting stuff
         private readonly SearchService _searchService = new SearchService();
 
@@ -26,10 +27,7 @@ namespace Studio1BTask.Controllers
             {
                 var Item = context.Items.Include(item => item.Seller).First(item => item.Id == id);
                 //Debug: Nullable Attribute null value can cause errors. 
-                if (Item.Views == null)
-                {
-                    Item.Views = 0;
-                }
+                if (Item.Views == null) Item.Views = 0;
                 Item.Views++;
                 context.SaveChanges();
                 return Item;
@@ -54,7 +52,6 @@ namespace Studio1BTask.Controllers
                 return item.Entity;
             }
         }
-
 
 
         [HttpPost("[action]")]
