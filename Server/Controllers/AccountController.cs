@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,53 +16,96 @@ namespace Studio1BTask.Controllers
         private readonly AccountService _accountService = new AccountService();
 
         [HttpPost("[action]")]
-        public bool CreateCustomerAccount([FromBody] CustomerAccountForm form)
+        public Dictionary<string, dynamic> CreateCustomerAccount([FromBody] CustomerAccountForm form)
         {
-            var sessionId = 0;
-            var isSessionIdInt = Request.Cookies["sessionId"] != null && int.TryParse(Request.Cookies["sessionId"], out
-                                     sessionId);
-            if (!isSessionIdInt)
-                return false;
-            var token = Request.Cookies["token"];
+            // Create response object to send back to client
+            var obj = new Dictionary<string, dynamic>
+            {
+                ["error"] = null, ["success"] = false
+            };
+
+            // Clean up fields
+            form.Email = form.Email.Trim().ToLower();
+
+            // Verify that email and password are valid
+            if (!_accountService.IsEmailValid(form.Email))
+            {
+                obj["error"] = "Please provide a valid email.";
+                return obj;
+            }
+
+            if (!_accountService.IsPasswordValid(form.Password, out var reason))
+            {
+                obj["error"] = reason;
+                return obj;
+            }
 
             using (var context = new DbContext())
             {
-                // Verify that the data session is actually valid, and that the session is not already linked to an account.
-                var session = _accountService.ValidateSession(sessionId, token, context);
+                // Verify that the session is actually valid, and that the session is not already linked to an account.
+                var session = _accountService.ValidateSession(Request.Cookies, context);
                 if (session == null || session.AccountId != null)
                 {
-                    Logout();
-                    // Show error 403 forbidden if the user tries to create an account whilst already logged in
+                    ClearCookies();
                     Response.StatusCode = 403;
-                    return false;
+                    obj["error"] =
+                        "Invalid session. Please try again, refresh the page, or delete cookies for the site.";
+                    return obj;
                 }
 
-                var newAccount = context.Accounts.Add(new Account
+                // Verify that the provided email is not already in use.
+                if (context.Accounts.Any(x => x.Email == form.Email))
                 {
-                    Type = 'c',
-                    Email = form.Email.ToLower(),
-                    PasswordHash = null, // Fill in password later when id is available to use as salt
-                    SessionId = session.Id // Tie the data session to the newly created account.
-                });
-                session.Account = newAccount.Entity;
+                    obj["error"] = "The email address provided is already in use.";
+                    return obj;
+                }
 
-                // Have to send this to the database before creating the customer entity,
-                // as we don't know what the id is yet until the database tells us.
-
-                context.SaveChanges();
-                context.Customers.Add(new Customer
+                // Try actually creating the account.
+                try
                 {
-                    Id = newAccount.Entity.Id,
-                    FirstName = form.FirstName,
-                    LastName = form.LastName
-                });
+                    // Create the Account object
+                    var newAccount = context.Accounts.Add(new Account
+                    {
+                        Type = 'c',
+                        Email = form.Email,
+                        PasswordHash = null, // Fill in password later when id is available to use as salt
+                        SessionId = session.Id // Tie the session to the newly created account.
+                    });
+                    session.Account = newAccount.Entity; // Tie the new account to the existing session.
 
-                newAccount.Entity.PasswordHash = _accountService.HashPassword(form.Password, newAccount.Entity);
+                    // Have to send this to the database before creating the customer entity,
+                    // as we don't know what the id is yet until the database tells us.
+                    context.SaveChanges();
 
-                context.SaveChanges();
+                    // Create the Customer object
+                    context.Customers.Add(new Customer
+                    {
+                        Id = newAccount.Entity.Id,
+                        FirstName = form.FirstName,
+                        LastName = form.LastName
+                    });
+
+                    // Set the password hash
+                    newAccount.Entity.PasswordHash = _accountService.HashPassword(form.Password, newAccount.Entity);
+
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    obj["error"] = "An unknown database error occurred.";
+                    return obj;
+                }
 
                 // Log in with credentials provided
-                return Login(new LoginForm {Email = form.Email, Password = form.Password});
+                var loginSuccessful = Login(new LoginForm {Email = form.Email, Password = form.Password});
+                if (loginSuccessful)
+                {
+                    obj["success"] = true;
+                    return obj;
+                }
+
+                obj["error"] = "An account was created but could not be logged into. Please try logging in manually.";
+                return obj;
             }
         }
 
@@ -90,7 +134,8 @@ namespace Studio1BTask.Controllers
             // If someone with an account id does not already have a valid session, log them out. (this shouldn't happen)
             if (Request.Cookies.ContainsKey("accountId"))
             {
-                Logout();
+                // Clear login cookies
+                ClearCookies();
                 return false;
             }
 
@@ -167,6 +212,9 @@ namespace Studio1BTask.Controllers
                 sessionId = (int) account.SessionId;
             }
 
+            // Clear login cookies
+            ClearCookies();
+
             // Provide with token and id cookies
             Response.Cookies.Append("token", token, new CookieOptions
             {
@@ -194,6 +242,12 @@ namespace Studio1BTask.Controllers
         [HttpPost("[action]")]
         public void Logout()
         {
+            ClearCookies();
+        }
+
+        private void ClearCookies()
+        {
+            // Clear all cookies
             foreach (var (key, value) in Request.Cookies)
                 // Give cookies an expiry date in the past to effectively delete them
                 Response.Cookies.Append(key, value, new CookieOptions

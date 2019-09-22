@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   private httpClient: HttpClient;
   private baseUrl: string;
+  formGroup: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
       const success = result as boolean;
       if (success) {
         Notifications.success("Logging in...");
-        window.location.reload();
+        window.location.assign('/');
       } else {
         Notifications.error("Invalid credentials.");
         document.body.style.cursor = "default";

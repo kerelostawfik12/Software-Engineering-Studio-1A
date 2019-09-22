@@ -46,23 +46,49 @@ namespace Studio1BTask.Services
         public Session ValidateSession(int sessionId, string token, DbContext context)
         {
             var session = context.Sessions.Find(sessionId);
+            // If the session doesn't exist, return null.
             if (session == null)
                 return null;
+            // If the session exists, but the provided token is wrong, return null.
             var isValid = token == session.Token;
             if (!isValid)
                 return null;
+            // The session is valid, and the session object will be returned.
             return session;
         }
 
-        public dynamic ValidateUser(int sessionId, int accountId, string token, DbContext context)
+        public Session ValidateSession(string sessionId, string token, DbContext context)
         {
-            var session = context.Sessions.Include(x => x.Account).FirstOrDefault(x => x.Id == sessionId);
-            // If session is nonexistent, or not linked with an account, return null.
-            if (session?.AccountId == null)
+            try
+            {
+                return ValidateSession(int.Parse(sessionId), token, context);
+            }
+            catch
+            {
                 return null;
-            // If token and account id provided do not match with the corresponding entries in the database, return null.
-            var isValid = token == session.Token && session.AccountId == accountId;
-            if (!isValid)
+            }
+        }
+
+        public Session ValidateSession(dynamic requestCookies, DbContext context)
+        {
+            var sessionId = requestCookies["sessionId"];
+            var token = requestCookies["token"];
+            try
+            {
+                return ValidateSession(int.Parse(sessionId), token, context);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        // If authorised, this will return an object with information about the user.
+        // If more information is needed, authenticate and get the user directly.
+        public Dictionary<string, dynamic> ValidateUser(int sessionId, int accountId, string token, DbContext context)
+        {
+            var session = ValidateAccountSession(sessionId, accountId, token, context);
+            if (session == null)
                 return null;
 
             // Return either a customer or seller object, depending on what type the user is.
@@ -89,6 +115,101 @@ namespace Studio1BTask.Services
             }
 
             return null;
+        }
+
+        private static Session ValidateAccountSession(int sessionId, int accountId, string token, DbContext context)
+        {
+            var session = context.Sessions.Include(x => x.Account).FirstOrDefault(x => x.Id == sessionId);
+            // If session is nonexistent, or not linked with an account, return null.
+            if (session?.AccountId == null)
+                return null;
+            // If token and account id provided do not match with the corresponding entries in the database, return null.
+            var isValid = token == session.Token && session.AccountId == accountId;
+            if (!isValid)
+                return null;
+
+            return session;
+        }
+
+        private static Customer ValidateCustomerSession(int sessionId, int accountId, string token, DbContext
+            context, bool includeAccountObject = false)
+        {
+            var session = ValidateAccountSession(sessionId, accountId, token, context);
+            // If account not valid or not authorised, return null.
+            if (session == null)
+                return null;
+            var account = session.Account;
+            // If account is not a customer, return null.
+            if (account.Type != 'c') return null;
+            Customer customer;
+            if (includeAccountObject)
+                customer = context.Customers.Include(x => x.Account)
+                    .FirstOrDefault(x => x.Id == account.Id);
+            else
+                customer = context.Customers.Find(account.Id);
+            return customer;
+        }
+
+        private static Seller ValidateSellerSession(int sessionId, int accountId, string token, DbContext
+            context, bool includeAccountObject = false)
+        {
+            var session = ValidateAccountSession(sessionId, accountId, token, context);
+            // If account not valid or not authorised, return null.
+            if (session == null)
+                return null;
+            var account = session.Account;
+            // If account is not a seller, return null.
+            if (account.Type != 's') return null;
+            Seller seller;
+            if (includeAccountObject)
+                seller = context.Sellers.Include(x => x.Account)
+                    .FirstOrDefault(x => x.Id == account.Id);
+            else
+                seller = context.Sellers.Find(account.Id);
+            return seller;
+        }
+
+        private static bool ValidateAdminSession(int sessionId, int accountId, string token, DbContext
+            context, bool includeAccountObject = false)
+        {
+            var session = ValidateAccountSession(sessionId, accountId, token, context);
+            // If account not valid or not authorised, return null.
+            if (session == null)
+                return false;
+            var account = session.Account;
+            // If account is not an admin, return false.
+            return account.Type == 'a';
+        }
+
+        public bool IsEmailValid(string email)
+        {
+            if (email.Length > 3 && email.Length < 80 && email.Contains(".") && email.Contains("@"))
+                return true;
+            return false;
+        }
+
+        // TODO: Add more password restrictions
+        public bool IsPasswordValid(string password, out string reason)
+        {
+            reason = "";
+            if (password.Length < 8)
+            {
+                reason = "Password must be 8 or more characters long.";
+                return false;
+            }
+
+            if (password.Length > 80)
+            {
+                reason = "Password is too long.";
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool IsPasswordValid(string password)
+        {
+            return IsPasswordValid(password, out var x);
         }
     }
 }

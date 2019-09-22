@@ -1,9 +1,9 @@
 import {Component, Inject} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms'
 import {HttpClient} from "@angular/common/http";
 import {Notifications} from "../notifications";
-import {User} from "../user";
+import {User, UserService} from "../user.service";
 
 
 @Component({
@@ -14,11 +14,14 @@ import {User} from "../user";
 export class RegisterComponent {
   private httpClient: HttpClient;
   private baseUrl: string;
+  private user: User;
 
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
+    private router: Router,
     http: HttpClient,
+    private userService: UserService,
     @Inject('BASE_URL') baseUrl: string
   ) {
     this.httpClient = http;
@@ -26,12 +29,16 @@ export class RegisterComponent {
 
   }
 
+  ngOnInit() {
+    this.userService.getCurrent().subscribe(x => this.user = x);
+  }
+
   public onSubmit() {
-    if (User.current == null) {
+    if (this.user == null) {
       Notifications.error("Please try again later.");
       return;
     }
-    if (User.current.isLoggedIn) {
+    if (this.user.isLoggedIn) {
       Notifications.error("Please log out before registering a new account.");
       return;
     }
@@ -42,8 +49,13 @@ export class RegisterComponent {
       email: (document.getElementById("email") as HTMLInputElement).value,
     };
     this.httpClient.post(this.baseUrl + 'api/Account/CreateCustomerAccount', customerAccountForm).subscribe(result => {
+      console.log(result);
+      if (result["error"] != null || !result["success"]) {
+        Notifications.error(result["error"]);
+        return;
+      }
       Notifications.success("Successfully created account.");
-      window.location.reload();
+      window.location.assign('/');
     }, error => {
       Notifications.error(error);
     });

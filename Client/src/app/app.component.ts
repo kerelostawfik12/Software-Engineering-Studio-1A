@@ -2,7 +2,7 @@ import {Component, Inject, NgZone, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Notifications} from "./notifications";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {User} from "./user";
+import {UserService} from "./user.service"
 
 
 @Component({
@@ -13,33 +13,24 @@ import {User} from "./user";
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  router: Router;
 
-  constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute, private zone: NgZone) {
-    this.router = router;
-
-    // Get new session token
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    @Inject('BASE_URL') private baseUrl: string,
+    private route: ActivatedRoute,
+    private zone: NgZone,
+    private userService: UserService) {
+    // Get new session token and fill in local user object with response
     http.get(baseUrl + 'api/Account/CreateSession', {}).subscribe(result => {
       if (result === true) {
         console.log("Created new session.");
-        let user = new User();
-        user.data = result;
-        user.isLoaded = true;
-        user.isLoggedIn = false;
-        this.zone.run(() => {
-          User.current = user;
-        })
+        userService.setCurrent(result, true, false);
       } else {
         console.log("Using existing session.");
         console.log(result);
-
-        let user = new User();
-        user.data = result;
-        user.isLoaded = true;
-        user.isLoggedIn = result != null && result != false;
-        this.zone.run(() => {
-          User.current = user;
-        })
+        let isLoggedIn = result != null && result != false;
+        userService.setCurrent(result, true, isLoggedIn);
       }
     }, error => {
       console.error(error);

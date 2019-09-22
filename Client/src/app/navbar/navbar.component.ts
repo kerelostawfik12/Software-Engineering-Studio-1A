@@ -1,8 +1,8 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
-import {User} from "../user";
 import {Notifications} from "../notifications";
+import {User, UserService} from "../user.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,12 +10,16 @@ import {Notifications} from "../notifications";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  private static instance: NavbarComponent;
+  public static instance: NavbarComponent;
   private httpClient : HttpClient;
   private baseUrl : string;
   private router: Router;
+  private user: User;
 
-  constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
+  constructor(router: Router,
+              http: HttpClient,
+              @Inject('BASE_URL') baseUrl: string,
+              private userService: UserService) {
     this.httpClient = http;
     this.baseUrl = baseUrl;
     this.router = router;
@@ -25,13 +29,10 @@ export class NavbarComponent implements OnInit {
     (document.getElementById('search-input') as HTMLInputElement).value = text;
   }
 
-  get user() {
-    return User.current;
-  }
-
   ngOnInit() {
     NavbarComponent.instance = this;
     document.getElementById('search-button').ondragstart = function() { return false; };
+    this.getUser();
   }
 
   search() {
@@ -50,10 +51,16 @@ export class NavbarComponent implements OnInit {
     return (document.getElementById('search-input') as HTMLInputElement).value;
   }
 
+  getUser(): void {
+    this.userService.getCurrent().subscribe(x => {
+      this.user = x;
+    });
+  }
+
   logout() {
     Notifications.success("Logging out...");
     this.httpClient.post(this.baseUrl + 'api/Account/Logout', {}).subscribe(result => {
-      window.location.reload();
+      window.location.assign('/');
     });
   }
 }
