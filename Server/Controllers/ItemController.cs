@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,15 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                return context.Items.Include(item => item.Seller).First(item => item.Id == id);
+                var Item = context.Items.Include(item => item.Seller).First(item => item.Id == id);
+                //Debug: Nullable Attribute null value can cause errors. 
+                if (Item.Views == null)
+                {
+                    Item.Views = 0;
+                }
+                Item.Views++;
+                context.SaveChanges();
+                return Item;
             }
         }
 
@@ -45,6 +54,8 @@ namespace Studio1BTask.Controllers
                 return item.Entity;
             }
         }
+
+
 
         [HttpPost("[action]")]
         public void RemoveItem([FromBody] SimpleInt simpleInt)

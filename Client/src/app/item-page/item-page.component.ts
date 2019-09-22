@@ -19,6 +19,7 @@ export class ItemPageComponent implements OnInit {
     }, error => console.error(error));
   }
 
+
   ngOnInit() {
 
   }

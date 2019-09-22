@@ -32,6 +32,7 @@ interface Item {
   sellerId : number;
   seller : Seller;
   price : number;
+  views? : number;
 }
 
 
