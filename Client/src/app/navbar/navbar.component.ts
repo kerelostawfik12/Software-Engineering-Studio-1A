@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   private httpClient : HttpClient;
   private baseUrl : string;
   private router: Router;
-  private user: User;
+  public user: User;
 
   constructor(router: Router,
               http: HttpClient,
