@@ -21,7 +21,7 @@ import {ItemViewComponent} from "./item-view/item-view.component";
 import {ViewCustomersComponent} from './view-customers/view-customers.component';
 import {SearchItemsComponent} from './search-items/search-items.component';
 import {LoginComponent} from './login/login.component';
-import {AdminComponent} from './admin/admin.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import {AdminComponent} from './admin/admin.component';
     ViewCustomersComponent,
     SearchItemsComponent,
     LoginComponent,
-    AdminComponent,
+    ProfilePageComponent,
 
   ],
   imports: [
@@ -53,7 +53,6 @@ import {AdminComponent} from './admin/admin.component';
     RouterModule.forRoot([
       {path: '', component: HomeComponent, pathMatch: 'full'},
       {path: 'counter', component: CounterComponent},
-      {path: 'admin', component: AdminComponent},
       {path: 'fetch-data', component: FetchDataComponent},
       {path: 'cart', component: CartComponent},
       {path: 'component-test-zone', component: ComponentTestZoneComponent},
