@@ -21,7 +21,8 @@ import {ItemViewComponent} from "./item-view/item-view.component";
 import {ViewCustomersComponent} from './view-customers/view-customers.component';
 import {SearchItemsComponent} from './search-items/search-items.component';
 import {LoginComponent} from './login/login.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
+import {ProfilePageComponent} from './profile-page/profile-page.component';
+import {AdminComponent} from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     SearchItemsComponent,
     LoginComponent,
     ProfilePageComponent,
+    AdminComponent
 
   ],
   imports: [
@@ -60,8 +62,10 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
       {path: 'login', component: LoginComponent},
       {path: 'item/:id', component: ItemPageComponent},
       {path: 'new-item-form', component: NewItemFormComponent},
+      {path: 'new-item-form', component: AdminComponent},
       {path: 'item-view', component: ItemViewComponent},
       {path: 'search/:query', component: SearchItemsComponent},
+      {path: 'admin', component: AdminComponent},
     ])
   ],
   providers: [],
