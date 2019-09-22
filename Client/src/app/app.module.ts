@@ -21,6 +21,7 @@ import {ItemViewComponent} from "./item-view/item-view.component";
 import {ViewCustomersComponent} from './view-customers/view-customers.component';
 import {SearchItemsComponent} from './search-items/search-items.component';
 import {LoginComponent} from './login/login.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {LoginComponent} from './login/login.component';
     ViewCustomersComponent,
     SearchItemsComponent,
     LoginComponent,
+    ProfilePageComponent,
 
   ],
   imports: [
