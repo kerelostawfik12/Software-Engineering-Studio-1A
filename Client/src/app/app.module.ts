@@ -66,6 +66,7 @@ import {AdminComponent} from './admin/admin.component';
       {path: 'item-view', component: ItemViewComponent},
       {path: 'search/:query', component: SearchItemsComponent},
       {path: 'admin', component: AdminComponent},
+      {path: 'profile', component: ProfilePageComponent},
     ])
   ],
   providers: [],

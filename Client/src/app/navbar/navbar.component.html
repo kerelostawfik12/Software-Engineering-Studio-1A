@@ -27,7 +27,7 @@
           <a [routerLink]='["/login"]'>Login</a> or <a [routerLink]="['/register']">Register</a>
         </div>
         <div *ngIf="user.isLoggedIn" id="logged-in">
-          Hi, {{user.firstName}}!
+          Hi, <a [routerLink]="['/profile']"> {{user.firstName}}!</a>
           <div id="log-out"><a (click)="logout()">Log out</a></div>
         </div>
       </div>
