@@ -1,8 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
 import {Notifications} from "../notifications";
+import {User, UserService} from "../user.service";
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,16 @@ import {Notifications} from "../notifications";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   private httpClient: HttpClient;
   private baseUrl: string;
-  formGroup: any;
+  private user: User;
 
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
+    private router: Router,
     http: HttpClient,
+    private userService: UserService,
     @Inject('BASE_URL') baseUrl: string
   ) {
     this.httpClient = http;
@@ -27,9 +29,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userService.getCurrent().subscribe(x => this.user = x);
   }
 
   onSubmit() {
+    if (this.user.isLoggedIn) {
+      Notifications.error("Please log out before logging in again.");
+      return;
+    }
     const loginForm = {
       "email" : (document.getElementById("email") as HTMLInputElement).value,
       "password": (document.getElementById("password") as HTMLInputElement).value
