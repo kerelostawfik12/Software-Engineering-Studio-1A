@@ -150,6 +150,22 @@ namespace Studio1BTask.Services
             return customer;
         }
 
+        public Customer ValidateCustomerSession(dynamic requestCookies, DbContext context, bool includeAccountObject
+            = false)
+        {
+            var sessionId = requestCookies["sessionId"];
+            var token = requestCookies["token"];
+            var accountId = requestCookies["accountId"];
+            try
+            {
+                return ValidateCustomerSession(int.Parse(sessionId), accountId, token, context, includeAccountObject);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         private static Seller ValidateSellerSession(int sessionId, int accountId, string token, DbContext
             context, bool includeAccountObject = false)
         {
@@ -169,8 +185,38 @@ namespace Studio1BTask.Services
             return seller;
         }
 
-        private static bool ValidateAdminSession(int sessionId, int accountId, string token, DbContext
-            context, bool includeAccountObject = false)
+        public Seller ValidateSellerSession(dynamic requestCookies, DbContext context, bool includeAccountObject
+            = false)
+        {
+            var sessionId = requestCookies["sessionId"];
+            var token = requestCookies["token"];
+            var accountId = requestCookies["accountId"];
+            try
+            {
+                return ValidateSellerSession(int.Parse(sessionId), accountId, token, context, includeAccountObject);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public bool ValidateAdminSession(dynamic requestCookies, DbContext context)
+        {
+            var sessionId = requestCookies["sessionId"];
+            var token = requestCookies["token"];
+            var accountId = requestCookies["accountId"];
+            try
+            {
+                return ValidateAdminSession(int.Parse(sessionId), accountId, token, context);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static bool ValidateAdminSession(int sessionId, int accountId, string token, DbContext context)
         {
             var session = ValidateAccountSession(sessionId, accountId, token, context);
             // If account not valid or not authorised, return null.
