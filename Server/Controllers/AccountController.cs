@@ -244,6 +244,20 @@ namespace Studio1BTask.Controllers
         {
             ClearCookies();
         }
+        
+        
+        [HttpPost("[action]")]
+        public void RemoveAccount()
+        {
+            using (var context = new DbContext())
+            {
+                var account = _accountService.ValidateAccountSession(Request.Cookies, context);
+                context.Accounts.Remove(account);
+                context.SaveChanges();
+            }
+            
+        }
+        
 
         private void ClearCookies()
         {
