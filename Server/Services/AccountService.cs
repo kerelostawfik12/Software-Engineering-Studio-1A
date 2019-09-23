@@ -131,6 +131,21 @@ namespace Studio1BTask.Services
             return session;
         }
 
+        public Account ValidateAccountSession(dynamic requestCookies, DbContext context)
+        {
+            var sessionId = requestCookies["sessionId"];
+            var token = requestCookies["token"];
+            var accountId = requestCookies["accountId"];
+            try
+            {
+                return ValidateAccountSession(int.Parse(sessionId), accountId, token, context);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         private static Customer ValidateCustomerSession(int sessionId, int accountId, string token, DbContext
             context, bool includeAccountObject = false)
         {
