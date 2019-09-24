@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MarkdownModule} from 'ngx-markdown';
 
 import {AppComponent} from './app.component';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
@@ -44,9 +45,9 @@ import {AdminComponent} from './admin/admin.component';
     LoginComponent,
     ProfilePageComponent,
     AdminComponent
-
   ],
   imports: [
+    MarkdownModule.forRoot(),
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
     FormsModule,
