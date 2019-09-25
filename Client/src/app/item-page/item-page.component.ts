@@ -20,4 +20,8 @@ export class ItemPageComponent implements OnInit {
 
   ngOnInit() { }
 
+  add(item: Item) {
+
+  }
+
 }
