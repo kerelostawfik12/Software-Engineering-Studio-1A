@@ -15,9 +15,9 @@
     <ItemGroup>
         <PackageReference Include="Isopoh.Cryptography.Argon2" Version="1.1.2" />
         <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
         <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
         <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.2.0" />
@@ -29,13 +29,16 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.6" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.4" />
 
-        <PackageReference Include="NuGet.CommandLine" Version="5.1.0"/>
+        <PackageReference Include="NuGet.CommandLine" Version="5.1.0" />
 
     </ItemGroup>
 
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="..\Client\src\app\Paypal\paypal.js.html">
+          <Link>src\app\Paypal\paypal.js.html</Link>
+        </Content>
         <Content Include="..\Client\src\assets\icons\cart.svg" />
         <Content Include="..\Client\src\assets\icons\search.svg" />
         <None Remove="$(SpaRoot)**" />
