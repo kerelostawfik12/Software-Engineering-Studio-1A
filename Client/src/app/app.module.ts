@@ -68,6 +68,7 @@ import { ViewTransactionsComponent } from './view-transactions/view-transactions
       {path: 'search/:query', component: SearchItemsComponent},
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
+      {path: 'list-of-transactions', component: ViewTransactionsComponent},
     ])
   ],
   providers: [],
