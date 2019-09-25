@@ -23,7 +23,7 @@ import {SearchItemsComponent} from './search-items/search-items.component';
 import {LoginComponent} from './login/login.component';
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {AdminComponent} from './admin/admin.component';
-import { ViewTransactionComponent } from './view-transaction/view-transaction.component';
+import { ViewTransactionsComponent } from './view-transactions/view-transactions.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { ViewTransactionComponent } from './view-transaction/view-transaction.co
     LoginComponent,
     ProfilePageComponent,
     AdminComponent,
-    ViewTransactionComponent
+    ViewTransactionsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
