@@ -34,7 +34,8 @@
     "ngx-toastr": "^10.2.0",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "paypal-rest-sdk": "^1.8.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.0",
