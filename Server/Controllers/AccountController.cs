@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Studio1BTask.Models;
 using Studio1BTask.Services;
+using DbContext = Studio1BTask.Models.DbContext;
+
 
 namespace Studio1BTask.Controllers
 {
@@ -108,8 +111,8 @@ namespace Studio1BTask.Controllers
                 return obj;
             }
         }
-        
-         [HttpPost("[action]")]
+
+        [HttpPost("[action]")]
         public Dictionary<string, dynamic> CreateSellerAccount([FromBody] SellerAccountForm form)
         {
             // Create response object to send back to client
@@ -201,6 +204,35 @@ namespace Studio1BTask.Controllers
                 return obj;
             }
         }
+        
+      
+
+        [HttpGet("[action]")]
+        public IEnumerable<Customer> AllCustomers()
+        {
+            using (var context = new DbContext())
+            {
+                var customers = context.Customers
+                    .Include(customer => customer.Account)
+                    .ToList();
+                return customers;
+            }
+        }
+        
+        [HttpGet("[action]")]
+        public IEnumerable<Seller> AllSellers()
+        {
+            using (var context = new DbContext())
+            {
+                var sellers = context.Sellers
+                    .Include(seller => seller.Account)
+                    .ToList();
+                return sellers;
+            }
+        }
+    
+        
+    
 
         // A session will be created the first time the user loads the website. 
         // Sessions can be used for things that don't need an account, such as shopping carts. 

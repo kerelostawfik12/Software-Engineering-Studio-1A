@@ -36,6 +36,13 @@ interface Item {
   views? : number;
 }
 
+interface Customer{
+  id : number;
+  firstName : string;
+  lastName : string;
+
+}
+
 
 interface SearchItemResult {
   items: Item[]; // The items returned by the query
