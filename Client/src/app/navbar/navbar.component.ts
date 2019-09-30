@@ -1,8 +1,9 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {NavigationEnd, Router} from "@angular/router";
+import {NavigationStart, Router} from "@angular/router";
 import {Notifications} from "../notifications";
 import {User, UserService} from "../user.service";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +21,8 @@ export class NavbarComponent implements OnInit {
   constructor(router: Router,
               http: HttpClient,
               @Inject('BASE_URL') baseUrl: string,
-              private userService: UserService) {
+              private userService: UserService,
+              private title: Title) {
     this.httpClient = http;
     this.baseUrl = baseUrl;
     this.router = router;
@@ -35,8 +37,18 @@ export class NavbarComponent implements OnInit {
     document.getElementById('search-button').ondragstart = function() { return false; };
     this.getUser();
     this.router.events.subscribe(x => {
-      if (x instanceof NavigationEnd) {
-        // TODO: SWITCH MODES
+      if (x instanceof NavigationStart) {
+        // Update title (this automatic title can be overridden in the component's constructor)
+        let title = x.url;
+        title = title.replace(/\//g, '');
+        title = title.replace(/-/g, " ");
+        if (title == "")
+          title = "NotAmazon.com";
+        else {
+          title = title.charAt(0).toUpperCase() + title.substring(1);
+          title += " - NotAmazon.com";
+        }
+        this.title.setTitle(title)
       }
     })
   }

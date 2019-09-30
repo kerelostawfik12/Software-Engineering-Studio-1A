@@ -25,7 +25,6 @@ export class LoginComponent implements OnInit {
   ) {
     this.httpClient = http;
     this.baseUrl = baseUrl;
-
   }
 
   ngOnInit() {

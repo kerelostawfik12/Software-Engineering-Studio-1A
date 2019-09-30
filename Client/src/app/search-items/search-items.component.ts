@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NavbarComponent} from "../navbar/navbar.component";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-browse-items',
@@ -15,7 +16,7 @@ export class SearchItemsComponent implements OnInit {
   searchResult: SearchItemResult = null;
   router: Router;
 
-  constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute) {
+  constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute, titleService: Title) {
     this.query = this.route.snapshot.paramMap.get('query').trim();
     if (this.query == null)
       this.query = "";
@@ -23,6 +24,7 @@ export class SearchItemsComponent implements OnInit {
     http.get<SearchItemResult>(baseUrl + 'api/Item/SearchItems', {params: {query: this.query}}).subscribe(result => {
       this.searchResult = result;
     }, error => console.error(error));
+    titleService.setTitle(this.query + " - NotAmazon.com")
   }
 
   ngOnInit() {
