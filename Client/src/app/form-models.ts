@@ -11,3 +11,9 @@ interface NewItemForm {
   price: string;
 }
 
+interface SellerAccountForm {
+  Name : string;
+  Password : string;
+  Email : string;
+}
+

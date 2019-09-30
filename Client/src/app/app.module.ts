@@ -25,6 +25,7 @@ import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {AdminComponent} from './admin/admin.component';
 import {ViewTransactionsComponent} from './view-transactions/view-transactions.component';
 import {SmallItemListingComponent} from './small-item-listing/small-item-listing.component';
+import {SellerRegisterComponent} from './seller-register/seller-register.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,10 @@ import {SmallItemListingComponent} from './small-item-listing/small-item-listing
     ProfilePageComponent,
     AdminComponent,
     ViewTransactionsComponent,
-    SmallItemListingComponent
-  ],
+    SmallItemListingComponent,
+    SellerRegisterComponent,
+
+],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
@@ -71,7 +74,8 @@ import {SmallItemListingComponent} from './small-item-listing/small-item-listing
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
       {path: 'list-of-transactions', component: ViewTransactionsComponent},
-    ])
+      {path: 'Create-Seller', component: SellerRegisterComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

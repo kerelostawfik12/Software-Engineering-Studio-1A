@@ -28,6 +28,16 @@ export class UserService {
     UserService.current.isLoggedIn = isLoggedIn;
     UserService.current.isLoaded = isLoaded;
   }
+
+  public ifSeller(): boolean{
+    return UserService.current.data["type"] == 's';
+  }
+
+
+
+
+
+
   constructor() { }
 }
 

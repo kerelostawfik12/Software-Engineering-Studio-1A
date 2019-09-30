@@ -75,6 +75,8 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+
+
   logout() {
     Notifications.success("Logging out...");
     this.httpClient.post(this.baseUrl + 'api/Account/Logout', {}).subscribe(result => {

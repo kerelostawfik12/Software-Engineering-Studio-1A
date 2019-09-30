@@ -108,6 +108,99 @@ namespace Studio1BTask.Controllers
                 return obj;
             }
         }
+        
+         [HttpPost("[action]")]
+        public Dictionary<string, dynamic> CreateSellerAccount([FromBody] SellerAccountForm form)
+        {
+            // Create response object to send back to client
+            var obj = new Dictionary<string, dynamic>
+            {
+                ["error"] = null, ["success"] = false
+            };
+
+            // Clean up fields
+            form.Email = form.Email.Trim().ToLower();
+
+            // Verify that email and password are valid
+            if (!_accountService.IsEmailValid(form.Email))
+            {
+                obj["error"] = "Please provide a valid email.";
+                return obj;
+            }
+
+            if (!_accountService.IsPasswordValid(form.Password, out var reason))
+            {
+                obj["error"] = reason;
+                return obj;
+            }
+
+            using (var context = new DbContext())
+            {
+                // Verify that the session is actually valid, and that the session is not already linked to an account.
+                var session = _accountService.ValidateSession(Request.Cookies, context);
+                if (session == null || session.AccountId != null)
+                {
+                    ClearCookies();
+                    Response.StatusCode = 403;
+                    obj["error"] =
+                        "Invalid session. Please try again, refresh the page, or delete cookies for the site.";
+                    return obj;
+                }
+
+                // Verify that the provided email is not already in use.
+                if (context.Accounts.Any(x => x.Email == form.Email))
+                {
+                    obj["error"] = "The email address provided is already in use.";
+                    return obj;
+                }
+
+                // Try actually creating the account.
+                try
+                {
+                    // Create the Account object
+                    var newAccount = context.Accounts.Add(new Account
+                    {
+                        Type = 's',
+                        Email = form.Email,
+                        PasswordHash = null, // Fill in password later when id is available to use as salt
+                        SessionId = session.Id // Tie the session to the newly created account.
+                    });
+                    session.Account = newAccount.Entity; // Tie the new account to the existing session.
+
+                    // Have to send this to the database before creating the customer entity,
+                    // as we don't know what the id is yet until the database tells us.
+                    context.SaveChanges();
+
+                    // Create the Seller object
+                    context.Sellers.Add(new Seller
+                    {
+                        Id = newAccount.Entity.Id,
+                        Name = form.Name,
+                    });
+
+                    // Set the password hash
+                    newAccount.Entity.PasswordHash = _accountService.HashPassword(form.Password, newAccount.Entity);
+
+                    context.SaveChanges();
+                }
+                catch
+                {
+                    obj["error"] = "An unknown database error occurred.";
+                    return obj;
+                }
+
+                // Log in with credentials provided
+                var loginSuccessful = Login(new LoginForm {Email = form.Email, Password = form.Password});
+                if (loginSuccessful)
+                {
+                    obj["success"] = true;
+                    return obj;
+                }
+
+                obj["error"] = "An account was created but could not be logged into. Please try logging in manually.";
+                return obj;
+            }
+        }
 
         // A session will be created the first time the user loads the website. 
         // Sessions can be used for things that don't need an account, such as shopping carts. 

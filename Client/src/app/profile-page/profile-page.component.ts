@@ -33,7 +33,7 @@ export class ProfilePageComponent implements OnInit{
       Notifications.success("Successfully removed " + User.name + "!");
     }, error => {
       console.error(error);
-      Notifications.error("Account was not deleted")
+      Notifications.error("Account was not deleted");
     })
   }
 
