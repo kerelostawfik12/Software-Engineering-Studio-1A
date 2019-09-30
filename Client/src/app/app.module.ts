@@ -26,6 +26,7 @@ import {AdminComponent} from './admin/admin.component';
 import {ViewTransactionsComponent} from './view-transactions/view-transactions.component';
 import {SmallItemListingComponent} from './small-item-listing/small-item-listing.component';
 import {SellerRegisterComponent} from './seller-register/seller-register.component';
+import { ViewSellersComponent } from '../view-sellers/view-sellers.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {SellerRegisterComponent} from './seller-register/seller-register.compone
     ViewTransactionsComponent,
     SmallItemListingComponent,
     SellerRegisterComponent,
+    ViewSellersComponent,
 
 ],
   imports: [
