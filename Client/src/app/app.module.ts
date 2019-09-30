@@ -24,6 +24,7 @@ import {LoginComponent} from './login/login.component';
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {AdminComponent} from './admin/admin.component';
 import { ViewTransactionsComponent } from './view-transactions/view-transactions.component';
+import { SellerRegisterComponent } from './seller-register/seller-register.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +46,10 @@ import { ViewTransactionsComponent } from './view-transactions/view-transactions
     LoginComponent,
     ProfilePageComponent,
     AdminComponent,
-    ViewTransactionsComponent
-  ],
+    ViewTransactionsComponent,
+    SellerRegisterComponent,
+
+],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
@@ -69,7 +72,8 @@ import { ViewTransactionsComponent } from './view-transactions/view-transactions
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
       {path: 'list-of-transactions', component: ViewTransactionsComponent},
-    ])
+      {path: 'Create-Seller', component: SellerRegisterComponent},
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]

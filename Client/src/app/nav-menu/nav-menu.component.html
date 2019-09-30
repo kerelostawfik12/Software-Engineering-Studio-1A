@@ -20,14 +20,14 @@
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
             <a class="nav-link text-white" [routerLink]='["/fetch-data"]'>Fetch data test</a>
           </li>
-          <li class="nav-item" [routerLinkActive]='["link-active"]'>
+          <li *ngIf="seller()" class="nav-item" [routerLinkActive]='["link-active"]'>
             <a [routerLink]='["/item-view"]' class="nav-link text-white">Item View</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a [routerLink]='["/new-item-form"]' class="nav-link text-white">New Item Form</a>
+            <a *ngIf="seller()" [routerLink]='["/new-item-form"]' class="nav-link text-white">New Item Form</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a [routerLink]='["/admin"]' class="nav-link text-white">Admin</a>
@@ -35,6 +35,7 @@
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a [routerLink]='["/list-of-transactions"]' class="nav-link text-white">List of Transactions</a>
           </li>
+
 
         </ul>
       </div>
