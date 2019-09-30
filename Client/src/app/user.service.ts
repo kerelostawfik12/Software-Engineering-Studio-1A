@@ -33,6 +33,11 @@ export class UserService {
     return UserService.current.data["type"] == 's';
   }
 
+  public ifCustomer(): boolean{
+    return UserService.current.data["type"] == 'c';
+  }
+
+
 
 
 
