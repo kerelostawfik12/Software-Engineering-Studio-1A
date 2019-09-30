@@ -1,0 +1,19 @@
+<div id="item">
+  <div id="container">
+    <a routerLink="/item/{{ item.id }}">
+      <img alt="{{item.name}}" id="image" src="{{item.imageURL}}">
+    </a>
+    <div id="name">
+      <a routerLink="/item/{{ item.id }}">{{item.name}}</a>
+    </div>
+    <div id="price">
+      <span id="dollars">${{getDollars()}}</span>
+      <span id="cents">{{getCents()}}</span>
+    </div>
+    <div id="add-to-cart">
+      <div (click)="addToCart()" id="add-to-cart-button">
+        <span id="add-to-cart-text">Add to Cart</span>
+      </div>
+    </div>
+  </div>
+</div>

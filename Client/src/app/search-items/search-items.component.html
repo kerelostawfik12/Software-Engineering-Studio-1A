@@ -1,14 +1,15 @@
-this is temporary lol
 <br>
 <br>
 <div *ngIf="searchResult != null">
-  <div *ngFor="let item of searchResult.items">
-    <a routerLink="/item/{{ item.id }}">{{item.name}}</a>
-    <br>
+  <div *ngFor="let item of searchResult.items" id="items-container">
+    <app-small-item-listing [item]="item"></app-small-item-listing>
   </div>
   <p *ngIf="searchResult.items.length == 0">
     No results found. :(
   </p>
+</div>
+<div *ngIf="searchResult == null">
+  Loading...
 </div>
 
 

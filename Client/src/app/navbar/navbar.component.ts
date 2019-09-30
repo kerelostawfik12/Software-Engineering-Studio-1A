@@ -43,8 +43,8 @@ export class NavbarComponent implements OnInit {
 
   search() {
     const searchInput = document.getElementById('search-input') as HTMLInputElement;
-    if (searchInput.value == null) {
-      searchInput.value = "";
+    if (searchInput.value == null || searchInput.value == "") {
+      searchInput.value = " ";
     }
     const stripSymbolsRegex = /[-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;
     searchInput.value = searchInput.value.replace(stripSymbolsRegex, '');

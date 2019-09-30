@@ -16,7 +16,7 @@ export class SearchItemsComponent implements OnInit {
   router: Router;
 
   constructor(router: Router, http: HttpClient, @Inject('BASE_URL') baseUrl: string, private route: ActivatedRoute) {
-    this.query = this.route.snapshot.paramMap.get('query');
+    this.query = this.route.snapshot.paramMap.get('query').trim();
     if (this.query == null)
       this.query = "";
     this.router = router;
@@ -26,7 +26,7 @@ export class SearchItemsComponent implements OnInit {
   }
 
   ngOnInit() {
-    NavbarComponent.setSearchText(this.query.split('?')[0]);
+    NavbarComponent.setSearchText(this.query.split('?')[0].trim());
   }
 
 }
