@@ -78,26 +78,28 @@ a {
   padding-left: 8px;
 }
 
-input[type="text"]
-{
+input[type="text"] {
 
   width: 100%;
   background: rgba(0, 0, 0, 0);
   border: none;
 }
-::placeholder
-{
+
+::placeholder {
   font-style: italic;
 }
 
+input:focus, textarea:focus, select:focus {
+
+  outline: none;
+
+}
+
 #menu {
-
-
   width: 221px;
   height: 24px;
   left: 1669px;
   top: 21px;
-
 }
 
 #cart {
@@ -158,7 +160,8 @@ input[type="text"]
 #login-or-register a {
   color: white;
 }
-#search-button  {
+
+#search-button {
   -webkit-user-drag: none;
   user-select: none;
   position: absolute;
