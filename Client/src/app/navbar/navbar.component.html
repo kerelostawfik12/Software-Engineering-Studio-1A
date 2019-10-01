@@ -21,7 +21,9 @@
     </div>
 
     <div id="menu">
-      <div id="cart"><a [routerLink]='["/cart"]'><img src="assets/icons/cart.svg" alt="Cart">Cart (0)</a></div>
+      <div
+        id="cart"><a [routerLink]='["/cart"]'><img alt="Cart" src="assets/icons/cart.svg">Cart {{cartCountText}}</a>
+      </div>
       <div *ngIf="user != null && user.isLoaded" id="login-or-register">
         <div *ngIf="!user.isLoggedIn">
           <a [routerLink]='["/login"]'>Login</a> or <a [routerLink]="['/register']">Register</a>

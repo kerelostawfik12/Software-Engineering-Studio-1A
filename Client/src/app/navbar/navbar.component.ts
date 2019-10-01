@@ -4,6 +4,7 @@ import {NavigationStart, Router} from "@angular/router";
 import {Notifications} from "../notifications";
 import {User, UserService} from "../user.service";
 import {Title} from "@angular/platform-browser";
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class NavbarComponent implements OnInit {
   private mode: string = "default";
+  private cartCountText: string = "";
   public static instance: NavbarComponent;
   private httpClient : HttpClient;
   private baseUrl : string;
@@ -22,7 +24,8 @@ export class NavbarComponent implements OnInit {
               http: HttpClient,
               @Inject('BASE_URL') baseUrl: string,
               private userService: UserService,
-              private title: Title) {
+              private title: Title,
+              private cartService: CartService) {
     this.httpClient = http;
     this.baseUrl = baseUrl;
     this.router = router;
@@ -36,6 +39,12 @@ export class NavbarComponent implements OnInit {
     NavbarComponent.instance = this;
     document.getElementById('search-button').ondragstart = function() { return false; };
     this.getUser();
+    this.cartService.getItems().subscribe(x => {
+      if (this.cartService.isLoaded)
+        this.cartCountText = "(" + x.length + ")";
+      else
+        this.cartCountText = "";
+    });
     this.router.events.subscribe(x => {
       if (x instanceof NavigationStart) {
         // Update title (this automatic title can be overridden in the component's constructor)

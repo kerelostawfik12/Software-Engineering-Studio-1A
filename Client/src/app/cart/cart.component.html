@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <body style="background-color: burlywood">
 
 <h1 style="color: black">
@@ -7,11 +5,14 @@
 </h1>
 </body>
 
-<ul>
-  <li *ngFor="let item of items">
-  <app-cart-item></app-cart-item>
-  </li>
-</ul>
+
+<div *ngFor="let item of items">
+  <app-cart-item [item]="item"></app-cart-item>
+</div>
+
+<div *ngIf="items.length == 0">
+  Your shopping cart is empty :(
+</div>
 
 
 

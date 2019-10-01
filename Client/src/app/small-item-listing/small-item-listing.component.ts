@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CartService} from '../cart.service';
 
 @Component({
   selector: 'app-small-item-listing',
@@ -9,7 +10,7 @@ export class SmallItemListingComponent implements OnInit {
 
   @Input() public item: Item;
 
-  constructor() {
+  constructor(private cartService: CartService) {
   }
 
   ngOnInit() {
@@ -34,6 +35,6 @@ export class SmallItemListingComponent implements OnInit {
   }
 
   addToCart() {
-    console.log("Not yet implemented ;(")
+    this.cartService.addToCart(this.item);
   }
 }

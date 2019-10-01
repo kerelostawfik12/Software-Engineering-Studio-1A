@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {UserService} from "../user.service";
+import {User, UserService} from "../user.service";
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,7 +8,14 @@ import {UserService} from "../user.service";
 })
 export class NavMenuComponent {
 
+  user: User = null;
   constructor(private userService: UserService){
+  }
+
+  ngOnInit() {
+    this.userService.getCurrent().subscribe(result => {
+      this.user = result;
+    })
   }
 
   isExpanded = false;
@@ -19,9 +26,5 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
-  }
-
-  seller(): boolean{
-    return this.userService.ifSeller();
   }
 }

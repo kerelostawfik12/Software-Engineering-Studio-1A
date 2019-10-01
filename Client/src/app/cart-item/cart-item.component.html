@@ -1,35 +1,22 @@
 <!--//product-1//-->
 <div class = "item">
-  <div class = "buttons">
-    <span class = "delete-btn"></span>
-    <span class = "like-btn"></span>
-  </div>
+
+  <button (click)="remove()" class="btn btn-danger">Remove</button>
+
 
   <!--//add image-->
-
+  <div id="name">
+    {{item.name}}
+  </div>
   <!--//product-discription//-->
   <div class = "Description">
     <!--// could use some more discription make sure to use the proper syntax for adding discription-->
-    <span>AMD Graphics card</span>
-    <span>3rd gen</span>
-    <span>Specs</span>
+    {{item.description}} <br> {{item.seller.name}}
   </div>
 
 </div>
 
-<div class="Quantity">
-  <button class= "plus-btn" type = "button" name = "Button">
-    <!--//ADD Image-->
-  </button>
-
-  <label>
-    <input type = "text" name ="name" value = "1">
-  </label>
-  <button class = "minus-btn" type = "button" name = "Button">
-    <!--//ADD image-->
-  </button>
-</div>
 <!--<app-cart-item></app-cart-item>-->
-<div class = "total-price">$546</div>
+<div class="total-price">{{item.price}}</div>
 
 

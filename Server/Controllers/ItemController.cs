@@ -117,12 +117,73 @@ namespace Studio1BTask.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<Item> ItemsInCart()
+        public IEnumerable<Item> GetItemsInCart()
         {
             using (var context = new DbContext())
             {
-                var items = context.Items.Include(item => item.Seller).ToList();
+                var session = _accountService.ValidateSession(Request.Cookies, context);
+                if (session == null)
+                {
+                    Response.StatusCode = 401; // Unauthorised
+                    return null;
+                }
+
+                var items = context.CartItems
+                    .Where(x => x.SessionId == session.Id)
+                    .Include(x => x.Item)
+                    .Select(cartItem => cartItem.Item).Include(x => x.Seller)
+                    .ToList();
                 return items;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public IEnumerable<Item> AddItemToCart([FromBody] SimpleInt id)
+        {
+            using (var context = new DbContext())
+            {
+                var session = _accountService.ValidateSession(Request.Cookies, context);
+                if (session == null)
+                {
+                    Response.StatusCode = 401; // Unauthorised
+                    return null;
+                }
+
+                context.CartItems.Add(new CartItem
+                {
+                    SessionId = session.Id,
+                    ItemId = id.Value
+                });
+
+                context.SaveChanges();
+                return GetItemsInCart();
+            }
+        }
+
+        [HttpPost("[action]")]
+        public IEnumerable<Item> RemoveItemFromCart([FromBody] SimpleInt id)
+        {
+            using (var context = new DbContext())
+            {
+                var session = _accountService.ValidateSession(Request.Cookies, context);
+                if (session == null)
+                {
+                    Response.StatusCode = 401; // Unauthorised
+                    return null;
+                }
+
+                var itemToRemove =
+                    context.CartItems.FirstOrDefault(x => x.SessionId == session.Id && x.ItemId == id.Value);
+                if (itemToRemove == null)
+                {
+                    // Item does not exist or has already been removed
+                    Response.StatusCode = 404;
+                    return null;
+                }
+
+                context.CartItems.Remove(itemToRemove);
+                context.SaveChanges();
+                return GetItemsInCart();
             }
         }
     }

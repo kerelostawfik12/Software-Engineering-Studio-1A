@@ -8,20 +8,20 @@ let notifier = new AWN(globalOptions);
 export class Notifications {
   public notifier: any = notifier;
 
-  public static success(text: string, optionsOverrides: Object = {}) {
-    notifier.success(text, optionsOverrides);
+  public static success(text: any, optionsOverrides: Object = {}) {
+    notifier.success(text.toString(), optionsOverrides);
   }
 
-  public static warning(text: string, optionsOverrides: Object = {}) {
-    notifier.warning(text, optionsOverrides);
+  public static warning(text: any, optionsOverrides: Object = {}) {
+    notifier.warning(text.toString(), optionsOverrides);
   }
 
-  public static info(text: string, optionsOverrides: Object = {}) {
-    notifier.info(text, optionsOverrides);
+  public static info(text: any, optionsOverrides: Object = {}) {
+    notifier.info(text.toString(), optionsOverrides);
   }
 
-  public static error(text: string, optionsOverrides: Object = {}) {
-    notifier.alert(text, optionsOverrides);
+  public static error(text: any, optionsOverrides: Object = {}) {
+    notifier.alert(text.toString(), optionsOverrides);
   }
 
   public static confirm(text: string, onOk: Function, onCancel: Function) {

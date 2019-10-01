@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Observable, of} from 'rxjs';
 
 export class User {
   public isLoaded: boolean = false;
@@ -12,6 +12,18 @@ export class User {
     } else
       return this.data["name"];
   }
+
+  public get isSeller(): boolean {
+    return this.data != null && this.data["type"] == 's';
+  }
+
+  public get isCustomer(): boolean {
+    return this.data != null && this.data["type"] == 'c';
+  }
+
+  public get isAdmin(): boolean {
+    return this.data != null && this.data["type"] == 'a';
+  }
 }
 
 @Injectable({
@@ -19,30 +31,16 @@ export class User {
 })
 export class UserService {
   private static current: User = new User();
+  private static currentObservable = of(UserService.current);
 
   public getCurrent(): Observable<User> {
-    return of(UserService.current);
+    return UserService.currentObservable;
   }
   public setCurrent(data : Object, isLoaded : boolean, isLoggedIn : boolean) {
     UserService.current.data = data;
     UserService.current.isLoggedIn = isLoggedIn;
     UserService.current.isLoaded = isLoaded;
   }
-
-  public ifSeller(): boolean{
-    return UserService.current.data["type"] == 's';
-  }
-  /* Is this necessary?
-  public ifCustomer(): boolean{
-    return UserService.current.data["type"] == 'c';
-  }
-*/
-
-
-
-
-
-
 
 
   constructor() { }
