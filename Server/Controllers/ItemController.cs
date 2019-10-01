@@ -25,12 +25,11 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                var Item = context.Items.Include(item => item.Seller).First(item => item.Id == id);
-                //Debug: Nullable Attribute null value can cause errors. 
-                if (Item.Views == null) Item.Views = 0;
-                Item.Views++;
+                var item = context.Items.Include(x => x.Seller).First(x => x.Id == id);
+                if (item.Views == null) item.Views = 0;
+                item.Views++;
                 context.SaveChanges();
-                return Item;
+                return item;
             }
         }
 

@@ -6,5 +6,9 @@
   <p>Item Price: {{ item.price }}</p>
   <p>Item Views: {{item.views}}</p>
   <p>Item Seller: {{ item.seller.name }}</p>
-  <button (click)="add(item)">Add to Cart</button>
+  <div id="add-to-cart">
+    <div (click)="addToCart()" id="add-to-cart-button">
+      <span id="add-to-cart-text">Add to Cart</span>
+    </div>
+  </div>
 </div>
