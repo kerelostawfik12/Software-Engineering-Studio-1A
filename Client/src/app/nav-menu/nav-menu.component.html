@@ -23,6 +23,9 @@
           <li *ngIf="seller()" class="nav-item" [routerLinkActive]='["link-active"]'>
             <a [routerLink]='["/item-view"]' class="nav-link text-white">Item View</a>
           </li>
+          <li *ngIf="seller()" class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a [routerLink]='["/view-sellers"]' class="nav-link text-white">View Sellers</a>
+          </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
           </li>

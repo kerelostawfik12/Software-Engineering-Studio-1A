@@ -32,10 +32,12 @@ export class UserService {
   public ifSeller(): boolean{
     return UserService.current.data["type"] == 's';
   }
-
+  /* Is this necessary?
   public ifCustomer(): boolean{
     return UserService.current.data["type"] == 'c';
   }
+*/
+
 
 
 
