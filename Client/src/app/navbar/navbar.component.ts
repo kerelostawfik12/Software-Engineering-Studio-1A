@@ -12,13 +12,15 @@ import {CartService} from '../cart.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  private mode: string = "default";
-  private cartCountText: string = "";
+  public cartCountText: string = "";
+  public user: User;
+
   public static instance: NavbarComponent;
   private httpClient : HttpClient;
   private baseUrl : string;
   private router: Router;
-  private user: User;
+  private mode: string = "default";
+
 
   constructor(router: Router,
               http: HttpClient,

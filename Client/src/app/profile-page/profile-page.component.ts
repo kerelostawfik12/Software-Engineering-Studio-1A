@@ -4,16 +4,17 @@ import {HttpClient} from "@angular/common/http";
 import {Notifications} from "../notifications";
 
 
-
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
   styleUrls: ['./profile-page.component.css']
 })
 export class ProfilePageComponent implements OnInit{
+  public user: User;
+
   private httpClient: HttpClient;
   private baseUrl: string;
-  private user: User;
+
   constructor(
     private userService: UserService,
     @Inject('BASE_URL') baseUrl: string,
