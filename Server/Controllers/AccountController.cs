@@ -206,7 +206,7 @@ namespace Studio1BTask.Controllers
         }
         
       
-
+        //might make new controller just adding this here because I lost my code :(
         [HttpGet("[action]")]
         public IEnumerable<Customer> AllCustomers()
         {
@@ -219,6 +219,7 @@ namespace Studio1BTask.Controllers
             }
         }
         
+        //might make new controller just adding this here because I lost my code :(
         [HttpGet("[action]")]
         public IEnumerable<Seller> AllSellers()
         {

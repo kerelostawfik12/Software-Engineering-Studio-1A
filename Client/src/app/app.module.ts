@@ -76,7 +76,8 @@ import { ViewSellersComponent } from './view-sellers/view-sellers.component';
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
       {path: 'list-of-transactions', component: ViewTransactionsComponent},
-      {path: 'Create-Seller', component: SellerRegisterComponent},
+      {path: 'create-seller', component: SellerRegisterComponent},
+      {path: 'view-sellers', component: ViewSellersComponent}
     ]),
   ],
   providers: [],
