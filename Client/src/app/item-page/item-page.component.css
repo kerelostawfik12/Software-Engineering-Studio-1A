@@ -1,0 +1,42 @@
+#add-to-cart {
+  width: 95px;
+  height: 32px;
+  left: 115px;
+  top: 292px;
+}
+
+#add-to-cart-button {
+  display: inline-block;
+  width: 95px;
+  height: 32px;
+  right: 0px;
+  bottom: -12px;
+
+  background: linear-gradient(193.77deg, #04FFD2 -79.47%, rgba(255, 255, 255, 0) 70.86%), #437ABB;
+  border-radius: 16px;
+}
+
+#add-to-cart-button:hover {
+  text-decoration: underline;
+  text-underline: #FFFFFF;
+  cursor: pointer;
+}
+
+#add-to-cart-text {
+  width: 100%;
+  height: 23px;
+  display: inherit;
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  align-items: center;
+  text-align: center;
+
+  text-decoration: inherit;
+  text-underline: #FFFFFF;
+
+  color: #FFFFFF;
+  padding-top: 7px;
+}

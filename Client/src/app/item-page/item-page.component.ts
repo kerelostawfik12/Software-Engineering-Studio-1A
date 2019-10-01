@@ -22,4 +22,7 @@ export class ItemPageComponent implements OnInit {
 
   ngOnInit() { }
 
+  addToCart() {
+
+  }
 }
