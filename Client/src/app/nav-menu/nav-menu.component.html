@@ -26,6 +26,9 @@
           <li *ngIf="user.isAdmin" [routerLinkActive]='["link-active"]' class="nav-item">
             <a [routerLink]='["/view-sellers"]' class="nav-link text-white">View Sellers</a>
           </li>
+          <li *ngIf="user.isSeller" [routerLinkActive]="['link-active']" class="nav-item">
+            <a [routerLink]='["/create-admin"]'></a>
+          </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
           </li>
