@@ -157,6 +157,11 @@ input:focus, textarea:focus, select:focus {
   cursor: pointer;
 }
 
+#admin-log-out a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 #login-or-register a {
   color: white;
 }

@@ -113,6 +113,15 @@ namespace Studio1BTask.Services
                 obj["name"] = seller.Name;
                 return obj;
             }
+            
+            if (session.Account.Type == 'a')
+            {
+                var obj = new Dictionary<string, dynamic>();
+                var account = context.Accounts.Find(accountId);
+                obj["type"] = 'a';
+                obj["id"] = account.Id;
+                return obj;
+            }
 
             return null;
         }

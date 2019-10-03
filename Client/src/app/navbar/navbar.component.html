@@ -28,11 +28,17 @@
         <div *ngIf="!user.isLoggedIn">
           <a [routerLink]='["/login"]'>Login</a> or <a [routerLink]="['/register']">Register</a>
         </div>
-        <div *ngIf="user.isLoggedIn" id="logged-in">
+        <div *ngIf="user.isLoggedIn && !user.isAdmin" id="logged-in">
           Hi, <a [routerLink]="['/profile']"> {{user.firstName}}!</a>
           <div id="log-out"><a (click)="logout()">Log out</a></div>
         </div>
+        <div *ngIf="user.isLoggedIn && user.isAdmin">
+          Administrator
+          <div id="admin-log-out"><a (click)="logout()">Log out</a></div>
+        </div>
       </div>
+
+
 
     </div>
     <div id="categories">
