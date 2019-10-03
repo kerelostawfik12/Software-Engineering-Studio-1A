@@ -80,7 +80,8 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
       {path: 'list-of-transactions', component: ViewTransactionsComponent},
       {path: 'create-seller', component: SellerRegisterComponent},
       {path: 'create-admin', component: AdminRegisterComponent},
-      {path: 'view-sellers', component: ViewSellersComponent}
+      {path: 'view-sellers', component: ViewSellersComponent},
+      {path: 'view-customers', component: ViewCustomersComponent}
     ]),
   ],
   providers: [],

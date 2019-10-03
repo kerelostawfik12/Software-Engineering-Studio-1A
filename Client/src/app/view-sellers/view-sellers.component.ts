@@ -28,7 +28,7 @@ export class ViewSellersComponent implements OnInit {
   }
 
   getSellers(){
-    this.httpClient.get<Seller[]>(this.baseUrl + 'api/Account/AllSellers').subscribe(result => {
+    this.httpClient.get<Seller[]>(this.baseUrl + 'api/Account/GetAllSellers').subscribe(result => {
       this.sellers = result;
     }, error => {console.error(error);
     });

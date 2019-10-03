@@ -299,7 +299,7 @@ namespace Studio1BTask.Controllers
       
         //might make new controller just adding this here because I lost my code :(
         [HttpGet("[action]")]
-        public IEnumerable<Customer> AllCustomers()
+        public IEnumerable<Customer> GetAllCustomers()
         {
             using (var context = new DbContext())
             {
@@ -312,7 +312,7 @@ namespace Studio1BTask.Controllers
         
         //might make new controller just adding this here because I lost my code :(
         [HttpGet("[action]")]
-        public IEnumerable<Seller> AllSellers()
+        public IEnumerable<Seller> GetAllSellers()
         {
             using (var context = new DbContext())
             {
