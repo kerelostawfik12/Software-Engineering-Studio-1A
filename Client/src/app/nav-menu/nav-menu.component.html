@@ -23,7 +23,7 @@
           <li *ngIf="user.isSeller" [routerLinkActive]='["link-active"]' class="nav-item">
             <a [routerLink]='["/item-view"]' class="nav-link text-white">Item View</a>
           </li>
-          <li *ngIf="user.isSeller" [routerLinkActive]='["link-active"]' class="nav-item">
+          <li *ngIf="user.isAdmin" [routerLinkActive]='["link-active"]' class="nav-item">
             <a [routerLink]='["/view-sellers"]' class="nav-link text-white">View Sellers</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
@@ -33,7 +33,10 @@
             <a *ngIf="user.isSeller" [routerLink]='["/new-item-form"]' class="nav-link text-white">New Item Form</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a [routerLink]='["/admin"]' class="nav-link text-white">Admin</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/admin"]' class="nav-link text-white">Admin</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a *ngIf="user.isAdmin" [routerLink]="['/create-admin']" class="nav-link text-white">Create Admin</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a [routerLink]='["/list-of-transactions"]' class="nav-link text-white">List of Transactions</a>

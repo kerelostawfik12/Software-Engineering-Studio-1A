@@ -23,7 +23,15 @@ interface ForeignKeyTest
 interface Seller {
   id : number;
   name : string;
-  email : string;
+  account : Account;
+}
+
+interface Account{
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string
+
 }
 
 interface Item {

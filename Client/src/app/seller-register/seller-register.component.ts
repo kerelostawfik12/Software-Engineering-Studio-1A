@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms'
 import {HttpClient} from "@angular/common/http";
 import {User, UserService} from "../user.service";
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {Notifications} from "../notifications";
 
 
@@ -38,9 +38,9 @@ export class SellerRegisterComponent implements OnInit {
     }
 
     const sellerAccountForm: SellerAccountForm = {
-      Name: (document.getElementById("name") as HTMLInputElement).value,
-      Email: (document.getElementById("email") as HTMLInputElement).value,
-      Password: (document.getElementById("password") as HTMLInputElement).value,
+      name: (document.getElementById("name") as HTMLInputElement).value,
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      password: (document.getElementById("password") as HTMLInputElement).value,
     };
     this.httpClient.post(this.baseUrl + 'api/Account/CreateSellerAccount', sellerAccountForm).subscribe(result => {
       console.log(result);

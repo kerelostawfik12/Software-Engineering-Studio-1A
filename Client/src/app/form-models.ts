@@ -12,8 +12,12 @@ interface NewItemForm {
 }
 
 interface SellerAccountForm {
-  Name : string;
-  Password : string;
-  Email : string;
+  name : string;
+  password : string;
+  email : string;
 }
 
+interface AdminAccountForm {
+  email : string;
+  password : string;
+}
