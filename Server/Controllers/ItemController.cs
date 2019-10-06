@@ -47,6 +47,14 @@ namespace Studio1BTask.Controllers
                 return obj;
             }
 
+            // If not a seller, refuse it
+            if (_accountService.ValidateSellerSession(Request.Cookies, new DbContext()) == null)
+            {
+                obj["reason"] = "Please log in as a seller to use this form.";
+                Response.StatusCode = 403;
+                return obj;
+            }
+
             const string baseUrl = "https://studio1btask.blob.core.windows.net/images/";
             var blob = Request.Body;
 
