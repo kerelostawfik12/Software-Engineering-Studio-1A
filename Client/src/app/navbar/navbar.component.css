@@ -150,9 +150,24 @@ input:focus, textarea:focus, select:focus {
   text-align: center;
 }
 
+#logged-in-admin {
+  text-align: center;
+  font-size: 18px
+}
+
+#logged-in a {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 #log-out {
   font-size: 10px;
 }
+
+#admin-log-out {
+  font-size: 10px;
+}
+
 
 #log-out a:hover {
   text-decoration: underline;
@@ -186,4 +201,43 @@ input:focus, textarea:focus, select:focus {
   -webkit-user-drag: none;
   user-select: none;
 
+}
+
+.rainbow {
+  animation: rainbow-text 3.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-text {
+  100%, 0% {
+    color: rgb(255, 78, 73);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+
+  75% {
+    color: rgb(191, 129, 255);
+  }
+  83% {
+    color: rgb(255, 54, 229);
+  }
+  91% {
+    color: rgb(255, 128, 187);
+  }
 }

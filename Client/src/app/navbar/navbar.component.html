@@ -32,7 +32,7 @@
           Hi, <a [routerLink]="['/profile']"> {{user.firstName}}!</a>
           <div id="log-out"><a (click)="logout()">Log out</a></div>
         </div>
-        <div *ngIf="user.isLoggedIn && user.isAdmin">
+        <div *ngIf="user.isLoggedIn && user.isAdmin" class="rainbow" id="logged-in-admin">
           Administrator
           <div id="admin-log-out"><a (click)="logout()">Log out</a></div>
         </div>

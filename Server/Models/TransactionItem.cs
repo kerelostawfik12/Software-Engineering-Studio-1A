@@ -15,6 +15,6 @@ namespace Studio1BTask.Models
         public decimal ItemSalePrice { get; set; }
         public string ItemSaleName { get; set; }
         public int SellerSaleId { get; set; }
-        public int SellerSaleName { get; set; }
+        public string SellerSaleName { get; set; }
     }
 }

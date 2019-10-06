@@ -54,6 +54,22 @@ interface Customer{
 
 }
 
+interface CustomerTransaction {
+  id: number;
+  customerId: Customer;
+  date: Date;
+}
+
+interface TransactionItem {
+  id: number;
+  customerTransaction: CustomerTransaction;
+  itemSaleId: number;
+  itemSalePrice: number;
+  itemSaleName: string;
+  sellerSaleId: number;
+  sellerSaleName: string;
+}
+
 
 interface SearchItemResult {
   items: Item[]; // The items returned by the query
