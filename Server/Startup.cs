@@ -51,6 +51,7 @@ namespace Studio1BTask
                 app.UseHsts();
             }
 
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();

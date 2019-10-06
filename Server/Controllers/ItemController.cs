@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ namespace Studio1BTask.Controllers
     public class ItemController : Controller
     {
         private readonly AccountService _accountService = new AccountService();
+        private readonly ImageUploadService _imageUploadService = new ImageUploadService();
 
         // TODO: Use a better way of injecting stuff
         private readonly SearchService _searchService = new SearchService();
@@ -33,7 +35,27 @@ namespace Studio1BTask.Controllers
             }
         }
 
-        // TODO: Make this actually get the seller id from the post request
+        [HttpPost("[action]")]
+        public Dictionary<string, string> UploadImage()
+        {
+            var obj = new Dictionary<string, string> {["reason"] = "An unknown error occurred."};
+            // If above 4MB, refuse it (actually a bit more to be generous)
+            if (Request.ContentLength > 4200000)
+            {
+                obj["reason"] = "Uploads must not exceed 4MB.";
+                Response.StatusCode = 403;
+                return obj;
+            }
+
+            const string baseUrl = "https://studio1btask.blob.core.windows.net/images/";
+            var blob = Request.Body;
+
+            var fileName = Guid.NewGuid() + ".jpg";
+            _imageUploadService.UploadImage(fileName, blob).Wait();
+            obj["url"] = baseUrl + fileName;
+            return obj;
+        }
+
         [HttpPost("[action]")]
         public Item CreateItem([FromBody] NewItemForm form)
         {
@@ -52,7 +74,8 @@ namespace Studio1BTask.Controllers
                     Description = form.Description,
                     Name = form.Name,
                     Price = decimal.Parse(form.Price),
-                    SellerId = seller.Id
+                    SellerId = seller.Id,
+                    ImageURL = form.ImageURL
                 });
                 context.SaveChanges();
 

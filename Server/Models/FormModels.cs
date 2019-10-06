@@ -12,9 +12,9 @@ namespace Studio1BTask.Models
 
     public class CreateSellerForm
     {
+        public string Email;
         public string Name;
         public string Password;
-        public string Email;
     }
 
     public class AdminAccountForm
@@ -32,6 +32,7 @@ namespace Studio1BTask.Models
     public class NewItemForm
     {
         public string Description;
+        public string ImageURL;
         public string Name;
         public string Price;
     }

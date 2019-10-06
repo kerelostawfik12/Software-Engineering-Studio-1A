@@ -9,6 +9,7 @@ interface NewItemForm {
   name: string;
   description: string;
   price: string;
+  imageURL: string;
 }
 
 interface SellerAccountForm {

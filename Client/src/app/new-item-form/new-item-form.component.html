@@ -19,9 +19,17 @@
     <br>
     <input class="form-control" id="price" name="item_price" required type="text">
     <br>
+    <div id="image-upload">
+      <label for="file"><b>Image (JPEG/PNG, no more than 4MB)</b></label>
+      <input #uploadButton (change)="uploadImage()" accept="image/jpeg, image/png" class="form-control-file" id="file" name="pic"
+             type="file">
+      <br>
+      <img #uploadedImage alt="{{imageURL}}" src="{{imageURL}}" width="400px">
+    </div>
+    <br>
     <br>
 
-    <button (click)="submit()" class="btn btn-primary" type="submit">Submit</button>
+    <button #submitButton (click)="submit()" class="btn btn-primary" type="submit">Submit</button>
 
   </div>
 </form>
