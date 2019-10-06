@@ -220,7 +220,7 @@ namespace Studio1BTask.Controllers
                 // Verify that the account is being created by an admin
                 if (!_accountService.ValidateAdminSession(Request.Cookies, context))
                 {
-                    obj["error"] = "Only admins can create seller accounts.";
+                    obj["error"] = "Only admins can create admin accounts.";
                     return obj;
                 }
 
