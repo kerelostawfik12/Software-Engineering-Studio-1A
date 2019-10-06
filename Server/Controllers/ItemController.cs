@@ -40,14 +40,22 @@ namespace Studio1BTask.Controllers
             form.Price = form.Price.Replace("$", "");
             using (var context = new DbContext())
             {
+                var seller = _accountService.ValidateSellerSession(Request.Cookies, context);
+                if (seller == null)
+                {
+                    Response.StatusCode = 403;
+                    return null;
+                }
+
                 var item = context.Items.Add(new Item
                 {
                     Description = form.Description,
                     Name = form.Name,
                     Price = decimal.Parse(form.Price),
-                    SellerId = 41
+                    SellerId = seller.Id
                 });
                 context.SaveChanges();
+
                 return item.Entity;
             }
         }
@@ -58,20 +66,64 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                context.Items.Remove(GetItem(simpleInt.Value));
+                // If an admin, just remove the item.
+                if (_accountService.ValidateAdminSession(Request.Cookies, context))
+                {
+                    context.Items.Remove(GetItem(simpleInt.Value));
+                    context.SaveChanges();
+                    return;
+                }
+
+                // Else, check if the user is a seller.
+                var seller = _accountService.ValidateSellerSession(Request.Cookies, context);
+                // If user is not a seller, return.
+                if (seller == null)
+                {
+                    Response.StatusCode = 403;
+                    return;
+                }
+
+                var item = GetItem(simpleInt.Value);
+                // Do not let a seller remove the item if they are not the owner of the item.
+                if (item.SellerId != seller.Id)
+                {
+                    Response.StatusCode = 403;
+                    return;
+                }
+
+                context.Items.Remove(item);
                 context.SaveChanges();
             }
         }
 
+        // If the requesting user is a seller, it will get all items from that seller. 
+        // If the requesting user is an admin, it will get all items in the database.
         [HttpGet("[action]")]
         public IEnumerable<Item> AllItems()
         {
             using (var context = new DbContext())
             {
-                var items = context.Items
-                    .Include(item => item.Seller)
-                    .ToList();
-                return items;
+                var seller = _accountService.ValidateSellerSession(Request.Cookies, context);
+                if (seller != null)
+                {
+                    var items = context.Items
+                        .Where(x => x.SellerId == seller.Id)
+                        .Include(item => item.Seller)
+                        .ToList();
+                    return items;
+                }
+
+                if (_accountService.ValidateAdminSession(Request.Cookies, context))
+                {
+                    var items = context.Items
+                        .Include(item => item.Seller)
+                        .ToList();
+                    return items;
+                }
+
+                // If the user is not a seller or admin, there is nothing to give them.
+                Response.StatusCode = 403;
+                return null;
             }
         }
 

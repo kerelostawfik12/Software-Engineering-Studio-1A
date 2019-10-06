@@ -49,7 +49,7 @@ export class AdminRegisterComponent implements OnInit {
       }
       Notifications.success("Administrator was successfully created");
     }, error => {
-      Notifications.error(error);
+      Notifications.error(error["error"]);
     });
 
   }

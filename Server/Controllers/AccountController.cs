@@ -8,7 +8,6 @@ using Studio1BTask.Models;
 using Studio1BTask.Services;
 using DbContext = Studio1BTask.Models.DbContext;
 
-
 namespace Studio1BTask.Controllers
 {
     // TODO: Clean up some of the messy code here
@@ -111,8 +110,7 @@ namespace Studio1BTask.Controllers
                 return obj;
             }
         }
-        
-        
+
 
         [HttpPost("[action]")]
         public Dictionary<string, dynamic> CreateSellerAccount([FromBody] CreateSellerForm form)
@@ -141,14 +139,10 @@ namespace Studio1BTask.Controllers
 
             using (var context = new DbContext())
             {
-                // Verify that the session is actually valid, and that the session is not already linked to an account.
-                var session = _accountService.ValidateSession(Request.Cookies, context);
-                if (session == null || session.AccountId != null)
+                // Verify that the account is being created by an admin
+                if (!_accountService.ValidateAdminSession(Request.Cookies, context))
                 {
-                    ClearCookies();
-                    Response.StatusCode = 403;
-                    obj["error"] =
-                        "Invalid session. Please try again, refresh the page, or delete cookies for the site.";
+                    obj["error"] = "Only admins can create seller accounts.";
                     return obj;
                 }
 
@@ -167,10 +161,8 @@ namespace Studio1BTask.Controllers
                     {
                         Type = 's',
                         Email = form.Email,
-                        PasswordHash = null, // Fill in password later when id is available to use as salt
-                        SessionId = session.Id // Tie the session to the newly created account.
+                        PasswordHash = null // Fill in password later when id is available to use as salt
                     });
-                    session.Account = newAccount.Entity; // Tie the new account to the existing session.
 
                     // Have to send this to the database before creating the customer entity,
                     // as we don't know what the id is yet until the database tells us.
@@ -180,7 +172,7 @@ namespace Studio1BTask.Controllers
                     context.Sellers.Add(new Seller
                     {
                         Id = newAccount.Entity.Id,
-                        Name = form.Name,
+                        Name = form.Name
                     });
 
                     // Set the password hash
@@ -194,19 +186,10 @@ namespace Studio1BTask.Controllers
                     return obj;
                 }
 
-                // Log in with credentials provided
-                var loginSuccessful = Login(new LoginForm {Email = form.Email, Password = form.Password});
-                if (loginSuccessful)
-                {
-                    obj["success"] = true;
-                    return obj;
-                }
-
-                obj["error"] = "An account was created but could not be logged into. Please try logging in manually.";
                 return obj;
             }
         }
-        
+
         [HttpPost("[action]")]
         public Dictionary<string, dynamic> CreateAdminAccount([FromBody] AdminAccountForm form)
         {
@@ -234,14 +217,10 @@ namespace Studio1BTask.Controllers
 
             using (var context = new DbContext())
             {
-                // Verify that the session is actually valid, and that the session is not already linked to an account.
-                var session = _accountService.ValidateSession(Request.Cookies, context);
-                if (session == null || session.AccountId != null)
+                // Verify that the account is being created by an admin
+                if (!_accountService.ValidateAdminSession(Request.Cookies, context))
                 {
-                    ClearCookies();
-                    Response.StatusCode = 403;
-                    obj["error"] =
-                        "Invalid session. Please try again, refresh the page, or delete cookies for the site.";
+                    obj["error"] = "Only admins can create seller accounts.";
                     return obj;
                 }
 
@@ -260,15 +239,13 @@ namespace Studio1BTask.Controllers
                     {
                         Type = 'a',
                         Email = form.Email,
-                        PasswordHash = null, // Fill in password later when id is available to use as salt
-                        SessionId = session.Id // Tie the session to the newly created account.
+                        PasswordHash = null // Fill in password later when id is available to use as salt
                     });
-                    session.Account = newAccount.Entity; // Tie the new account to the existing session.
 
                     // Have to send this to  the database before creating the customer entity,
                     // as we don't know what the id is yet until the database tells us.
                     context.SaveChanges();
-                    
+
 
                     // Set the password hash
                     newAccount.Entity.PasswordHash = _accountService.HashPassword(form.Password, newAccount.Entity);
@@ -281,22 +258,11 @@ namespace Studio1BTask.Controllers
                     return obj;
                 }
 
-                // Log in with credentials provided
-                var loginSuccessful = Login(new LoginForm {Email = form.Email, Password = form.Password});
-                if (loginSuccessful)
-                {
-                    obj["success"] = true;
-                    return obj;
-                }
-
-                obj["error"] = "An account was created but could not be logged into. Please try logging in manually.";
                 return obj;
             }
         }
-        
-        
-        
-      
+
+
         //might make new controller just adding this here because I lost my code :(
         [HttpGet("[action]")]
         public IEnumerable<Customer> GetAllCustomers()
@@ -309,7 +275,7 @@ namespace Studio1BTask.Controllers
                 return customers;
             }
         }
-        
+
         //might make new controller just adding this here because I lost my code :(
         [HttpGet("[action]")]
         public IEnumerable<Seller> GetAllSellers()
@@ -322,9 +288,7 @@ namespace Studio1BTask.Controllers
                 return sellers;
             }
         }
-    
-        
-    
+
 
         // A session will be created the first time the user loads the website. 
         // Sessions can be used for things that don't need an account, such as shopping carts. 
@@ -461,8 +425,8 @@ namespace Studio1BTask.Controllers
         {
             ClearCookies();
         }
-        
-        
+
+
         [HttpPost("[action]")]
         public void RemoveAccount()
         {
@@ -472,9 +436,8 @@ namespace Studio1BTask.Controllers
                 context.Accounts.Remove(account);
                 context.SaveChanges();
             }
-            
         }
-        
+
 
         private void ClearCookies()
         {

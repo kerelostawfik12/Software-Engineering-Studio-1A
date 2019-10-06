@@ -71,11 +71,11 @@ namespace Studio1BTask.Services
 
         public Session ValidateSession(dynamic requestCookies, DbContext context)
         {
-            var sessionId = requestCookies["sessionId"];
-            var token = requestCookies["token"];
             try
             {
-                return ValidateSession(int.Parse(sessionId), token, context);
+                var sessionId = int.Parse(requestCookies["sessionId"]);
+                var token = requestCookies["token"].ToString();
+                return ValidateSession(sessionId, token, context);
             }
             catch
             {
@@ -113,7 +113,7 @@ namespace Studio1BTask.Services
                 obj["name"] = seller.Name;
                 return obj;
             }
-            
+
             if (session.Account.Type == 'a')
             {
                 var obj = new Dictionary<string, dynamic>();
@@ -142,12 +142,12 @@ namespace Studio1BTask.Services
 
         public Account ValidateAccountSession(dynamic requestCookies, DbContext context)
         {
-            var sessionId = requestCookies["sessionId"];
-            var token = requestCookies["token"];
-            var accountId = requestCookies["accountId"];
             try
             {
-                return ValidateAccountSession(int.Parse(sessionId), accountId, token, context);
+                var sessionId = int.Parse(requestCookies["sessionId"]);
+                var accountId = int.Parse(requestCookies["accountId"]);
+                var token = requestCookies["token"].ToString();
+                return ValidateAccountSession(sessionId, accountId, token, context);
             }
             catch
             {
@@ -171,18 +171,19 @@ namespace Studio1BTask.Services
                     .FirstOrDefault(x => x.Id == account.Id);
             else
                 customer = context.Customers.Find(account.Id);
+
             return customer;
         }
 
         public Customer ValidateCustomerSession(dynamic requestCookies, DbContext context, bool includeAccountObject
             = false)
         {
-            var sessionId = requestCookies["sessionId"];
-            var token = requestCookies["token"];
-            var accountId = requestCookies["accountId"];
             try
             {
-                return ValidateCustomerSession(int.Parse(sessionId), accountId, token, context, includeAccountObject);
+                var sessionId = int.Parse(requestCookies["sessionId"]);
+                var accountId = int.Parse(requestCookies["accountId"]);
+                var token = requestCookies["token"].ToString();
+                return ValidateCustomerSession(sessionId, accountId, token, context, includeAccountObject);
             }
             catch
             {
@@ -206,18 +207,19 @@ namespace Studio1BTask.Services
                     .FirstOrDefault(x => x.Id == account.Id);
             else
                 seller = context.Sellers.Find(account.Id);
+
             return seller;
         }
 
         public Seller ValidateSellerSession(dynamic requestCookies, DbContext context, bool includeAccountObject
             = false)
         {
-            var sessionId = requestCookies["sessionId"];
-            var token = requestCookies["token"];
-            var accountId = requestCookies["accountId"];
             try
             {
-                return ValidateSellerSession(int.Parse(sessionId), accountId, token, context, includeAccountObject);
+                var sessionId = int.Parse(requestCookies["sessionId"]);
+                var accountId = int.Parse(requestCookies["accountId"]);
+                var token = requestCookies["token"].ToString();
+                return ValidateSellerSession(sessionId, accountId, token, context, includeAccountObject);
             }
             catch
             {
@@ -227,12 +229,12 @@ namespace Studio1BTask.Services
 
         public bool ValidateAdminSession(dynamic requestCookies, DbContext context)
         {
-            var sessionId = requestCookies["sessionId"];
-            var token = requestCookies["token"];
-            var accountId = requestCookies["accountId"];
             try
             {
-                return ValidateAdminSession(int.Parse(sessionId), accountId, token, context);
+                var sessionId = int.Parse(requestCookies["sessionId"]);
+                var accountId = int.Parse(requestCookies["accountId"]);
+                var token = requestCookies["token"].ToString();
+                return ValidateAdminSession(sessionId, accountId, token, context);
             }
             catch
             {

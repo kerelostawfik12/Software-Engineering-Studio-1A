@@ -28,11 +28,13 @@ nav {
   text-align: center;
 
   color: #FFFFFF;
+  pointer-events: none;
 }
 
 
 a {
   color: white;
+  pointer-events: auto;
 }
 
 #logo {
