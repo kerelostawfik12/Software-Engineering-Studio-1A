@@ -269,6 +269,12 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
+                if (!_accountService.ValidateAdminSession(Request.Cookies, context))
+                {
+                    Response.StatusCode = 403;
+                    return null;
+                }
+
                 var customers = context.Customers
                     .Include(customer => customer.Account)
                     .ToList();
@@ -282,6 +288,12 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
+                if (!_accountService.ValidateAdminSession(Request.Cookies, context))
+                {
+                    Response.StatusCode = 403;
+                    return null;
+                }
+
                 var sellers = context.Sellers
                     .Include(seller => seller.Account)
                     .ToList();
@@ -309,7 +321,12 @@ namespace Studio1BTask.Controllers
                 var accountId = int.Parse(Request.Cookies["accountId"]);
 
                 // Return the data logged in user
-                return _accountService.ValidateUser(sessionId, accountId, token, new DbContext());
+                var user = _accountService.ValidateUser(sessionId, accountId, token, new DbContext());
+                // If user is invalid, clear cookies.
+                if (user == null)
+                    ClearCookies();
+                else
+                    return user;
             }
 
             // If someone with an account id does not already have a valid session, log them out. (this shouldn't happen)
@@ -325,7 +342,7 @@ namespace Studio1BTask.Controllers
             {
                 var newSession = context.Sessions.Add(new Session
                 {
-                    Token = Convert.ToBase64String(Guid.NewGuid().ToByteArray())
+                    Token = _accountService.CreateSessionToken()
                 });
                 context.SaveChanges();
                 session = newSession.Entity;
@@ -336,13 +353,15 @@ namespace Studio1BTask.Controllers
             {
                 HttpOnly = true,
                 Secure = true,
-                IsEssential = true
+                IsEssential = true,
+                Expires = DateTimeOffset.Now.AddYears(1)
             });
             Response.Cookies.Append("sessionId", session.Id.ToString(), new CookieOptions
             {
                 HttpOnly = true,
                 Secure = true,
-                IsEssential = true
+                IsEssential = true,
+                Expires = DateTimeOffset.Now.AddYears(1)
             });
 
             return true;
@@ -379,7 +398,7 @@ namespace Studio1BTask.Controllers
                 {
                     var newSession = context.Sessions.Add(new Session
                     {
-                        Token = Convert.ToBase64String(Guid.NewGuid().ToByteArray())
+                        Token = _accountService.CreateSessionToken()
                     });
 
                     // Link session to account, and account to session
@@ -401,19 +420,22 @@ namespace Studio1BTask.Controllers
             {
                 HttpOnly = true,
                 Secure = true,
-                IsEssential = true
+                IsEssential = true,
+                Expires = DateTimeOffset.Now.AddYears(1)
             });
             Response.Cookies.Append("accountId", accountId.ToString(), new CookieOptions
             {
                 HttpOnly = true,
                 Secure = true,
-                IsEssential = true
+                IsEssential = true,
+                Expires = DateTimeOffset.Now.AddYears(1)
             });
             Response.Cookies.Append("sessionId", sessionId.ToString(), new CookieOptions
             {
                 HttpOnly = true,
                 Secure = true,
-                IsEssential = true
+                IsEssential = true,
+                Expires = DateTimeOffset.Now.AddYears(1)
             });
 
             // Account has successfully been logged into. Page should now refresh.

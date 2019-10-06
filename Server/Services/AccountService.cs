@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Isopoh.Cryptography.Argon2;
@@ -282,6 +283,15 @@ namespace Studio1BTask.Services
         public bool IsPasswordValid(string password)
         {
             return IsPasswordValid(password, out var x);
+        }
+
+        public string CreateSessionToken()
+        {
+            // One GUID string is about 30 characters - we want 60, so we'll run it twice.
+            var token = "";
+            for (var i = 0; i < 2; i++)
+                token += Convert.ToBase64String(Guid.NewGuid().ToByteArray());
+            return token;
         }
     }
 }
