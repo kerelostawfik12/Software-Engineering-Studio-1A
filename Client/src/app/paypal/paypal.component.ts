@@ -12,7 +12,9 @@ export class PaypalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    paypal.Buttons().render('body');
+    paypal.Buttons().render('#buttons');
   }
+
+
 
 }
