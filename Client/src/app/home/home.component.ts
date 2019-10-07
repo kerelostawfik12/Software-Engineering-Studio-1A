@@ -7,7 +7,5 @@ declare var paypal: any;
 })
 export class HomeComponent {
 
-  ngOnInit() {
-    paypal.Buttons().render('body');
-  }
+
 }

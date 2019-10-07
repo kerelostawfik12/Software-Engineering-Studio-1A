@@ -26,8 +26,9 @@ import {AdminComponent} from './admin/admin.component';
 import {ViewTransactionsComponent} from './view-transactions/view-transactions.component';
 import {SmallItemListingComponent} from './small-item-listing/small-item-listing.component';
 import {SellerRegisterComponent} from './seller-register/seller-register.component';
-import { ViewSellersComponent } from './view-sellers/view-sellers.component';
-import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import {ViewSellersComponent} from './view-sellers/view-sellers.component';
+import {AdminRegisterComponent} from './admin-register/admin-register.component';
+import {PaypalComponent} from './paypal/paypal.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
     SellerRegisterComponent,
     ViewSellersComponent,
     AdminRegisterComponent,
+    PaypalComponent,
 
 ],
   imports: [
@@ -81,7 +83,8 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
       {path: 'create-seller', component: SellerRegisterComponent},
       {path: 'create-admin', component: AdminRegisterComponent},
       {path: 'view-sellers', component: ViewSellersComponent},
-      {path: 'view-customers', component: ViewCustomersComponent}
+      {path: 'view-customers', component: ViewCustomersComponent},
+      {path: 'paypal', component: PaypalComponent}
     ]),
   ],
   providers: [],
