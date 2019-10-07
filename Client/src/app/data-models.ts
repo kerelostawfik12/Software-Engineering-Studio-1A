@@ -45,7 +45,7 @@ interface Item {
   views? : number;
 }
 
-interface Customer{
+interface Customer {
   id : number;
   firstName : string;
   lastName : string;
@@ -56,7 +56,7 @@ interface Customer{
 
 interface CustomerTransaction {
   id: number;
-  customerId: Customer;
+  customerId?: Customer;
   date: Date;
 }
 

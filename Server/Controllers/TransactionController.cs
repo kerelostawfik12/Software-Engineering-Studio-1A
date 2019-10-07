@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Studio1BTask.Models;
@@ -58,6 +60,63 @@ namespace Studio1BTask.Controllers
                 // If the user is not a seller, customer, or admin, there is nothing to give them.
                 Response.StatusCode = 403;
                 return null;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public Dictionary<string, dynamic> CreateNewTransaction()
+        {
+            // Creating a new transaction involves recording all the items from the shopping cart as TransactionItems,
+            // and creating the owning transaction object. Only customers can initiate transactions.
+            var obj = new Dictionary<string, dynamic> {["error"] = "An unknown error occurred."};
+            using (var context = new DbContext())
+            {
+                var session = _accountService.ValidateSession(Request.Cookies, context);
+                if (session == null)
+                {
+                    Response.StatusCode = 401; // Unauthorised
+                    obj["error"] = "Invalid session. Please refresh the page.";
+                    return obj;
+                }
+
+                var transaction = context.CustomerTransactions.Add(new CustomerTransaction
+                {
+                    CustomerId = session.AccountId,
+                    Date = DateTime.Now
+                });
+
+                var items = context.CartItems
+                    .Where(x => x.SessionId == session.Id)
+                    .Include(x => x.Item)
+                    .Select(cartItem => cartItem.Item).Include(x => x.Seller)
+                    .ToList();
+
+                if (items.IsNullOrEmpty())
+                {
+                    Response.StatusCode = 412; // Precondition failed
+                    obj["error"] = "You don't have any items in your cart.";
+                    return obj;
+                }
+
+                foreach (var item in items)
+                    context.TransactionItems.Add(new TransactionItem
+                    {
+                        CustomerTransaction = transaction.Entity,
+                        ItemSaleId = item.Id,
+                        ItemSalePrice = item.Price,
+                        ItemSaleName = item.Name,
+                        SellerSaleId = item.SellerId,
+                        SellerSaleName = item.Seller.Name
+                    });
+
+                context.SaveChanges();
+
+                var transactionItems
+                    = context.TransactionItems.Where(x => x.TransactionId == transaction.Entity.Id).ToList();
+
+                obj["items"] = transactionItems;
+                obj["transaction"] = transaction.Entity;
+                return obj;
             }
         }
     }
