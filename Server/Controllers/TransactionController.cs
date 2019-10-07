@@ -67,7 +67,8 @@ namespace Studio1BTask.Controllers
         public Dictionary<string, dynamic> CreateNewTransaction()
         {
             // Creating a new transaction involves recording all the items from the shopping cart as TransactionItems,
-            // and creating the owning transaction object. Only customers can initiate transactions.
+            // and creating the owning transaction object. Anyone can initiate transactions, but their customer id will
+            // only be recorded if they are a customer.
             var obj = new Dictionary<string, dynamic> {["error"] = "An unknown error occurred."};
             using (var context = new DbContext())
             {
