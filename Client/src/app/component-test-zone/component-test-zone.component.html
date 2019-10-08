@@ -8,6 +8,49 @@
 
 <!-- add your component to the bottom of this page like so: <app-cart/> or <app-cart></app-cart> -->
 <app-paypal></app-paypal>
+
+<!--Basic Payment-->
+<form action="https://www.sandbox.spaypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick" />
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com"  /> <!--Buisness(sandbox) Email in value-->
+
+  <input type="hidden" name="item_name" value="My painting" />
+  <input type="hidden" name="amount" value="10.00" />
+  <input type="submit" value="Buy!" />
+</form>
+
+<!--shipping and handling-->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick" />
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com" /> <!--Buisness(sandbox) Email in value-->
+
+  <input type="hidden" name="item_name" value="My painting" />
+  <input type="hidden" name="amount" value="10.00" />
+
+  <input type="hidden" name="shipping" value="3.00" />
+  <input type="hidden" name="handling" value="2.00" />
+
+  <input type="submit" value="Buy with additional parameters!" />
+</form>
+
+<!--Recurring Payments-->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick-subscriptions"/>
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com"/>
+  <input type="hidden" name="item_name" value="Something"/>
+  <input type="submit" value="Subscribe!" />
+
+  <input type="hidden" name="a1" value="0"/>
+  <input type="hidden" name="p1" value="3"/>
+  <input type="hidden" name="t1" value="D"/>
+  <input type="hidden" name="a3" value="10.00"/>
+  <input type="hidden" name="p3" value="1"/>
+  <input type="hidden" name="t3" value="M"/>
+  <input type="hidden" name="src" value="1"/>
+  <input type="hidden" name="srt" value="0"/>
+  <input type="hidden" name="sra" value="1"/>
+
+</form>
 <app-counter-component></app-counter-component>
 <br><br>
 <app-cart></app-cart>
