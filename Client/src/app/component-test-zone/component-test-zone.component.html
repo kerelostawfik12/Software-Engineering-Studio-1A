@@ -81,6 +81,22 @@ My Cart Item :
 
        height="1">
 </form>
+<!--View Cart-->
+View Cart:
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+  <input type="hidden" name="cmd" value="_cart">
+
+  <input type="hidden" name="display" value="1">
+  <input type="hidden" name="business" value="youremailaddress@yourdomain.com">
+
+  <input type="hidden" name="shopping_url"
+
+         value="http://www.yourwebsite.com/shoppingpage.html">
+  <input type="image" src="https://www.paypal.com/en_US/i/btn/view_cart_02.gif"
+
+         name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+
+</form>
 <app-counter-component></app-counter-component>
 <br><br>
 <app-cart></app-cart>

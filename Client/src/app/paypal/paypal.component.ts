@@ -12,7 +12,7 @@ export class PaypalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    paypal.Buttons().render('#buttons',);
+    paypal.Buttons().render('#buttons');
 
     // paypal.configure({
     //  'mode' : 'Sandbox', //live or sandbox
