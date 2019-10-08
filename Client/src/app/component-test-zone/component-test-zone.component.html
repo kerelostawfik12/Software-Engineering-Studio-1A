@@ -49,7 +49,37 @@
   <input type="hidden" name="src" value="1"/>
   <input type="hidden" name="srt" value="0"/>
   <input type="hidden" name="sra" value="1"/>
+</form>
 
+<!--Cart-item-paypal-->
+My Cart Item :
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="add" value="1">
+
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com"> <!--Buisness(sandbox) Email in value-->
+  <input type="hidden" name="item_name" value="My Cart Item 1">
+
+  <input type="hidden" name="amount" value="10.00">
+  <input type="hidden" name="shopping_url"
+
+         value="http://www.yourwebsite.com/shoppingpage.html">  <!--change the url to not amazon one-->
+
+  <input type="hidden" name="return" value="http://www.yourwebsite.com/success.html"> <!--change the url to not amazon one success-->
+  <input type="hidden" name="cancel_return" value="http://www.yourwebsite.com/cancel.html"> <!--change the url to not amazon one cancel-->
+
+  <input type="hidden" name="bn" value="PP-ShopCartBF:x-click-but22.gif:NonHosted">
+  <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" border="0"
+
+
+
+         name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+
+
+
+       height="1">
 </form>
 <app-counter-component></app-counter-component>
 <br><br>
