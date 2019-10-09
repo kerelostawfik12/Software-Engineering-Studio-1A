@@ -29,6 +29,7 @@ import {ViewSellersComponent} from "./view-sellers/view-sellers.component";
 import {SellerRegisterComponent} from "./seller-register/seller-register.component";
 import {AdminRegisterComponent} from "./admin-register/admin-register.component";
 import {LongItemViewComponent} from "./long-item-view/long-item-view.component";
+import {PaypalComponent} from "./paypal/paypal.component";
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import {LongItemViewComponent} from "./long-item-view/long-item-view.component";
     ViewTransactionsComponent,
     SmallItemListingComponent,
     SellerRegisterComponent,
-    AdminRegisterComponent
+    AdminRegisterComponent,
+    PaypalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
