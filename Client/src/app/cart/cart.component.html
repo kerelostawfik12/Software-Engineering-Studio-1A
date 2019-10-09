@@ -28,7 +28,7 @@
         <td>{{item.name}}</td>
         <td>{{item.description}}</td>
         <td>{{item.seller.name}}</td>
-        <td>${{item.price}}</td>
+        <td> <b>${{item.price}}</b></td>
         <td>
           <button (click)="remove(item)" class="btn btn-danger">Remove</button>
         </td>
@@ -46,8 +46,11 @@
 </div>
 
 <div *ngIf="items.length != 0">
-  <h5>Total Price: ${{totalPrice}}</h5>
+  <h5>Total Price:
+    <span class="red">${{totalPrice}}</span>
+  </h5>
 </div>
+<br>
 
 <div id="buttons">
 

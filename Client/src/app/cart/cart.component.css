@@ -5,3 +5,7 @@ ul {
 #image {
   height: 90px;
 }
+
+span.red {
+  color: #e2191c;
+}
