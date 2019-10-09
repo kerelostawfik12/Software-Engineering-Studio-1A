@@ -71,6 +71,7 @@ import {SmallItemListingComponent} from "./small-item-listing/small-item-listing
       {path: 'search/:query', component: SearchItemsComponent},
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
+      {path: 'view-transactions', component: ViewTransactionsComponent}
     ])
   ],
   providers: [],
