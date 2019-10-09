@@ -7,17 +7,34 @@
   </div>
 
   <div class="split right">
-    <h2>Item #{{ item.id }}</h2>
-    <p>Item Name: {{ item.name }}</p>
-    <p>Item Description: {{ item.description }}</p>
-    <p>Item Price: {{ item.price }}</p>
-    <p>Item Views: {{item.views}}</p>
-    <p>Item Seller: {{ item.seller.name }}</p>
+    <h3>{{item.name}}</h3>
+    <p>By {{item.seller.name}}</p>
+    <p></p>
+    <h5>
+      Price:
+      <span class="item-price">${{item.price}}</span>
+    </h5>
+    <br>
+    <h6>Description of the product: </h6>
+    <p>{{item.description}}</p>
+    <br>
     <div id="add-to-cart">
       <div (click)="addToCart()" id="add-to-cart-button">
         <span id="add-to-cart-text">Add to Cart</span>
       </div>
     </div>
+    <br>
+    <br>
+    <b>This item has been viewed {{item.views}} times</b>
+
+
+<!--    <h3>Item #{{ item.id }}</h3>-->
+<!--    <p>Item Name: {{ item.name }}</p>-->
+<!--    <p>Item Description: {{ item.description }}</p>-->
+<!--    <p>Item Price: {{ item.price }}</p>-->
+<!--    <p>Item Views: {{item.views}}</p>-->
+<!--    <p>Item Seller: {{ item.seller.name }}</p>-->
+
   </div>
 
 </div>

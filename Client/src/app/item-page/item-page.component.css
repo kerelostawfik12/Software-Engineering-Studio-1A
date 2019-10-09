@@ -57,3 +57,12 @@
 #image {
   height: 500px
 }
+
+span.item-price {
+  color: #e2191c;
+  background: none;
+}
+
+span.space {
+  height: 100px;
+}
