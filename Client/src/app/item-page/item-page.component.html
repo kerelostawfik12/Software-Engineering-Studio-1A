@@ -2,9 +2,11 @@
 <br>
 <div *ngIf="item != null" id="container">
   <div class="split left">
-    <a routerLink="/item/{{ item.id }}">
-      <img alt="{{item.name}}" id="image" src="{{item.imageURL}}">
-    </a>
+
+    <img *ngIf="item.imageURL != null && item.imageURL.trim() != ''" draggable="true" id="image"
+         src="{{item.imageURL}}">
+    <div *ngIf="item.imageURL == null || item.imageURL.trim() == ''" id="image-placeholder"></div>
+
   </div>
 
   <div class="split right">
@@ -37,5 +39,8 @@
 <!--    <p>Item Seller: {{ item.seller.name }}</p>-->
 
   </div>
+
+</div>
+<div *ngIf="item == null">
 
 </div>
