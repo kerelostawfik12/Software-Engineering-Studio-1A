@@ -1,31 +1,26 @@
-# NodePaypalSample
+A computer devices company plans to build an online shopping website to sell its devices. The company has several branches, some branches sell similar goods while others sell different. The requirements are as follows:
+For student from 1A
+1.	The webpage can be access by customer’s view, sellers (branches) view and admin’s view. 
+2.	On the customer sides, they can buy devices from different branches. All transactions will be processed by credit cards. 
+3.	On the sellers sides, they can control all transactions of their own branches, update the storage of devices, and add/delete devices 
+4.	On the admin side, they can check all transactions and add/delete devices. 
+Roles:
+•	Company
+•	Branches
+•	Customers
+Admin view: all branches, all customers, all transactions.
+Customer view:
+·	Customer can browse products within each seller/branch’s product list;
+·	Customer can browse/search products without caring where they come from.
+Seller view:
+·	 Seller’s own products and own transactions.  
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+For student from 1B:   
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+In addition to above requirements, please consider following requirements:  
 
-## Code scaffolding
+5.	How to secure the credit card payment. 
+6.	Website testing, proposing comprehensive testing cases. 
+7.	Purchase recommendation: recommend new devices to customers according to his/her historical purchases, or peer’s purchases. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Amazon.com might be a possible solution, but you can only see the customer’s view. Please consider seller’s view and admin’s view. 
