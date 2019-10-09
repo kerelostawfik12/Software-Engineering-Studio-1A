@@ -32,10 +32,11 @@
     "jquery": "3.3.1",
     "ngx-markdown": "^8.1.0",
     "ngx-toastr": "^10.2.0",
+    "paypal-rest-sdk": "^1.8.1",
     "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
-    "zone.js": "^0.8.26",
-    "paypal-rest-sdk": "^1.8.1"
+    "swipejs": "^2.2.14",
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.0",
