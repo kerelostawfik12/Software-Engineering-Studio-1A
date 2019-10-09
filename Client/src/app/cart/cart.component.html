@@ -5,17 +5,42 @@
 </h1>
 </body>
 
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Description</th>
+        <th>Seller</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
 
-<div *ngFor="let item of items">
-  <app-cart-item [item]="item"></app-cart-item>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.seller.name}}</td>
+        <td>{{item.price}}</td>
+        <td>
+          <button (click)="remove(item)" class="btn btn-danger">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+<!--<div *ngFor="let item of items">-->
+<!--  <app-cart-item [item]="item"></app-cart-item>-->
+<!--</div>-->
 
 <div *ngIf="items.length == 0">
   Your shopping cart is empty :(
 </div>
 
-<div>
-  {{totalPrice}}
+<div *ngIf="items.length != 0">
+  <h5>Total Price: ${{totalPrice}}</h5>
 </div>
 
 <div id="buttons">

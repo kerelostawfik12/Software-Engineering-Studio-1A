@@ -55,4 +55,10 @@ export class CartComponent implements OnInit {
     return price;
   }
 
+  remove(item : Item) {
+    this.cartService.removeItem(item);
+
+  }
+
+
 }
