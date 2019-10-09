@@ -28,6 +28,7 @@ import {SmallItemListingComponent} from "./small-item-listing/small-item-listing
 import {ViewSellersComponent} from "./view-sellers/view-sellers.component";
 import {SellerRegisterComponent} from "./seller-register/seller-register.component";
 import {AdminRegisterComponent} from "./admin-register/admin-register.component";
+import {LongItemViewComponent} from "./long-item-view/long-item-view.component";
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import {AdminRegisterComponent} from "./admin-register/admin-register.component"
     ViewSellersComponent,
     SearchItemsComponent,
     LoginComponent,
+    LongItemViewComponent,
     ProfilePageComponent,
     AdminComponent,
     ViewTransactionsComponent,
