@@ -6,21 +6,26 @@
     <thead>
       <tr>
         <th>Transaction ID</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Amount</th>
+        <th>Seller ID</th>
+        <th>Seller Name</th>
+        <th>Date and Time</th>
+        <th>Item ID</th>
+        <th>Item Name</th>
+        <th>Item Price</th>
       </tr>
     </thead>
 
     <tbody>
-    <!--    Example of transaction-->
-    <tr>
-      <td>T001</td>
-      <td>25/09/2019</td>
-      <td>5:45:00</td>
-      <td>$200</td>
-    </tr>
+    <tr *ngFor="let item of items">
+      <td>{{item.id}}</td>
+      <td>{{item.sellerSaleId}}</td>
+      <td>{{item.sellerSaleName}}</td>
+      <td>{{item.customerTransaction.date}}}</td>
+      <td>{{item.itemSaleId}}</td>
+      <td>{{item.itemSaleName}}</td>
+      <td>{{item.itemSalePrice}}</td>
 
+    </tr>
     </tbody>
 
   </table>
