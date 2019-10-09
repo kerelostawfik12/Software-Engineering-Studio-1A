@@ -41,6 +41,9 @@
         <Content Include="..\Client\src\assets\icons\search.svg" />
         <None Remove="$(SpaRoot)**" />
         <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+        <None Include="..\Client\src\app\long-item-view\long-item-view.component.css">
+          <Link>src\app\long-item-view\long-item-view.component.css</Link>
+        </None>
     </ItemGroup>
 
     <ItemGroup>

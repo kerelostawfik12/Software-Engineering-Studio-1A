@@ -23,12 +23,9 @@ import {SearchItemsComponent} from './search-items/search-items.component';
 import {LoginComponent} from './login/login.component';
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {AdminComponent} from './admin/admin.component';
-import {ViewTransactionsComponent} from './view-transactions/view-transactions.component';
-import {SmallItemListingComponent} from './small-item-listing/small-item-listing.component';
-import {SellerRegisterComponent} from './seller-register/seller-register.component';
-import {ViewSellersComponent} from './view-sellers/view-sellers.component';
-import {AdminRegisterComponent} from './admin-register/admin-register.component';
-import {PaypalComponent} from './paypal/paypal.component';
+import { ViewTransactionsComponent } from './view-transactions/view-transactions.component';
+import {SmallItemListingComponent} from "./small-item-listing/small-item-listing.component";
+
 
 @NgModule({
   declarations: [
@@ -51,13 +48,8 @@ import {PaypalComponent} from './paypal/paypal.component';
     ProfilePageComponent,
     AdminComponent,
     ViewTransactionsComponent,
-    SmallItemListingComponent,
-    SellerRegisterComponent,
-    ViewSellersComponent,
-    AdminRegisterComponent,
-    PaypalComponent,
-
-],
+    SmallItemListingComponent
+  ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     HttpClientModule,
@@ -79,13 +71,7 @@ import {PaypalComponent} from './paypal/paypal.component';
       {path: 'search/:query', component: SearchItemsComponent},
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
-      {path: 'list-of-transactions', component: ViewTransactionsComponent},
-      {path: 'create-seller', component: SellerRegisterComponent},
-      {path: 'create-admin', component: AdminRegisterComponent},
-      {path: 'view-sellers', component: ViewSellersComponent},
-      {path: 'view-customers', component: ViewCustomersComponent},
-      {path: 'paypal', component: PaypalComponent}
-    ]),
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
