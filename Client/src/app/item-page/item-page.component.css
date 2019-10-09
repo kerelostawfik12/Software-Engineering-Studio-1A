@@ -56,18 +56,7 @@
   margin-left: -40px;
   padding-right: 30px;
   display: block;
-  border: none;
 }
-
-#image-placeholder {
-  height: 500px;
-  width: 500px;
-  margin-left: -40px;
-  padding-right: 30px;
-  display: block;
-  border: none;
-}
-
 
 span.item-price {
   color: #e2191c;
@@ -77,4 +66,3 @@ span.item-price {
 span.space {
   height: 100px;
 }
-
