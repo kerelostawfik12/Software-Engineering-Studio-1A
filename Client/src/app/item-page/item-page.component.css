@@ -40,3 +40,20 @@
   color: #FFFFFF;
   padding-top: 7px;
 }
+
+.split {
+  width: 50%;
+  position: fixed;
+}
+
+.left {
+  left: 100px;
+}
+
+.right {
+  right: 100px;
+}
+
+#image {
+  height: 500px
+}

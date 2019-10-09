@@ -1,14 +1,23 @@
 <h1>Item Page</h1>
 <div *ngIf="item != null">
-  <h2>Item #{{ item.id }}</h2>
-  <p>Item Name: {{ item.name }}</p>
-  <p>Item Description: {{ item.description }}</p>
-  <p>Item Price: {{ item.price }}</p>
-  <p>Item Views: {{item.views}}</p>
-  <p>Item Seller: {{ item.seller.name }}</p>
-  <div id="add-to-cart">
-    <div (click)="addToCart()" id="add-to-cart-button">
-      <span id="add-to-cart-text">Add to Cart</span>
+  <div class="split left">
+    <a routerLink="/item/{{ item.id }}">
+      <img alt="{{item.name}}" id="image" src="{{item.imageURL}}">
+    </a>
+  </div>
+
+  <div class="split right">
+    <h2>Item #{{ item.id }}</h2>
+    <p>Item Name: {{ item.name }}</p>
+    <p>Item Description: {{ item.description }}</p>
+    <p>Item Price: {{ item.price }}</p>
+    <p>Item Views: {{item.views}}</p>
+    <p>Item Seller: {{ item.seller.name }}</p>
+    <div id="add-to-cart">
+      <div (click)="addToCart()" id="add-to-cart-button">
+        <span id="add-to-cart-text">Add to Cart</span>
+      </div>
     </div>
   </div>
+
 </div>
