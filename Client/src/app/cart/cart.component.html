@@ -42,9 +42,17 @@
 </div>
 <br>
 
-<div id="buttons">
-
+<div [hidden]="user == null || !user.isLoaded">
+  <div [hidden]="!user.isCustomer" id="buttons">
 </div>
-
+  <div [hidden]="user.isLoggedIn">
+    Please <a routerLink="/register">register</a> an account to make purchases. Don't worry - the items in your cart
+    won't go anywhere.
+  </div>
+  <div [hidden]="!user.isLoggedIn || user.isCustomer">
+    Sorry - only customer accounts can make purchases. You can register a customer account <a routerLink="/register">
+    here</a>.
+  </div>
+</div>
 
 

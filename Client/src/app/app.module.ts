@@ -23,8 +23,11 @@ import {SearchItemsComponent} from './search-items/search-items.component';
 import {LoginComponent} from './login/login.component';
 import {ProfilePageComponent} from './profile-page/profile-page.component';
 import {AdminComponent} from './admin/admin.component';
-import { ViewTransactionsComponent } from './view-transactions/view-transactions.component';
+import {ViewTransactionsComponent} from './view-transactions/view-transactions.component';
 import {SmallItemListingComponent} from "./small-item-listing/small-item-listing.component";
+import {ViewSellersComponent} from "./view-sellers/view-sellers.component";
+import {SellerRegisterComponent} from "./seller-register/seller-register.component";
+import {AdminRegisterComponent} from "./admin-register/admin-register.component";
 
 
 @NgModule({
@@ -43,12 +46,15 @@ import {SmallItemListingComponent} from "./small-item-listing/small-item-listing
     ItemPageComponent,
     ItemViewComponent,
     ViewCustomersComponent,
+    ViewSellersComponent,
     SearchItemsComponent,
     LoginComponent,
     ProfilePageComponent,
     AdminComponent,
     ViewTransactionsComponent,
-    SmallItemListingComponent
+    SmallItemListingComponent,
+    SellerRegisterComponent,
+    AdminRegisterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -71,7 +77,11 @@ import {SmallItemListingComponent} from "./small-item-listing/small-item-listing
       {path: 'search/:query', component: SearchItemsComponent},
       {path: 'admin', component: AdminComponent},
       {path: 'profile', component: ProfilePageComponent},
-      {path: 'view-transactions', component: ViewTransactionsComponent}
+      {path: 'view-transactions', component: ViewTransactionsComponent},
+      {path: 'view-customers', component: ViewCustomersComponent},
+      {path: 'view-sellers', component: ViewSellersComponent},
+      {path: 'register-seller', component: SellerRegisterComponent},
+      {path: 'register-admin', component: AdminRegisterComponent},
     ])
   ],
   providers: [],

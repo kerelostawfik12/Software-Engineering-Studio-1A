@@ -1,39 +1,41 @@
 <header>
   <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light'>
     <div class="container">
-      <a class="navbar-brand" [routerLink]='["/"]'>DEV MENU</a>
+      <a *ngIf="user.isCustomer" [routerLink]='["/"]' class="navbar-brand">CUSTOMER MENU</a>
+      <a *ngIf="user.isSeller" [routerLink]='["/"]' class="navbar-brand">SELLER MENU</a>
+      <a *ngIf="user.isAdmin" [routerLink]='["/"]' class="navbar-brand">ADMIN MENU</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
         [attr.aria-expanded]="isExpanded" (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" [ngClass]='{"show": isExpanded}'>
         <ul class="navbar-nav flex-grow">
-          <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-            <a class="nav-link text-white" [routerLink]='["/"]'>Home</a>
-          </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
             <a class="nav-link text-white" [routerLink]='["/component-test-zone"]'>Component test zone</a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-white" [routerLink]='["/counter"]'>Counter test</a>
+            <a *ngIf="user.isAdmin || user.isSeller" [routerLink]='["/item-view"]' class="nav-link text-white">Items</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a *ngIf="user.isSeller" [routerLink]='["/new-item-form"]' class="nav-link text-white">Create New Item</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a *ngIf="user.isLoggedIn" [routerLink]='["/view-transactions"]' class="nav-link text-white">Transactions
+            </a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a class="nav-link text-white" [routerLink]='["/fetch-data"]'>Fetch data test</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/view-customers"]' class="nav-link text-white">Customers</a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a [routerLink]='["/item-view"]' class="nav-link text-white">Item View</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/view-sellers"]' class="nav-link text-white">Sellers</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a class="nav-link text-white" [routerLink]='["/cart"]'>Cart</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/register-admin"]' class="nav-link text-white">Register New
+              Admin</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a [routerLink]='["/new-item-form"]' class="nav-link text-white">New Item Form</a>
-          </li>
-          <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a [routerLink]='["/admin"]' class="nav-link text-white">Admin</a>
-          </li>
-          <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a *ngIf="user.isAdmin" [routerLink]='["/view-transactions"]' class="nav-link text-white">List of Transactions</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/register-seller"]' class="nav-link text-white">Register New
+              Seller</a>
           </li>
         </ul>
       </div>

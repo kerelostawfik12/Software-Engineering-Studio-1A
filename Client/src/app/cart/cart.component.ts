@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {CartService} from "../cart.service";
+import {User, UserService} from "../user.service";
 
 declare var paypal: any;
 
@@ -11,12 +12,14 @@ declare var paypal: any;
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  public user: User;
   public items: Item[];
   public totalPrice: number;
 
-  constructor(private httpClient: HttpClient, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService) {
-
+  constructor(private httpClient: HttpClient, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService) {
+    this.userService.getCurrent().subscribe(x => {
+      this.user = x;
+    });
 
   }
 
