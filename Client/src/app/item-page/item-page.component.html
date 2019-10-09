@@ -2,9 +2,7 @@
 <br>
 <div *ngIf="item != null" id="container">
   <div class="split left">
-    <a routerLink="/item/{{ item.id }}">
-      <img alt="{{item.name}}" id="image" src="{{item.imageURL}}">
-    </a>
+    <img alt="{{item.name}}" draggable="true" id="image" src="{{item.imageURL}}">
   </div>
 
   <div class="split right">
@@ -27,14 +25,6 @@
     <br>
     <br>
     <b>This item has been viewed {{item.views}} times.</b>
-
-
-<!--    <h3>Item #{{ item.id }}</h3>-->
-<!--    <p>Item Name: {{ item.name }}</p>-->
-<!--    <p>Item Description: {{ item.description }}</p>-->
-<!--    <p>Item Price: {{ item.price }}</p>-->
-<!--    <p>Item Views: {{item.views}}</p>-->
-<!--    <p>Item Seller: {{ item.seller.name }}</p>-->
 
   </div>
 
