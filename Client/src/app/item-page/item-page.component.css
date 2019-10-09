@@ -1,3 +1,8 @@
+#container {
+  display: flex;
+  flex-direction: row;
+}
+
 #add-to-cart {
   width: 95px;
   height: 32px;
@@ -41,21 +46,16 @@
   padding-top: 7px;
 }
 
-.split {
-  width: 50%;
-  position: fixed;
-}
 
-.left {
-  left: 100px;
-}
 
-.right {
-  right: 100px;
-}
+
 
 #image {
-  height: 500px
+  height: 500px;
+  width: 500px;
+  margin-left: -40px;
+  padding-right: 30px;
+  display: block;
 }
 
 span.item-price {

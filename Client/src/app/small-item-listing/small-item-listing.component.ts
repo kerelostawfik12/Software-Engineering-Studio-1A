@@ -16,8 +16,8 @@ export class SmallItemListingComponent implements OnInit {
   ngOnInit() {
   }
 
-  getDollars(): string {
-    return "" + Math.floor(this.item.price);
+  getDollars(): number {
+    return Math.floor(this.item.price);
   }
 
   getCents(): string {

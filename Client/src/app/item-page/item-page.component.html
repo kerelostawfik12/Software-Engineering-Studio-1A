@@ -1,6 +1,6 @@
 <!--<h1>Item Page</h1>-->
 <br>
-<div *ngIf="item != null">
+<div *ngIf="item != null" id="container">
   <div class="split left">
     <a routerLink="/item/{{ item.id }}">
       <img alt="{{item.name}}" id="image" src="{{item.imageURL}}">
@@ -13,10 +13,10 @@
     <p></p>
     <h5>
       Price:
-      <span class="item-price">${{item.price}}</span>
+      <span class="item-price">${{item.price.toLocaleString()}}</span>
     </h5>
     <br>
-    <h6>Description of the product: </h6>
+    <h6>Product description: </h6>
     <p>{{item.description}}</p>
     <br>
     <div id="add-to-cart">
@@ -26,7 +26,7 @@
     </div>
     <br>
     <br>
-    <b>This item has been viewed {{item.views}} times</b>
+    <b>This item has been viewed {{item.views}} times.</b>
 
 
 <!--    <h3>Item #{{ item.id }}</h3>-->

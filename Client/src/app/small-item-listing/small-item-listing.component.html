@@ -7,7 +7,7 @@
       <a routerLink="/item/{{ item.id }}">{{item.name}}</a>
     </div>
     <div id="price">
-      <span id="dollars">${{getDollars()}}</span>
+      <span id="dollars">${{getDollars().toLocaleString()}}</span>
       <span id="cents">{{getCents()}}</span>
     </div>
     <div id="add-to-cart">

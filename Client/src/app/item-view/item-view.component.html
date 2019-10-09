@@ -17,7 +17,7 @@
         <td>{{ item.id }}</td>
         <td>{{ item.name }}</td>
         <td>{{ item.description }}</td>
-        <td>{{ item.price }}</td>
+        <td>{{ item.price.toLocaleString() }}</td>
         <td>{{ item.seller.name }}</td>
         <td><a routerLink="/item/{{ item.id }}">View Page</a></td>
         <td>
