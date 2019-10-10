@@ -18,11 +18,27 @@
     <tbody>
     <tr *ngFor="let item of items">
       <td>{{item.id}}</td>
-      <td>{{item.sellerSaleId}}</td>
-      <td>{{item.sellerSaleName}}</td>
+      <td>
+        <a routerLink="/chat/{{ item.sellerSaleId }}">
+          {{item.sellerSaleId}}
+        </a>
+      </td>
+      <td>
+        <a routerLink="/chat/{{ item.sellerSaleId }}">
+          {{item.sellerSaleName}}
+        </a>
+      </td>
       <td>{{item.customerTransaction.date}}}</td>
-      <td>{{item.itemSaleId}}</td>
-      <td>{{item.itemSaleName}}</td>
+      <td>
+        <a routerLink="/item/{{ item.itemSaleId }}">
+          {{item.itemSaleId}}
+        </a>
+      </td>
+      <td>
+        <a routerLink="/item/{{ item.itemSaleId }}">
+          {{item.itemSaleName}}
+        </a>
+      </td>
       <td>{{item.itemSalePrice.toLocaleString()}}</td>
 
     </tr>

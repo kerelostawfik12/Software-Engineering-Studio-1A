@@ -7,7 +7,8 @@
 
   <div class="split right">
     <h3>{{item.name}}</h3>
-    <p>By {{item.seller.name}}</p>
+
+    <p>By {{item.seller.name}} <a routerLink="/chat/{{ item.sellerId }}">(Send Message)</a></p>
     <p></p>
     <h5>
       Price:
@@ -28,4 +29,8 @@
 
   </div>
 
+</div>
+
+<div>
+  {{errorText}}
 </div>

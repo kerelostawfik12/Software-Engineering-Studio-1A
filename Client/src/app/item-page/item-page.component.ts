@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from "@angular/platform-browser";
 import {CartService} from '../cart.service';
+import {Notifications} from "../notifications";
 
 @Component({
   selector: 'app-item-page',
@@ -10,8 +11,9 @@ import {CartService} from '../cart.service';
   styleUrls: ['./item-page.component.css']
 })
 export class ItemPageComponent implements OnInit {
-  item: Item;
-  id: number;
+  public item: Item;
+  public id: number;
+  public errorText: string = "";
 
   constructor(private http: HttpClient,
               @Inject('BASE_URL') private baseUrl: string,
@@ -23,7 +25,11 @@ export class ItemPageComponent implements OnInit {
     http.get<Item>(baseUrl + 'api/Item/GetItem', {params: {id: String(this.id)}}).subscribe(result => {
       this.item = result;
       this.title.setTitle(this.item.name + " - NotAmazon.com");
-    }, error => console.error(error));
+    }, error => {
+      this.errorText = "This item does not exist, or has been removed.";
+      Notifications.error(this.errorText);
+      console.error(error)
+    });
   }
 
   ngOnInit() { }
