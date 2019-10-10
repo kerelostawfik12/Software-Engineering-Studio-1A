@@ -30,6 +30,7 @@ import {SellerRegisterComponent} from "./seller-register/seller-register.compone
 import {AdminRegisterComponent} from "./admin-register/admin-register.component";
 import {LongItemViewComponent} from "./long-item-view/long-item-view.component";
 import {PaypalComponent} from "./paypal/paypal.component";
+import {ChatComponent} from './chat/chat.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import {PaypalComponent} from "./paypal/paypal.component";
     SmallItemListingComponent,
     SellerRegisterComponent,
     AdminRegisterComponent,
-    PaypalComponent
+    PaypalComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -86,6 +88,8 @@ import {PaypalComponent} from "./paypal/paypal.component";
       {path: 'view-sellers', component: ViewSellersComponent},
       {path: 'register-seller', component: SellerRegisterComponent},
       {path: 'register-admin', component: AdminRegisterComponent},
+      {path: 'chat/:id', component: ChatComponent},
+      {path: 'chat', component: ChatComponent},
     ])
   ],
   providers: [],

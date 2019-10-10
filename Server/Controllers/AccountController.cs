@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +18,7 @@ namespace Studio1BTask.Controllers
     {
         // TODO: Use a better way of injecting stuff
         private readonly AccountService _accountService = new AccountService();
+        private readonly string _chatSecret = "sk_test_7XLBVs1PZ8zhQoiqYAGuoqS5";
 
         [HttpPost("[action]")]
         public Dictionary<string, dynamic> CreateCustomerAccount([FromBody] CustomerAccountForm form)
@@ -473,6 +476,49 @@ namespace Studio1BTask.Controllers
                     IsEssential = true,
                     Expires = DateTime.Now.AddYears(-1)
                 });
+        }
+
+        [HttpGet("[action]")]
+        public Dictionary<string, string> StartChat([FromQuery] int? id)
+        {
+            var obj = new Dictionary<string, string> {["error"] = ""};
+            using (var context = new DbContext())
+            {
+                // Check if user is a customer or seller
+                var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
+                var seller = _accountService.ValidateSellerSession(Request.Cookies, context, true);
+
+                if (customer != null)
+                {
+                    obj["userId"] = customer.Id.ToString();
+                    obj["userName"] = customer.FirstName;
+                    obj["userEmail"] = customer.Account.Email;
+                    obj["userRole"] = "customer";
+                }
+                else if (seller != null)
+                {
+                    obj["userId"] = seller.Id.ToString();
+                    obj["userEmail"] = seller.Account.Email;
+                    obj["userRole"] = "seller";
+                }
+                else
+                {
+                    // User is not authenticated
+                    Response.StatusCode = 403;
+                    obj["error"] = "Only registered customers and sellers can send and receive messages.";
+                    return obj;
+                }
+
+                var keyByte = new ASCIIEncoding().GetBytes(_chatSecret);
+                var userIdBytes = new ASCIIEncoding().GetBytes(obj["userId"]);
+
+                var hash = new HMACSHA256(keyByte).ComputeHash(userIdBytes);
+
+                // to HEX(Base16)
+                obj["signature"] = string.Concat(Array.ConvertAll(hash, x => x.ToString("x2")));
+            }
+
+            return obj;
         }
     }
 }
