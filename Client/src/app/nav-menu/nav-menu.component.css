@@ -6,6 +6,10 @@ a.navbar-brand {
   color: white;
 }
 
+a.nav-link {
+  font-size: 10px;
+}
+
 nav {
   font-size: 10px;
   /* Navbar */

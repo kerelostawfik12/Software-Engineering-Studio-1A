@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -478,28 +479,35 @@ namespace Studio1BTask.Controllers
                 });
         }
 
+        // This is a monolithic and extremely poorly written function that probably needs to be refactored at some point,
+        // but probably won't be as it kinda works okay for the time being and the project is due really soon.
+        // Originally the conversation stuff was handled on the backend, but I gave up after about 3 hours, which is why the code is especially strange.
         [HttpGet("[action]")]
-        public Dictionary<string, string> StartChat([FromQuery] int? id)
+        public async Task<Dictionary<string, string>> StartChat([FromQuery] int? id)
         {
-            var obj = new Dictionary<string, string> {["error"] = ""};
+            var obj = new Dictionary<string, string> {["error"] = "", ["otherId"] = ""};
+
             using (var context = new DbContext())
             {
                 // Check if user is a customer or seller
                 var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
                 var seller = _accountService.ValidateSellerSession(Request.Cookies, context, true);
 
+                string userId, userName, userEmail, userRole;
+
                 if (customer != null)
                 {
-                    obj["userId"] = customer.Id.ToString();
-                    obj["userName"] = customer.FirstName;
-                    obj["userEmail"] = customer.Account.Email;
-                    obj["userRole"] = "customer";
+                    userId = customer.Id.ToString();
+                    userName = customer.FirstName;
+                    userEmail = customer.Account.Email;
+                    userRole = "customer";
                 }
                 else if (seller != null)
                 {
-                    obj["userId"] = seller.Id.ToString();
-                    obj["userEmail"] = seller.Account.Email;
-                    obj["userRole"] = "seller";
+                    userId = seller.Id.ToString();
+                    userName = seller.Name;
+                    userEmail = seller.Account.Email;
+                    userRole = "seller";
                 }
                 else
                 {
@@ -509,12 +517,42 @@ namespace Studio1BTask.Controllers
                     return obj;
                 }
 
+                obj["userId"] = userId;
+                obj["userName"] = userName;
+                obj["userEmail"] = userEmail;
+                obj["userRole"] = userRole;
+
+                // If an id parameter is specified, try to start a new chat
+                // (customers are only be able to talk to sellers, and vice versa)
+                if (id != null)
+                {
+                    if (customer != null)
+                    {
+                        var other = context.Sellers.Include(x => x.Account)
+                            .FirstOrDefault(x => x.Id == id);
+                        if (other != null)
+                        {
+                            obj["otherId"] = other.Id.ToString();
+                            obj["otherName"] = other.Name;
+                        }
+                    }
+                    else
+                    {
+                        var other = context.Customers.Include(x => x.Account)
+                            .FirstOrDefault(x => x.Id == id);
+                        if (other != null)
+                        {
+                            obj["otherId"] = other.Id.ToString();
+                            obj["otherName"] = other.FirstName;
+                        }
+                    }
+                }
+
+                // Generate signature
                 var keyByte = new ASCIIEncoding().GetBytes(_chatSecret);
-                var userIdBytes = new ASCIIEncoding().GetBytes(obj["userId"]);
-
+                var userIdBytes = new ASCIIEncoding().GetBytes(userId);
                 var hash = new HMACSHA256(keyByte).ComputeHash(userIdBytes);
-
-                // to HEX(Base16)
+                // Convert to HEX (Base 16)
                 obj["signature"] = string.Concat(Array.ConvertAll(hash, x => x.ToString("x2")));
             }
 

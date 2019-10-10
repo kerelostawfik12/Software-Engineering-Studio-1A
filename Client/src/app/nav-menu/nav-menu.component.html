@@ -1,7 +1,6 @@
 <header>
   <nav class='navbar navbar-expand-sm navbar-toggleable-sm navbar-light'>
     <div class="container">
-      <a *ngIf="user.isCustomer" [routerLink]='["/"]' class="navbar-brand">CUSTOMER MENU</a>
       <a *ngIf="user.isSeller" [routerLink]='["/"]' class="navbar-brand">SELLER MENU</a>
       <a *ngIf="user.isAdmin" [routerLink]='["/"]' class="navbar-brand">ADMIN MENU</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation"
@@ -14,13 +13,28 @@
             <a class="nav-link text-white" [routerLink]='["/component-test-zone"]'>Component test zone</a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a *ngIf="user.isAdmin || user.isSeller" [routerLink]='["/item-view"]' class="nav-link text-white">Items</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/item-view"]' class="nav-link text-white">Items</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a *ngIf="user.isSeller" [routerLink]='["/item-view"]' class="nav-link text-white">My Items</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a *ngIf="user.isSeller" [routerLink]='["/new-item-form"]' class="nav-link text-white">Create New Item</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a *ngIf="user.isLoggedIn" [routerLink]='["/view-transactions"]' class="nav-link text-white">Transactions
+            <a *ngIf="user.isCustomer || user.isSeller" [routerLink]='["/chat"]' class="nav-link text-white">
+              My Messages</a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a *ngIf="user.isLoggedIn && !user.isAdmin" [routerLink]='["/view-transactions"]'
+               class="nav-link text-white">
+              My Transactions
+            </a>
+          </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a *ngIf="user.isLoggedIn && user.isAdmin" [routerLink]='["/view-transactions"]'
+               class="nav-link text-white">
+              Transactions
             </a>
           </li>
           <li class="nav-item" [routerLinkActive]='["link-active"]'>
@@ -30,12 +44,12 @@
             <a *ngIf="user.isAdmin" [routerLink]='["/view-sellers"]' class="nav-link text-white">Sellers</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a *ngIf="user.isAdmin" [routerLink]='["/register-admin"]' class="nav-link text-white">Register New
-              Admin</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/register-admin"]' class="nav-link text-white">
+              Register New Admin</a>
           </li>
           <li [routerLinkActive]='["link-active"]' class="nav-item">
-            <a *ngIf="user.isAdmin" [routerLink]='["/register-seller"]' class="nav-link text-white">Register New
-              Seller</a>
+            <a *ngIf="user.isAdmin" [routerLink]='["/register-seller"]' class="nav-link text-white">
+              Register New Seller</a>
           </li>
         </ul>
       </div>
