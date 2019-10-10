@@ -43,6 +43,7 @@ export class ChatComponent implements OnInit {
         id: result["userId"],
         name: result["userName"],
         email: result["userEmail"],
+        role: result["userRole"]
       });
 
 
