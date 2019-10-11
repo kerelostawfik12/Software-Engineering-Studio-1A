@@ -1,32 +1,29 @@
-<body style="background-color: burlywood">
-
-<h1 style="color: black">
+<h1>
   Cart
 </h1>
-</body>
 
-<div class="row">
+<div [hidden]="items.length == 0" class="row">
   <table class="table">
     <thead>
-      <tr>
-        <th>Item</th>
-        <th>Description</th>
-        <th>Seller</th>
-        <th>Price</th>
-        <th></th>
-      </tr>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Seller</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let item of items">
-        <td><a routerLink="/item/{{ item.id }}">{{item.name}}</a></td>
-        <td>{{item.description}}</td>
-        <td><a routerLink="/chat/{{ item.sellerId }}">{{item.seller.name}}</a></td>
-        <td><b>${{item.price.toLocaleString()}}</b></td>
-        <td>
-          <button (click)="remove(item)" class="btn btn-danger">Remove</button>
-        </td>
-      </tr>
+    <tr *ngFor="let item of items">
+      <td><a routerLink="/item/{{ item.id }}">{{item.name}}</a></td>
+      <td>{{item.description}}</td>
+      <td><a routerLink="/chat/{{ item.sellerId }}">{{item.seller.name}}</a></td>
+      <td><b>${{item.price.toLocaleString()}}</b></td>
+      <td>
+        <button (click)="remove(item)" class="btn btn-danger">Remove</button>
+      </td>
+    </tr>
     </tbody>
   </table>
 </div>
@@ -35,24 +32,25 @@
   Your shopping cart is empty :(
 </div>
 
-<div *ngIf="items.length != 0">
-  <h5>Total Price:
-    <span class="red">${{totalPrice.toLocaleString()}}</span>
-  </h5>
-</div>
-<br>
-
-<div [hidden]="user == null || !user.isLoaded">
-  <div [hidden]="!user.isCustomer" id="buttons">
-</div>
-  <div [hidden]="user.isLoggedIn">
-    Please <a routerLink="/register">register</a> an account to make purchases. Don't worry - the items in your cart
-    won't go anywhere.
+<div [hidden]="items.length == 0" id="checkout">
+  <div>
+    <h5>Total Price:
+      <span class="red">${{totalPrice.toLocaleString()}}</span>
+    </h5>
   </div>
-  <div [hidden]="!user.isLoggedIn || user.isCustomer">
-    Sorry - only customer accounts can make purchases. You can register a customer account <a routerLink="/register">
-    here</a>.
+  <br>
+
+  <div [hidden]="user == null || !user.isLoaded">
+    <div [hidden]="!user.isCustomer" id="buttons">
+    </div>
+    <div [hidden]="user.isLoggedIn">
+      Please <a routerLink="/register">register</a> an account to make purchases. Don't worry - the items in your cart
+      won't go anywhere.
+    </div>
+    <div [hidden]="!user.isLoggedIn || user.isCustomer">
+      Sorry - only customer accounts can make purchases. You can register a customer account <a routerLink="/register">
+      here</a>.
+    </div>
   </div>
+
 </div>
-
-

@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {CartService} from "../cart.service";
 import {User, UserService} from "../user.service";
+import {Router} from "@angular/router";
 
 declare var paypal: any;
 
@@ -16,7 +17,7 @@ export class CartComponent implements OnInit {
   public items: Item[];
   public totalPrice: number;
 
-  constructor(private httpClient: HttpClient, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService) {
+  constructor(private httpClient: HttpClient, private router: Router, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService) {
     this.userService.getCurrent().subscribe(x => {
       this.user = x;
     });
@@ -26,19 +27,26 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     let thisRef = this;
     paypal.Buttons({
-      createOrder: function (data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: thisRef.getTotalPrice(),
-              currency_code: 'AUD'
-            }
+      createOrder: function () {
+        return fetch(thisRef.baseUrl + 'api/Transaction/CreatePaypalOrder', {
+          method: 'post',
+          headers: {
+            'content-type': 'application/json'
           }
-          ]
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          return data.id; // Use the same key name for order ID on the client and server
         });
       },
-      onApprove: function (data, actions) {
-        return null;
+      onApprove: function (data) {
+        return fetch(thisRef.baseUrl + 'api/Transaction/CapturePaypalOrder?orderId=' + data.orderID, {
+          method: 'get'
+        }).then(function (res) {
+          return res.json();
+        }).then(function (details) {
+          thisRef.router.navigateByUrl('/thank-you');
+        })
       }
     }).render('#buttons');
     this.cartService.refreshItems();

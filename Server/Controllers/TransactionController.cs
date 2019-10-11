@@ -1,19 +1,30 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using Castle.Core.Internal;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PayPalCheckoutSdk.Orders;
 using Studio1BTask.Models;
 using Studio1BTask.Services;
 using DbContext = Studio1BTask.Models.DbContext;
+using Item = PayPalCheckoutSdk.Orders.Item;
 
 namespace Studio1BTask.Controllers
 {
     [Route("api/[controller]")]
     public class TransactionController : Controller
     {
+        // Used to keep transaction item data between paypal transaction creation and capture
+        // (paypal for some reason does not do this on its own, so this was the only workaround I could think of
+        // - yes, this has to be static, or else it'll be reset)
+        private static readonly Dictionary<string, List<Item>> TempTransactionItemsDict = new
+            Dictionary<string, List<Item>>();
+
         private readonly AccountService _accountService = new AccountService();
+        private readonly PaypalService _paypalService = new PaypalService();
+
 
         // If the requesting user is a customer, it will get all transactions from that customer. 
         // If the requesting user is a seller, it will get all transactions from that seller. 
@@ -30,7 +41,7 @@ namespace Studio1BTask.Controllers
                     var items = context.TransactionItems
                         .Include(x => x.CustomerTransaction)
                         .Where(x => x.CustomerTransaction.CustomerId == customer.Id)
-                        .OrderBy(x => x.CustomerTransaction.Date)
+                        .OrderByDescending(x => x.CustomerTransaction.Date)
                         .ToList();
                     return items;
                 }
@@ -42,7 +53,7 @@ namespace Studio1BTask.Controllers
                     var items = context.TransactionItems
                         .Where(x => x.SellerSaleId == seller.Id)
                         .Include(x => x.CustomerTransaction)
-                        .OrderBy(x => x.CustomerTransaction.Date)
+                        .OrderByDescending(x => x.CustomerTransaction.Date)
                         .ToList();
                     return items;
                 }
@@ -52,7 +63,7 @@ namespace Studio1BTask.Controllers
                 {
                     var items = context.TransactionItems
                         .Include(x => x.CustomerTransaction)
-                        .OrderBy(x => x.CustomerTransaction.Date)
+                        .OrderByDescending(x => x.CustomerTransaction.Date)
                         .ToList();
                     return items;
                 }
@@ -64,60 +75,96 @@ namespace Studio1BTask.Controllers
         }
 
         [HttpPost("[action]")]
-        public Dictionary<string, dynamic> CreateNewTransaction()
+        public async Task<Order> CreatePaypalOrder()
         {
-            // Creating a new transaction involves recording all the items from the shopping cart as TransactionItems,
-            // and creating the owning transaction object. Only customers can initiate transactions.
-            var obj = new Dictionary<string, dynamic> {["error"] = "An unknown error occurred."};
+            var orderItems = new List<Item>();
+            decimal totalPrice = 0;
             using (var context = new DbContext())
             {
                 var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
-                if (customer == null)
+                var itemsInCart = context.CartItems
+                    .Where(x => x.SessionId == customer.Account.SessionId)
+                    .Include(x => x.Item)
+                    .Select(cartItem => cartItem.Item).Include(x => x.Seller)
+                    .ToList();
+
+                foreach (var item in itemsInCart)
+                {
+                    totalPrice += item.Price;
+                    orderItems.Add(new Item
+                    {
+                        Name = item.Name,
+                        Sku = item.Id.ToString(),
+                        Quantity = 1.ToString(),
+                        Category = "PHYSICAL_GOODS",
+                        Description = "Sold by " + item.Seller.Name + ". " + item.Description,
+                        Tax = new Money
+                        {
+                            CurrencyCode = "AUD",
+                            Value = "0.00"
+                        },
+                        UnitAmount = new Money
+                        {
+                            CurrencyCode = "AUD",
+                            Value = item.Price.ToString(CultureInfo.InvariantCulture)
+                        }
+                    });
+                }
+            }
+
+            // Create items for order 
+            var order = await _paypalService.CreateOrder(orderItems, totalPrice);
+            TempTransactionItemsDict[order.Id] = orderItems.ToList();
+            return order;
+        }
+
+        [HttpGet("[action]")]
+        public async Task<Order> CapturePaypalOrder([FromQuery] string orderId)
+        {
+            using (var context = new DbContext())
+            {
+                // Refuse capture if customer is not properly authenticated, or if server does not remember creating the order
+                var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
+                if (customer == null || !TempTransactionItemsDict.ContainsKey(orderId))
                 {
                     Response.StatusCode = 401; // Unauthorised
-                    obj["error"] = "Only logged in customers can initiate a transaction.";
-                    return obj;
+                    return null;
                 }
 
+                // Capture funds through Paypal
+                var order = await _paypalService.CaptureOrder(orderId);
+                // Create transaction object
                 var transaction = context.CustomerTransactions.Add(new CustomerTransaction
                 {
                     CustomerId = customer.Id,
                     CustomerName = customer.FirstName + customer.LastName,
                     Date = DateTime.Now
                 });
-
-                var items = context.CartItems
-                    .Where(x => x.SessionId == customer.Account.SessionId)
-                    .Include(x => x.Item)
-                    .Select(cartItem => cartItem.Item).Include(x => x.Seller)
-                    .ToList();
-
-                if (items.IsNullOrEmpty())
-                {
-                    Response.StatusCode = 412; // Precondition failed
-                    obj["error"] = "You don't have any items in your cart.";
-                    return obj;
-                }
-
+                // Create transaction item objects
+                var items = TempTransactionItemsDict[orderId];
+                TempTransactionItemsDict.Remove(orderId);
                 foreach (var item in items)
+                {
+                    var itemId = int.Parse(item.Sku);
+                    var itemEntity = context.Items
+                        .Include(x => x.Seller)
+                        .First(x => x.Id == itemId);
                     context.TransactionItems.Add(new TransactionItem
                     {
                         CustomerTransaction = transaction.Entity,
-                        ItemSaleId = item.Id,
-                        ItemSalePrice = item.Price,
+                        ItemSaleId = itemId,
+                        ItemSalePrice = decimal.Parse(item.UnitAmount.Value),
                         ItemSaleName = item.Name,
-                        SellerSaleId = item.SellerId,
-                        SellerSaleName = item.Seller.Name
+                        SellerSaleId = itemEntity.SellerId,
+                        SellerSaleName = itemEntity.Seller.Name
                     });
+                }
 
+                // Clear user's shopping cart
+                var itemsToRemove = context.CartItems.Where(x => x.SessionId == customer.Account.SessionId);
+                context.CartItems.RemoveRange(itemsToRemove);
                 context.SaveChanges();
-
-                var transactionItems
-                    = context.TransactionItems.Where(x => x.TransactionId == transaction.Entity.Id).ToList();
-
-                obj["items"] = transactionItems;
-                obj["transaction"] = transaction.Entity;
-                return obj;
+                return order;
             }
         }
     }

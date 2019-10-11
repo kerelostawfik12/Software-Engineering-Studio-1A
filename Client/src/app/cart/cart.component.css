@@ -2,6 +2,10 @@ ul {
   list-style: none;
 }
 
+#checkout {
+  text-align: left;
+}
+
 #image {
   height: 90px;
 }

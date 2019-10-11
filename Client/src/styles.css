@@ -3,6 +3,11 @@ body {
 
 }
 
+h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .rainbow {
   animation: rainbow-text 3.5s linear;
   animation-iteration-count: infinite;

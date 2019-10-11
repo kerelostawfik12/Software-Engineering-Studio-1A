@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading.Tasks;
-using BraintreeHttp;
 using PayPalCheckoutSdk.Core;
 using PayPalCheckoutSdk.Orders;
 
@@ -9,10 +8,13 @@ namespace Studio1BTask.Services
 {
     public class PaypalService
     {
-        private static readonly string _clientId = "PAYPAL-CLIENT-ID";
-        private static readonly string _secret = "PAYPAL-CLIENT-SECRET";
+        private static readonly string _clientId =
+            "AbY5qhTQK2zo_163bAA1xkA19YkBMg8uiLqqh3MIAULsH2yF7T2ZGQ38cx740JmcUq24_bwNLS6-e3LF";
 
-        public static PayPalHttpClient Client()
+        private static readonly string _secret =
+            "EMicuENMd4PD-W86tF2wEvUFHTCf_bHhNqJYwc7zsRvEnKKj1tmSDlv30H220hxyeq-f0rbevVAJgGrk";
+
+        public PayPalHttpClient Client()
         {
             // Creating a sandbox environment
             var environment = new SandboxEnvironment(_clientId, _secret);
@@ -22,46 +24,58 @@ namespace Studio1BTask.Services
             return client;
         }
 
-        public static async Task<HttpResponse> createOrder()
+        public async Task<Order> CreateOrder(List<Item> items, decimal totalPrice)
         {
             // Construct a request object and set desired parameters
             // Here, OrdersCreateRequest() creates a POST request to /v2/checkout/orders
             var order = new OrderRequest
             {
                 CheckoutPaymentIntent = "CAPTURE",
+
                 PurchaseUnits = new List<PurchaseUnitRequest>
                 {
                     new PurchaseUnitRequest
                     {
                         AmountWithBreakdown = new AmountWithBreakdown
                         {
-                            CurrencyCode = "USD",
-                            Value = "100.00"
-                        }
+                            CurrencyCode = "AUD",
+                            Value = totalPrice.ToString(CultureInfo.InvariantCulture),
+                            AmountBreakdown = new AmountBreakdown
+                            {
+                                ItemTotal = new Money
+                                {
+                                    CurrencyCode = "AUD",
+                                    Value = totalPrice.ToString(CultureInfo.InvariantCulture)
+                                }
+                            }
+                        },
+                        Items = items
                     }
                 },
                 ApplicationContext = new ApplicationContext
                 {
-                    ReturnUrl = "https://www.example.com",
-                    CancelUrl = "https://www.example.com"
+                    ReturnUrl = "http://studio1btask.azurewebsites.net/",
+                    CancelUrl = "http://studio1btask.azurewebsites.net/"
                 }
             };
-
-
             // Call API with your client and get a response for your call
             var request = new OrdersCreateRequest();
             request.Prefer("return=representation");
             request.RequestBody(order);
             var response = await Client().Execute(request);
-            var statusCode = response.StatusCode;
             var result = response.Result<Order>();
-            Console.WriteLine("Status: {0}", result.Status);
-            Console.WriteLine("Order Id: {0}", result.Id);
-            Console.WriteLine("Intent: {0}", result.CheckoutPaymentIntent);
-            Console.WriteLine("Links:");
-            foreach (var link in result.Links)
-                Console.WriteLine("\t{0}: {1}\tCall Type: {2}", link.Rel, link.Href, link.Method);
-            return response;
+            return result;
+        }
+
+        public async Task<Order> CaptureOrder(string approvedOrderId)
+        {
+            // Construct a request object and set desired parameters
+            // Replace ORDER-ID with the approved order id from create order
+            var request = new OrdersCaptureRequest(approvedOrderId);
+            request.RequestBody(new OrderActionRequest());
+            var response = await Client().Execute(request);
+            var result = response.Result<Order>();
+            return result;
         }
     }
 }
