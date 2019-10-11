@@ -67,27 +67,27 @@ namespace Studio1BTask.Controllers
         public Dictionary<string, dynamic> CreateNewTransaction()
         {
             // Creating a new transaction involves recording all the items from the shopping cart as TransactionItems,
-            // and creating the owning transaction object. Anyone can initiate transactions, but their customer id will
-            // only be recorded if they are a customer.
+            // and creating the owning transaction object. Only customers can initiate transactions.
             var obj = new Dictionary<string, dynamic> {["error"] = "An unknown error occurred."};
             using (var context = new DbContext())
             {
-                var session = _accountService.ValidateSession(Request.Cookies, context);
-                if (session == null)
+                var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
+                if (customer == null)
                 {
                     Response.StatusCode = 401; // Unauthorised
-                    obj["error"] = "Invalid session. Please refresh the page.";
+                    obj["error"] = "Only logged in customers can initiate a transaction.";
                     return obj;
                 }
 
                 var transaction = context.CustomerTransactions.Add(new CustomerTransaction
                 {
-                    CustomerId = session.AccountId,
+                    CustomerId = customer.Id,
+                    CustomerName = customer.FirstName + customer.LastName,
                     Date = DateTime.Now
                 });
 
                 var items = context.CartItems
-                    .Where(x => x.SessionId == session.Id)
+                    .Where(x => x.SessionId == customer.Account.SessionId)
                     .Include(x => x.Item)
                     .Select(cartItem => cartItem.Item).Include(x => x.Seller)
                     .ToList();

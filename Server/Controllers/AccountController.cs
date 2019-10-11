@@ -498,7 +498,7 @@ namespace Studio1BTask.Controllers
                 if (customer != null)
                 {
                     userId = customer.Id.ToString();
-                    userName = customer.FirstName;
+                    userName = customer.FirstName + " " + customer.LastName;
                     userEmail = customer.Account.Email;
                     userRole = "customer";
                 }

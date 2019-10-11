@@ -55,6 +55,7 @@ interface Customer {
 }
 
 interface CustomerTransaction {
+  customerName: string;
   id: number;
   customerId?: Customer;
   date: Date;
