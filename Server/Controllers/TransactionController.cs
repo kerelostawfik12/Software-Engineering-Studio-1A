@@ -16,15 +16,8 @@ namespace Studio1BTask.Controllers
     [Route("api/[controller]")]
     public class TransactionController : Controller
     {
-        // Used to keep transaction item data between paypal transaction creation and capture
-        // (paypal for some reason does not do this on its own, so this was the only workaround I could think of
-        // - yes, this has to be static, or else it'll be reset)
-        private static readonly Dictionary<string, List<Item>> TempTransactionItemsDict = new
-            Dictionary<string, List<Item>>();
-
         private readonly AccountService _accountService = new AccountService();
         private readonly PaypalService _paypalService = new PaypalService();
-
 
         // If the requesting user is a customer, it will get all transactions from that customer. 
         // If the requesting user is a seller, it will get all transactions from that seller. 
@@ -114,7 +107,6 @@ namespace Studio1BTask.Controllers
 
             // Create items for order 
             var order = await _paypalService.CreateOrder(orderItems, totalPrice);
-            TempTransactionItemsDict[order.Id] = orderItems.ToList();
             return order;
         }
 
@@ -125,7 +117,7 @@ namespace Studio1BTask.Controllers
             {
                 // Refuse capture if customer is not properly authenticated, or if server does not remember creating the order
                 var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
-                if (customer == null || !TempTransactionItemsDict.ContainsKey(orderId))
+                if (customer == null)
                 {
                     Response.StatusCode = 401; // Unauthorised
                     return null;
@@ -133,16 +125,18 @@ namespace Studio1BTask.Controllers
 
                 // Capture funds through Paypal
                 var order = await _paypalService.CaptureOrder(orderId);
+
                 // Create transaction object
                 var transaction = context.CustomerTransactions.Add(new CustomerTransaction
                 {
                     CustomerId = customer.Id,
-                    CustomerName = customer.FirstName + customer.LastName,
-                    Date = DateTime.Now
+                    CustomerName = customer.FirstName + " " + customer.LastName,
+                    Date = DateTime.Now,
+                    PaypalTransactionId = order.Id,
+                    Total = decimal.Parse(order.PurchaseUnits[0].AmountWithBreakdown.Value)
                 });
                 // Create transaction item objects
-                var items = TempTransactionItemsDict[orderId];
-                TempTransactionItemsDict.Remove(orderId);
+                var items = order.PurchaseUnits[0].Items;
                 foreach (var item in items)
                 {
                     var itemId = int.Parse(item.Sku);

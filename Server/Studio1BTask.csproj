@@ -39,6 +39,12 @@
     <ItemGroup>
         <!-- Don't publish the SPA source files, but do show them in the project files list -->
         <Content Remove="$(SpaRoot)**" />
+        <Content Include="..\Client\src\app\thank-you\thank-you.component.css">
+            <Link>app\thank-you\thank-you.component.css</Link>
+        </Content>
+        <Content Include="..\Client\src\app\thank-you\thank-you.component.html">
+            <Link>app\thank-you\thank-you.component.html</Link>
+        </Content>
         <Content Include="..\Client\src\assets\icons\cart.svg" />
         <Content Include="..\Client\src\assets\icons\search.svg" />
         <None Remove="$(SpaRoot)**" />
@@ -53,6 +59,12 @@
         <TypeScriptCompile Include="..\Client\src\app\form-models.ts" />
         <TypeScriptCompile Include="..\Client\src\app\notifications.ts">
             <Link>app\notifications.ts</Link>
+        </TypeScriptCompile>
+        <TypeScriptCompile Include="..\Client\src\app\thank-you\thank-you.component.spec.ts">
+            <Link>app\thank-you\thank-you.component.spec.ts</Link>
+        </TypeScriptCompile>
+        <TypeScriptCompile Include="..\Client\src\app\thank-you\thank-you.component.ts">
+            <Link>app\thank-you\thank-you.component.ts</Link>
         </TypeScriptCompile>
     </ItemGroup>
 

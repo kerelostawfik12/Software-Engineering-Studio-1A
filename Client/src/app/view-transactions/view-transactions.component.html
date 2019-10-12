@@ -16,8 +16,8 @@
 
     <tbody>
     <tr *ngFor="let item of items">
-      <td>{{item.customerTransaction.date.toString().replace("T", " at ").split('.')[0]}}</td>
-      <td>#{{item.customerTransaction.id}}</td>
+      <td>{{getDateString(item.customerTransaction.date)}}<br>{{getTimeString(item.customerTransaction.date)}}</td>
+      <td>Internal: #{{item.customerTransaction.id}}<br>PayPal: #{{item.customerTransaction.paypalTransactionId}}</td>
       <td *ngIf="!user.isCustomer">
         #{{item.customerTransaction.customerId}}: {{item.customerTransaction.customerName}}
         <a *ngIf="user.isSeller" routerLink="/chat/{{ item.customerTransaction.customerId }}">
@@ -37,7 +37,8 @@
           <br>(View Page)
         </a>
       </td>
-      <td>${{item.itemSalePrice.toLocaleString()}}</td>
+      <td>Unit: ${{addTrailingZero(item.itemSalePrice.toLocaleString())}}<br>Total:
+        ${{addTrailingZero(item.customerTransaction.total.toLocaleString())}}</td>
 
     </tr>
     </tbody>

@@ -31,7 +31,7 @@ import {AdminRegisterComponent} from "./admin-register/admin-register.component"
 import {LongItemViewComponent} from "./long-item-view/long-item-view.component";
 import {PaypalComponent} from "./paypal/paypal.component";
 import {ChatComponent} from './chat/chat.component';
-import {ThankYouComponent} from '../thank-you/thank-you.component';
+import {ThankYouComponent} from './thank-you/thank-you.component';
 
 
 @NgModule({

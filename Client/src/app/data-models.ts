@@ -59,6 +59,8 @@ interface CustomerTransaction {
   id: number;
   customerId?: Customer;
   date: Date;
+  total: number;
+  paypalTransactionId: string;
 }
 
 interface TransactionItem {

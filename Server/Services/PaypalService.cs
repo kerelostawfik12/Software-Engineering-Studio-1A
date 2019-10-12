@@ -74,6 +74,8 @@ namespace Studio1BTask.Services
             var request = new OrdersCaptureRequest(approvedOrderId);
             request.RequestBody(new OrderActionRequest());
             var response = await Client().Execute(request);
+            var getRequest = new OrdersGetRequest(approvedOrderId);
+            response = await Client().Execute(getRequest);
             var result = response.Result<Order>();
             return result;
         }
