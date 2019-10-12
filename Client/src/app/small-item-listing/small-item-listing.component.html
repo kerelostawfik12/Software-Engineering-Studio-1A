@@ -11,7 +11,7 @@
       <span id="cents">{{getCents()}}</span>
     </div>
     <div id="add-to-cart">
-      <div (click)="addToCart()" id="add-to-cart-button">
+      <div (click)="addToCart()" [hidden]="!showAddToCart" id="add-to-cart-button">
         <span id="add-to-cart-text">Add to Cart</span>
       </div>
     </div>

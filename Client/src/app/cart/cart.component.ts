@@ -49,10 +49,19 @@ export class CartComponent implements OnInit {
           return res.json();
         }).then(function (details) {
           try {
-            assert(details.status == "COMPLETED");
+            assert(details.order.status == "COMPLETED");
             thisRef.cartService.refreshItems();
-            thisRef.router.navigateByUrl('/thank-you');
-            Notifications.success("Order placed successfully. Thank you.");
+            if (details.lootBoxItems == null) {
+              window.location.assign('/thank-you/');
+            } else {
+              let params = "";
+              for (let i = 0; i < details.lootBoxItems.length; i++) {
+                params += details.lootBoxItems[i];
+                if (i != details.lootBoxItems.length - 1)
+                  params += ","
+              }
+              window.location.assign('/thank-you/' + params);
+            }
           } catch {
             thisRef.cartService.refreshItems();
             Notifications.error("An error occurred processing your transaction. Please check that you have not" +

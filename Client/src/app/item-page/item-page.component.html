@@ -1,5 +1,8 @@
 <!--<h1>Item Page</h1>-->
 <br>
+<div *ngIf="item == null && errorText == ''" id="loading">
+  Loading...
+</div>
 <div *ngIf="item != null" id="container">
   <div class="split left">
     <img alt="{{item.name}}" draggable="true" id="image" src="{{item.imageURL}}">

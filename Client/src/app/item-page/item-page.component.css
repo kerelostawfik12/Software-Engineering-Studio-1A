@@ -58,6 +58,11 @@
   display: block;
 }
 
+#loading {
+  text-align: center;
+  margin: 0;
+}
+
 span.item-price {
   color: #e2191c;
   background: none;

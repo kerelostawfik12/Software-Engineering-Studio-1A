@@ -52,6 +52,9 @@
   font-size: 14px;
   line-height: 19px;
   color: black;
+  height: 60px;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
 }
 
 #name a {

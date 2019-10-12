@@ -2,3 +2,41 @@ p {
   text-align: center;
   margin-top: 40px;
 }
+
+#items-container {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 5px;
+
+}
+
+.lootBoxDescription {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+body {
+  min-height: 1000px;
+}
+
+
+.item {
+  -webkit-animation: slide-in-fwd-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-fwd-center 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: scale(2) rotate(-14deg);
+    transform: scale(2) rotate(-14deg);
+
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+

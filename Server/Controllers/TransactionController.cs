@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
+using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PayPalCheckoutSdk.Orders;
@@ -84,13 +85,21 @@ namespace Studio1BTask.Controllers
                 foreach (var item in itemsInCart)
                 {
                     totalPrice += item.Price;
+
+                    // Limit description and title size so that Paypal doesn't refuse it
+                    const int maxStrSize = 100;
+                    var itemDescription = "Sold by " + item.Seller.Name + ". " + item.Description;
+                    if (itemDescription.Length > maxStrSize) itemDescription = itemDescription.Substring(0, maxStrSize);
+                    var itemName = item.Name;
+                    if (itemName.Length > maxStrSize) itemName = itemName.Substring(0, maxStrSize);
+
                     orderItems.Add(new Item
                     {
-                        Name = item.Name,
+                        Name = itemName,
                         Sku = item.Id.ToString(),
                         Quantity = 1.ToString(),
                         Category = "PHYSICAL_GOODS",
-                        Description = "Sold by " + item.Seller.Name + ". " + item.Description,
+                        Description = itemDescription,
                         Tax = new Money
                         {
                             CurrencyCode = "AUD",
@@ -111,7 +120,7 @@ namespace Studio1BTask.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<Order> CapturePaypalOrder([FromQuery] string orderId)
+        public async Task<Dictionary<string, dynamic>> CapturePaypalOrder([FromQuery] string orderId)
         {
             using (var context = new DbContext())
             {
@@ -137,12 +146,14 @@ namespace Studio1BTask.Controllers
                 });
                 // Create transaction item objects
                 var items = order.PurchaseUnits[0].Items;
+                var lootBoxItems = new List<int>();
                 foreach (var item in items)
                 {
                     var itemId = int.Parse(item.Sku);
                     var itemEntity = context.Items
                         .Include(x => x.Seller)
                         .First(x => x.Id == itemId);
+
                     context.TransactionItems.Add(new TransactionItem
                     {
                         CustomerTransaction = transaction.Entity,
@@ -152,13 +163,53 @@ namespace Studio1BTask.Controllers
                         SellerSaleId = itemEntity.SellerId,
                         SellerSaleName = itemEntity.Seller.Name
                     });
+
+                    // If item is a loot box, also add in a random item below its price.
+                    if (itemEntity.Id == 86)
+                    {
+                        var eligibleItems = context.Items
+                            .Include(x => x.Seller)
+                            .Where(x => x.Price < itemEntity.Price);
+                        var skip = (int) (new Random().NextDouble() * eligibleItems.Count());
+                        var chosenItem = eligibleItems.Skip(skip).Take(1).FirstOrDefault();
+                        TransactionItem transactionItem;
+                        if (chosenItem == null)
+                            transactionItem = context.TransactionItems.Add(new TransactionItem
+                            {
+                                CustomerTransaction = transaction.Entity,
+                                ItemSaleId = -1,
+                                ItemSalePrice = 0,
+                                ItemSaleName = "Empty Cardboard Box",
+                                SellerSaleId = itemEntity.SellerId,
+                                SellerSaleName = itemEntity.Seller.Name
+                            }).Entity;
+                        else
+                            transactionItem = context.TransactionItems.Add(new TransactionItem
+                            {
+                                CustomerTransaction = transaction.Entity,
+                                ItemSaleId = chosenItem.Id,
+                                ItemSalePrice = 0,
+                                ItemSaleName = chosenItem.Name + " (from Loot Box)",
+                                SellerSaleId = chosenItem.SellerId,
+                                SellerSaleName = chosenItem.Seller.Name
+                            }).Entity;
+                        Console.WriteLine("Loot box item unlocked: " + transactionItem.ItemSaleName);
+                        lootBoxItems.Add(transactionItem.ItemSaleId);
+                    }
                 }
 
                 // Clear user's shopping cart
                 var itemsToRemove = context.CartItems.Where(x => x.SessionId == customer.Account.SessionId);
                 context.CartItems.RemoveRange(itemsToRemove);
                 context.SaveChanges();
-                return order;
+
+                if (lootBoxItems.IsNullOrEmpty())
+                    lootBoxItems = null;
+                return new Dictionary<string, dynamic>
+                {
+                    ["order"] = order,
+                    ["lootBoxItems"] = lootBoxItems
+                };
             }
         }
     }

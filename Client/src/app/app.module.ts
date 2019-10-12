@@ -93,6 +93,7 @@ import {ThankYouComponent} from './thank-you/thank-you.component';
       {path: 'chat/:id', component: ChatComponent},
       {path: 'chat', component: ChatComponent},
       {path: 'thank-you', component: ThankYouComponent},
+      {path: 'thank-you/:loot', component: ThankYouComponent},
     ])
   ],
   providers: [],
