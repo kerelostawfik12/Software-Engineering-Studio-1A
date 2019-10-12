@@ -27,10 +27,8 @@ export class ViewTransactionsComponent implements OnInit {
   }
 
   refreshItems() {
-
     this.httpClient.get<TransactionItem[]>(this.baseUrl + 'api/Transaction/AllTransactions').subscribe(result => {
       this.items = result;
-      console.log(this.items);
     }, error => console.error(error));
   }
 

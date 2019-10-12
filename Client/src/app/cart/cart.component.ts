@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {CartService} from "../cart.service";
 import {User, UserService} from "../user.service";
 import {Router} from "@angular/router";
+import {Notifications} from "../notifications";
+import * as assert from "assert";
 
 declare var paypal: any;
 
@@ -40,12 +42,22 @@ export class CartComponent implements OnInit {
         });
       },
       onApprove: function (data) {
+        Notifications.info("Your transaction is being processed. This may take a few seconds. Please wait...");
         return fetch(thisRef.baseUrl + 'api/Transaction/CapturePaypalOrder?orderId=' + data.orderID, {
           method: 'get'
         }).then(function (res) {
           return res.json();
         }).then(function (details) {
-          thisRef.router.navigateByUrl('/thank-you');
+          try {
+            assert(details.status == "COMP2LETED");
+            thisRef.cartService.refreshItems();
+            thisRef.router.navigateByUrl('/thank-you');
+          } catch {
+            thisRef.cartService.refreshItems();
+            Notifications.error("An error occurred processing your transaction. Please check that you have not" +
+              " been charged, and try again.");
+          }
+
         })
       }
     }).render('#buttons');

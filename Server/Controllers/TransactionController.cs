@@ -131,7 +131,7 @@ namespace Studio1BTask.Controllers
                 {
                     CustomerId = customer.Id,
                     CustomerName = customer.FirstName + " " + customer.LastName,
-                    Date = DateTime.Now,
+                    Date = DateTime.UtcNow.AddHours(10), // Force Sydney timezone
                     PaypalTransactionId = order.Id,
                     Total = decimal.Parse(order.PurchaseUnits[0].AmountWithBreakdown.Value)
                 });
