@@ -52,6 +52,7 @@ export class CartComponent implements OnInit {
             assert(details.status == "COMPLETED");
             thisRef.cartService.refreshItems();
             thisRef.router.navigateByUrl('/thank-you');
+            Notifications.success("Order placed successfully. Thank you.");
           } catch {
             thisRef.cartService.refreshItems();
             Notifications.error("An error occurred processing your transaction. Please check that you have not" +
