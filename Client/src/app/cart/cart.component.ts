@@ -49,7 +49,7 @@ export class CartComponent implements OnInit {
           return res.json();
         }).then(function (details) {
           try {
-            assert(details.status == "COMP2LETED");
+            assert(details.status == "COMPLETED");
             thisRef.cartService.refreshItems();
             thisRef.router.navigateByUrl('/thank-you');
           } catch {
