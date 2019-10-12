@@ -28,7 +28,7 @@ export class ThankYouComponent implements OnInit {
 
   async updateLootBoxItems() {
     for (let i = 0; i < this.lootBoxItemIds.length; i++) {
-      await this.delay(1500);
+      await this.delay(2500);
       await this.httpClient.get<Item>(this.baseUrl + 'api/Item/GetItem', {params: {id: this.lootBoxItemIds[i]}}).subscribe(result => {
         this.lootBoxItems.push(result);
 
