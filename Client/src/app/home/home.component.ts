@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-//import Swipe from 'swipejs/build/swipe.min.js';
+import Swipe from 'swipejs/build/swipe.min.js';
 
 @Component({
   selector: 'app-home',
