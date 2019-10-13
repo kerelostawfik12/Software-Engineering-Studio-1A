@@ -38,6 +38,31 @@ namespace Studio1BTask.Controllers
             }
         }
 
+        [HttpGet("[action]")]
+        public IEnumerable<Item> GetItemsBoughtTogether([FromQuery] int id)
+        {
+            using (var context = new DbContext())
+            {
+                var items = context.ItemsBoughtTogether
+                    .Where(x => x.ItemAId == id && x.ItemA.Hidden == false && x.ItemB.Hidden == false)
+                    .OrderByDescending(x => x.Count)
+                    .Take(8)
+                    .Select(x => x.ItemB)
+                    .ToList();
+                return items;
+            }
+        }
+
+        [HttpGet("[action]")]
+        public Dictionary<string, dynamic> GetItemPage([FromQuery] int id)
+        {
+            return new Dictionary<string, dynamic>
+            {
+                ["item"] = GetItem(id),
+                ["boughtTogether"] = GetItemsBoughtTogether(id)
+            };
+        }
+
         [HttpPost("[action]")]
         public Dictionary<string, string> UploadImage()
         {

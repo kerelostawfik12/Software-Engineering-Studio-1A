@@ -10,8 +10,11 @@ import {Notifications} from "../notifications";
   styleUrls: ['./thank-you.component.css']
 })
 export class ThankYouComponent implements OnInit {
+  readonly confettiUrlDefault: string = "assets/confetti.gif";
   public lootBoxItemIds: string[] = [];
   public lootBoxItems: Item[] = [];
+  public showConfetti: boolean = false;
+  public confettiUrl: string = this.confettiUrlDefault;
 
   constructor(private httpClient: HttpClient, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute, private title: Title) {
     this.title.setTitle("Thank you - NotAmazon.com");
@@ -29,9 +32,11 @@ export class ThankYouComponent implements OnInit {
   async updateLootBoxItems() {
     for (let i = 0; i < this.lootBoxItemIds.length; i++) {
       await this.delay(2500 + Math.random() * 1000);
+      this.showConfetti = false;
       await this.httpClient.get<Item>(this.baseUrl + 'api/Item/GetItem', {params: {id: this.lootBoxItemIds[i]}}).subscribe(result => {
         this.lootBoxItems.push(result);
-
+        this.showConfetti = true;
+        this.confettiUrl = this.confettiUrlDefault
       }, error => {
         const defaultItem: Item = {
           id: -1,
@@ -44,6 +49,7 @@ export class ThankYouComponent implements OnInit {
           imageURL: ""
         };
         this.lootBoxItems.push(defaultItem);
+        this.showConfetti = true;
       })
     }
   }

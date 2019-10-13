@@ -14,6 +14,7 @@ namespace Studio1BTask.Models
         public DbSet<Session> Sessions { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<CustomerTransaction> CustomerTransactions { get; set; }
+        public DbSet<ItemsBoughtTogether> ItemsBoughtTogether { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ItemCategory> ItemCategories { get; set; }
         public DbSet<TransactionItem> TransactionItems { get; set; }
@@ -33,6 +34,8 @@ namespace Studio1BTask.Models
             // Composite primary keys need to be defined here.
             modelBuilder.Entity<ItemCategory>()
                 .HasKey(x => new {x.ItemId, x.CategoryId});
+            modelBuilder.Entity<ItemsBoughtTogether>()
+                .HasKey(x => new {x.ItemAId, x.ItemBId});
         }
     }
 

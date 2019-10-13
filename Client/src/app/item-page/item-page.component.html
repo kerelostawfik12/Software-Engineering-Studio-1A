@@ -28,10 +28,19 @@
     </div>
     <br>
     <br>
-    <b>This item has been viewed {{item.views}} times.</b>
+    <strong>This item has been viewed {{item.views}} times.</strong>
 
   </div>
 
+</div>
+
+<br>
+<div [hidden]="boughtTogether.length == 0" id="boughtTogetherHeading">
+  <strong>Customers who bought this item also bought:</strong>
+</div>
+<br>
+<div *ngFor="let item of boughtTogether" id="items-container">
+  <app-small-item-listing [item]="item"></app-small-item-listing>
 </div>
 
 <div>

@@ -12,6 +12,7 @@ import {Notifications} from "../notifications";
 })
 export class ItemPageComponent implements OnInit {
   public item: Item;
+  public boughtTogether: Item[] = [];
   public id: number;
   public errorText: string = "";
 
@@ -22,8 +23,9 @@ export class ItemPageComponent implements OnInit {
               private title: Title,
               private router: Router) {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
-    http.get<Item>(baseUrl + 'api/Item/GetItem', {params: {id: String(this.id)}}).subscribe(result => {
-      this.item = result;
+    http.get(baseUrl + 'api/Item/GetItemPage', {params: {id: String(this.id)}}).subscribe(result => {
+      this.item = result["item"] as Item;
+      this.boughtTogether = result["boughtTogether"] as Item[];
       this.title.setTitle(this.item.name + " - NotAmazon.com");
     }, error => {
       this.errorText = "This item does not exist, or has been removed.";

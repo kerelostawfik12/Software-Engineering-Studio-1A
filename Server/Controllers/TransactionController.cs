@@ -150,9 +150,12 @@ namespace Studio1BTask.Controllers
                 // Create transaction item objects
                 var items = order.PurchaseUnits[0].Items;
                 var lootBoxItems = new List<int>();
+
+                var boughtTogetherRecordsAlreadyHandledA = new HashSet<int>();
                 foreach (var item in items)
                 {
                     var itemId = int.Parse(item.Sku);
+
                     var itemEntity = context.Items
                         .Include(x => x.Seller)
                         .First(x => x.Id == itemId);
@@ -166,6 +169,40 @@ namespace Studio1BTask.Controllers
                         SellerSaleId = itemEntity.SellerId,
                         SellerSaleName = itemEntity.Seller.Name
                     });
+
+                    // Handle bought together records
+
+                    if (!boughtTogetherRecordsAlreadyHandledA.Contains(itemId))
+                    {
+                        boughtTogetherRecordsAlreadyHandledA.Add(itemId);
+
+                        var boughtTogetherRecordsAlreadyHandledB = new HashSet<int>();
+                        foreach (var itemB in items)
+                        {
+                            var itemBId = int.Parse(itemB.Sku);
+                            // Skip if item already handled or same (means duplicate items don't impact the count)
+                            if (boughtTogetherRecordsAlreadyHandledB.Contains(itemBId) || itemBId == itemId)
+                                continue;
+
+                            boughtTogetherRecordsAlreadyHandledB.Add(itemBId);
+
+                            // Get existing bought together record
+                            var boughtTogetherRecord = context.ItemsBoughtTogether
+                                .FirstOrDefault(x => x.ItemAId == itemId && x.ItemBId == itemBId);
+                            // If record doesn't exist, create it.
+                            if (boughtTogetherRecord == null)
+                                boughtTogetherRecord = context.ItemsBoughtTogether.Add(new ItemsBoughtTogether
+                                {
+                                    ItemAId = itemId,
+                                    ItemBId = itemBId,
+                                    Count = 0
+                                }).Entity;
+
+                            // Increment bought together count
+                            boughtTogetherRecord.Count++;
+                        }
+                    }
+
 
                     // If item is a loot box, also add in a random item below its price.
                     if (itemEntity.Id == 86)

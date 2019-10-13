@@ -47,6 +47,12 @@
 }
 
 
+#items-container {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 5px;
+  margin-left: 14px;
+}
 
 
 
@@ -70,4 +76,8 @@ span.item-price {
 
 span.space {
   height: 100px;
+}
+
+#boughtTogetherHeading {
+  padding-bottom: 20px;
 }
