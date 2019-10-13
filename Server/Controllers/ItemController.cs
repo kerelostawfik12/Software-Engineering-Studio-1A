@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Studio1BTask.Models;
@@ -27,7 +28,9 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                var item = context.Items.Include(x => x.Seller).First(x => x.Id == id);
+                var item = context.Items
+                    .Include(x => x.Seller)
+                    .First(x => x.Id == id && !x.Hidden);
                 if (item.Views == null) item.Views = 0;
                 item.Views++;
                 context.SaveChanges();
@@ -83,7 +86,8 @@ namespace Studio1BTask.Controllers
                     Name = form.Name,
                     Price = decimal.Parse(form.Price),
                     SellerId = seller.Id,
-                    ImageURL = form.ImageURL
+                    ImageURL = form.ImageURL,
+                    Hidden = false
                 });
                 context.SaveChanges();
 
@@ -97,32 +101,25 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                // If an admin, just remove the item.
-                if (_accountService.ValidateAdminSession(Request.Cookies, context))
-                {
-                    context.Items.Remove(GetItem(simpleInt.Value));
-                    context.SaveChanges();
-                    return;
-                }
-
-                // Else, check if the user is a seller.
+                var item = context.Items.First(x => x.Id == simpleInt.Value);
+                // Check if the user is a seller.
                 var seller = _accountService.ValidateSellerSession(Request.Cookies, context);
-                // If user is not a seller, return.
-                if (seller == null)
+                var admin = _accountService.ValidateAdminSession(Request.Cookies, context);
+                // If user is not a seller or admin, return.
+                if (seller == null && admin == false)
                 {
                     Response.StatusCode = 403;
                     return;
                 }
 
-                var item = GetItem(simpleInt.Value);
                 // Do not let a seller remove the item if they are not the owner of the item.
-                if (item.SellerId != seller.Id)
+                if (!admin && item.SellerId != seller.Id)
                 {
                     Response.StatusCode = 403;
                     return;
                 }
 
-                context.Items.Remove(item);
+                item.Hidden = true;
                 context.SaveChanges();
             }
         }
@@ -138,7 +135,7 @@ namespace Studio1BTask.Controllers
                 if (seller != null)
                 {
                     var items = context.Items
-                        .Where(x => x.SellerId == seller.Id)
+                        .Where(x => !x.Hidden && x.SellerId == seller.Id)
                         .Include(item => item.Seller)
                         .ToList();
                     return items;
@@ -147,6 +144,7 @@ namespace Studio1BTask.Controllers
                 if (_accountService.ValidateAdminSession(Request.Cookies, context))
                 {
                     var items = context.Items
+                        .Where(x => !x.Hidden)
                         .Include(item => item.Seller)
                         .ToList();
                     return items;
@@ -173,7 +171,7 @@ namespace Studio1BTask.Controllers
 
             using (var context = new DbContext())
             {
-                var q = context.Items as IQueryable<Item>;
+                var q = context.Items.Where(x => !x.Hidden);
 
                 // Include seller data from start so it can be searched
                 q = q.Include(item => item.Seller);
@@ -200,7 +198,48 @@ namespace Studio1BTask.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<Item> GetItemsInCart()
+        public Dictionary<string, dynamic> GetItemsInCart()
+        {
+            var obj = new Dictionary<string, dynamic>();
+
+            using (var context = new DbContext())
+            {
+                var session = _accountService.ValidateSession(Request.Cookies, context);
+                if (session == null)
+                {
+                    Response.StatusCode = 401; // Unauthorised
+                    return null;
+                }
+
+                var cartItems = context.CartItems
+                    .Where(x => x.SessionId == session.Id)
+                    .Include(x => x.Item);
+
+                // If there are any hidden items in the cart, remove them before returning the items.
+                var itemsToRemove = cartItems.Where(x => x.Item.Hidden);
+                if (!itemsToRemove.IsNullOrEmpty())
+                {
+                    context.CartItems.RemoveRange(itemsToRemove);
+                    context.SaveChanges();
+                    if (itemsToRemove.Count() == 1)
+                        obj["warning"] = "An item in your cart has been removed, as it is no longer available.";
+                    else
+                        obj["warning"] = "Some items in your cart have been removed, as they are no longer available.";
+                }
+
+                var items = cartItems
+                    .Select(cartItem => cartItem.Item)
+                    .Where(x => !x.Hidden)
+                    .Include(x => x.Seller)
+                    .ToList();
+
+                obj["items"] = items;
+                return obj;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public Dictionary<string, dynamic> AddItemToCart([FromBody] SimpleInt id)
         {
             using (var context = new DbContext())
             {
@@ -211,24 +250,10 @@ namespace Studio1BTask.Controllers
                     return null;
                 }
 
-                var items = context.CartItems
-                    .Where(x => x.SessionId == session.Id)
-                    .Include(x => x.Item)
-                    .Select(cartItem => cartItem.Item).Include(x => x.Seller)
-                    .ToList();
-                return items;
-            }
-        }
-
-        [HttpPost("[action]")]
-        public IEnumerable<Item> AddItemToCart([FromBody] SimpleInt id)
-        {
-            using (var context = new DbContext())
-            {
-                var session = _accountService.ValidateSession(Request.Cookies, context);
-                if (session == null)
+                // If item does not exist, don't add it.
+                if (context.Items.FirstOrDefault(x => x.Id == id.Value && !x.Hidden) == null)
                 {
-                    Response.StatusCode = 401; // Unauthorised
+                    Response.StatusCode = 404; // Not found
                     return null;
                 }
 
@@ -239,12 +264,13 @@ namespace Studio1BTask.Controllers
                 });
 
                 context.SaveChanges();
+
                 return GetItemsInCart();
             }
         }
 
         [HttpPost("[action]")]
-        public IEnumerable<Item> RemoveItemFromCart([FromBody] SimpleInt id)
+        public Dictionary<string, dynamic> RemoveItemFromCart([FromBody] SimpleInt id)
         {
             using (var context = new DbContext())
             {

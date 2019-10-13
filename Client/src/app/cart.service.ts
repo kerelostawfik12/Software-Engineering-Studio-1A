@@ -18,7 +18,7 @@ export class CartService {
     this.httpClient.post(this.baseUrl + 'api/Item/AddItemToCart', {"value": item.id}).subscribe(result => {
       Notifications.success("Added " + item.name + " to cart.");
       // Set items in cart to whatever the response from the server now says is in the cart
-      this.items.next(result as Item[]);
+      this.setItemsToResponse(result);
     }, error => {
       console.error(error);
       Notifications.error("Could not add item to cart. Please refresh the page, and try again.");
@@ -28,7 +28,7 @@ export class CartService {
   public refreshItems(): Observable<Item[]> {
     this.httpClient.get<Item[]>(this.baseUrl + 'api/Item/GetItemsInCart').subscribe(result => {
       this.isLoaded = true;
-      this.items.next(result as Item[]);
+      this.setItemsToResponse(result);
     }, error => {
       console.log(error);
       // Quick workaround for incorrect cart data on first page load
@@ -46,10 +46,16 @@ export class CartService {
     this.httpClient.post(this.baseUrl + 'api/Item/RemoveItemFromCart', {"value": item.id}).subscribe(result => {
       Notifications.success("Removed " + item.name + " from cart.");
       // Set items in cart to whatever the response from the server now says is in the cart
-      this.items.next(result as Item[]);
+      this.setItemsToResponse(result);
     }, error => {
       console.error(error);
       Notifications.error(error);
     });
+  }
+
+  setItemsToResponse(result) {
+    this.items.next(result["items"] as Item[]);
+    if (result["warning"] != null)
+      Notifications.warning(result["warning"]);
   }
 }

@@ -79,6 +79,7 @@ namespace Studio1BTask.Controllers
                 var itemsInCart = context.CartItems
                     .Where(x => x.SessionId == customer.Account.SessionId)
                     .Include(x => x.Item)
+                    .Where(x => !x.Item.Hidden)
                     .Select(cartItem => cartItem.Item).Include(x => x.Seller)
                     .ToList();
 
@@ -124,13 +125,15 @@ namespace Studio1BTask.Controllers
         {
             using (var context = new DbContext())
             {
-                // Refuse capture if customer is not properly authenticated, or if server does not remember creating the order
+                // Refuse capture if customer is not properly authenticated
                 var customer = _accountService.ValidateCustomerSession(Request.Cookies, context, true);
                 if (customer == null)
                 {
                     Response.StatusCode = 401; // Unauthorised
                     return null;
                 }
+
+                // Refuse capture if 
 
                 // Capture funds through Paypal
                 var order = await _paypalService.CaptureOrder(orderId);
@@ -169,7 +172,7 @@ namespace Studio1BTask.Controllers
                     {
                         var eligibleItems = context.Items
                             .Include(x => x.Seller)
-                            .Where(x => x.Price < itemEntity.Price);
+                            .Where(x => !x.Hidden && x.Price < itemEntity.Price);
                         var skip = (int) (new Random().NextDouble() * eligibleItems.Count());
                         var chosenItem = eligibleItems.Skip(skip).Take(1).FirstOrDefault();
                         TransactionItem transactionItem;

@@ -18,5 +18,6 @@ namespace Studio1BTask.Models
         public decimal Price { get; set; }
 
         public int? Views { get; set; }
+        public bool Hidden { get; set; }
     }
 }

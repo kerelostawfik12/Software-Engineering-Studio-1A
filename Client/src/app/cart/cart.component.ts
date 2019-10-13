@@ -30,6 +30,7 @@ export class CartComponent implements OnInit {
     let thisRef = this;
     paypal.Buttons({
       createOrder: function () {
+        thisRef.cartService.refreshItems();
         return fetch(thisRef.baseUrl + 'api/Transaction/CreatePaypalOrder', {
           method: 'post',
           headers: {
