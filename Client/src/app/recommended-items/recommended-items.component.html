@@ -1,0 +1,6 @@
+<h1>Most Popular Items</h1>
+<div *ngFor="let item of items; let i = index" [attr.data-index]="i" id="items-container">
+  <div *ngIf="i < 8">
+    <app-small-item-listing [item]="item"></app-small-item-listing>
+  </div>
+</div>
