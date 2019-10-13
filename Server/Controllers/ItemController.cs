@@ -191,6 +191,7 @@ namespace Studio1BTask.Controllers
             using (var context = new DbContext())
             {
                 var items = context.Items
+                    .Where(x => !x.Hidden)
                     .Include(item => item.Seller)
                     .OrderByDescending(item => item.Views)
                     .Take(count)
@@ -205,6 +206,7 @@ namespace Studio1BTask.Controllers
             using (var context = new DbContext())
             {
                 var items = context.Items
+                    .Where(x => !x.Hidden)
                     .Include(item => item.Seller)
                     .OrderByDescending(item => item.Purchases)
                     .Take(count)
