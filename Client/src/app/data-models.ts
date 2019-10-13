@@ -75,10 +75,10 @@ interface TransactionItem {
 
 
 interface SearchItemResult {
-  items: Item[]; // The items returned by the query
-  categories?: JSON; // All categories of items returned by the query
-  sellers?: JSON; // All sellers of items returned by the query
-  brands?: JSON; // All brands of items returned by the query
+  items: Item[]; // The mostViewed returned by the query
+  categories?: JSON; // All categories of mostViewed returned by the query
+  sellers?: JSON; // All sellers of mostViewed returned by the query
+  brands?: JSON; // All brands of mostViewed returned by the query
   // Categories/sellers/brands JSON will probably look like this:
   /*
   {
@@ -89,7 +89,7 @@ interface SearchItemResult {
     }
   }
   */
-  maxPrice: number; // The max price of items returned by the query
-  minPrice: number; // The minimum price of items returned by the query
-  numItems: number; // The total number of items fitting the query
+  maxPrice: number; // The max price of mostViewed returned by the query
+  minPrice: number; // The minimum price of mostViewed returned by the query
+  numItems: number; // The total number of mostViewed fitting the query
 }

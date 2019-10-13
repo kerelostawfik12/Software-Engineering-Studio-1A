@@ -51,7 +51,7 @@
   display: inline-flex;
   flex-direction: row;
   padding: 5px;
-  margin-left: 14px;
+  transform: translateX(14px);
 }
 
 

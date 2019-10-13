@@ -115,7 +115,7 @@ namespace Studio1BTask.Controllers
                 }
             }
 
-            // Create items for order 
+            // Create mostViewed for order 
             var order = await _paypalService.CreateOrder(orderItems, totalPrice);
             return order;
         }
@@ -170,17 +170,17 @@ namespace Studio1BTask.Controllers
                         SellerSaleName = itemEntity.Seller.Name
                     });
 
-                    // Handle bought together records
-
+                    // Handle bought together records and purchase count
                     if (!boughtTogetherRecordsAlreadyHandledA.Contains(itemId))
                     {
                         boughtTogetherRecordsAlreadyHandledA.Add(itemId);
+                        itemEntity.Purchases++;
 
                         var boughtTogetherRecordsAlreadyHandledB = new HashSet<int>();
                         foreach (var itemB in items)
                         {
                             var itemBId = int.Parse(itemB.Sku);
-                            // Skip if item already handled or same (means duplicate items don't impact the count)
+                            // Skip if item already handled or same (means duplicate mostViewed don't impact the count)
                             if (boughtTogetherRecordsAlreadyHandledB.Contains(itemBId) || itemBId == itemId)
                                 continue;
 

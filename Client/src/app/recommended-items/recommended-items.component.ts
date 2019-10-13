@@ -9,7 +9,8 @@ import {HttpClient} from "@angular/common/http";
 export class RecommendedItemsComponent implements OnInit {
   private httpClient: HttpClient;
   private baseUrl: string;
-  items: Item[];
+  mostViewed: Item[];
+  topSellers: Item[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.httpClient = http;
@@ -21,8 +22,9 @@ export class RecommendedItemsComponent implements OnInit {
   }
 
   refreshItems() {
-    this.httpClient.get<Item[]>(this.baseUrl + 'api/Item/RecommendedItems').subscribe(result => {
-      this.items = result;
+    this.httpClient.get<Item[]>(this.baseUrl + 'api/Item/FrontPageItems').subscribe(result => {
+      this.mostViewed = result["mostViewed"];
+      this.topSellers = result["topSellers"];
     }, error => console.error(error));
   }
 }

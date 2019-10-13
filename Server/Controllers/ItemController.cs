@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.SqlServer.Query.ExpressionTranslators.Internal;
 using Studio1BTask.Models;
 using Studio1BTask.Services;
 using DbContext = Studio1BTask.Models.DbContext;
@@ -16,7 +14,7 @@ namespace Studio1BTask.Controllers
 {
     // NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. 
     // See https://docs.microsoft.com/en-us/ef/core/querying/related-data
-    
+
     [Route("api/[controller]")]
     public class ItemController : Controller
     {
@@ -115,7 +113,8 @@ namespace Studio1BTask.Controllers
                     Price = decimal.Parse(form.Price),
                     SellerId = seller.Id,
                     ImageURL = form.ImageURL,
-                    Hidden = false
+                    Hidden = false,
+                    Purchases = 0
                 });
                 context.SaveChanges();
 
@@ -152,8 +151,8 @@ namespace Studio1BTask.Controllers
             }
         }
 
-        // If the requesting user is a seller, it will get all items from that seller. 
-        // If the requesting user is an admin, it will get all items in the database.
+        // If the requesting user is a seller, it will get all mostViewed from that seller. 
+        // If the requesting user is an admin, it will get all mostViewed in the database.
         [HttpGet("[action]")]
         public IEnumerable<Item> AllItems()
         {
@@ -165,6 +164,7 @@ namespace Studio1BTask.Controllers
                     var items = context.Items
                         .Where(x => !x.Hidden && x.SellerId == seller.Id)
                         .Include(item => item.Seller)
+                        .OrderBy(x => x.Id)
                         .ToList();
                     return items;
                 }
@@ -174,6 +174,7 @@ namespace Studio1BTask.Controllers
                     var items = context.Items
                         .Where(x => !x.Hidden)
                         .Include(item => item.Seller)
+                        .OrderBy(x => x.Id)
                         .ToList();
                     return items;
                 }
@@ -185,16 +186,41 @@ namespace Studio1BTask.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<Item> RecommendedItems()
+        public IEnumerable<Item> MostViewedItems(int count)
         {
             using (var context = new DbContext())
             {
                 var items = context.Items
                     .Include(item => item.Seller)
                     .OrderByDescending(item => item.Views)
+                    .Take(count)
                     .ToList();
                 return items;
             }
+        }
+
+        [HttpGet("[action]")]
+        public IEnumerable<Item> TopSellingItems(int count)
+        {
+            using (var context = new DbContext())
+            {
+                var items = context.Items
+                    .Include(item => item.Seller)
+                    .OrderByDescending(item => item.Purchases)
+                    .Take(count)
+                    .ToList();
+                return items;
+            }
+        }
+
+        [HttpGet("[action]")]
+        public Dictionary<string, dynamic> FrontPageItems()
+        {
+            return new Dictionary<string, dynamic>
+            {
+                ["topSellers"] = TopSellingItems(16),
+                ["mostViewed"] = MostViewedItems(16)
+            };
         }
 
         [HttpGet("[action]")]
@@ -256,7 +282,7 @@ namespace Studio1BTask.Controllers
                     .Where(x => x.SessionId == session.Id)
                     .Include(x => x.Item);
 
-                // If there are any hidden items in the cart, remove them before returning the items.
+                // If there are any hidden mostViewed in the cart, remove them before returning the mostViewed.
                 var itemsToRemove = cartItems.Where(x => x.Item.Hidden);
                 if (!itemsToRemove.IsNullOrEmpty())
                 {
@@ -265,7 +291,8 @@ namespace Studio1BTask.Controllers
                     if (itemsToRemove.Count() == 1)
                         obj["warning"] = "An item in your cart has been removed, as it is no longer available.";
                     else
-                        obj["warning"] = "Some items in your cart have been removed, as they are no longer available.";
+                        obj["warning"] =
+                            "Some mostViewed in your cart have been removed, as they are no longer available.";
                 }
 
                 var items = cartItems
@@ -274,7 +301,7 @@ namespace Studio1BTask.Controllers
                     .Include(x => x.Seller)
                     .ToList();
 
-                obj["items"] = items;
+                obj["mostViewed"] = items;
                 return obj;
             }
         }

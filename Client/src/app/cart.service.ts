@@ -17,7 +17,7 @@ export class CartService {
   public addToCart(item: Item) {
     this.httpClient.post(this.baseUrl + 'api/Item/AddItemToCart', {"value": item.id}).subscribe(result => {
       Notifications.success("Added " + item.name + " to cart.");
-      // Set items in cart to whatever the response from the server now says is in the cart
+      // Set mostViewed in cart to whatever the response from the server now says is in the cart
       this.setItemsToResponse(result);
     }, error => {
       console.error(error);
@@ -45,7 +45,7 @@ export class CartService {
   public removeItem(item: Item): void {
     this.httpClient.post(this.baseUrl + 'api/Item/RemoveItemFromCart', {"value": item.id}).subscribe(result => {
       Notifications.success("Removed " + item.name + " from cart.");
-      // Set items in cart to whatever the response from the server now says is in the cart
+      // Set mostViewed in cart to whatever the response from the server now says is in the cart
       this.setItemsToResponse(result);
     }, error => {
       console.error(error);
@@ -54,7 +54,7 @@ export class CartService {
   }
 
   setItemsToResponse(result) {
-    this.items.next(result["items"] as Item[]);
+    this.items.next(result["mostViewed"] as Item[]);
     if (result["warning"] != null)
       Notifications.warning(result["warning"]);
   }

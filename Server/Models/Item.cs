@@ -16,8 +16,8 @@ namespace Studio1BTask.Models
 
         public string ImageURL { get; set; }
         public decimal Price { get; set; }
-
         public int? Views { get; set; }
+        public int Purchases { get; set; }
         public bool Hidden { get; set; }
     }
 }

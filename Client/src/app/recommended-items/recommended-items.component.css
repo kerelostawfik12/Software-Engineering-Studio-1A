@@ -1,5 +1,6 @@
-#items-container {
+.items-container {
   display: inline-flex;
   flex-direction: row;
   padding: 5px;
+  transform: translateX(14px);
 }
