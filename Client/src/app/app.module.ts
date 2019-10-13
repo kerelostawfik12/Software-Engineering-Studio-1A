@@ -32,6 +32,7 @@ import {LongItemViewComponent} from "./long-item-view/long-item-view.component";
 import {PaypalComponent} from "./paypal/paypal.component";
 import {ChatComponent} from './chat/chat.component';
 import {ThankYouComponent} from './thank-you/thank-you.component';
+import {RecommendedItemsComponent} from "./recommended-items/recommended-items.component";
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import {ThankYouComponent} from './thank-you/thank-you.component';
     AdminRegisterComponent,
     PaypalComponent,
     ChatComponent,
-    ThankYouComponent
+    ThankYouComponent,
+    RecommendedItemsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),

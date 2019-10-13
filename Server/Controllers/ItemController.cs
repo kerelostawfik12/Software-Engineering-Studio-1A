@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Castle.Core.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.ExpressionTranslators.Internal;
 using Studio1BTask.Models;
 using Studio1BTask.Services;
 using DbContext = Studio1BTask.Models.DbContext;
@@ -14,6 +16,7 @@ namespace Studio1BTask.Controllers
 {
     // NOTE: To have objects from foreign keys filled, you will need to use Include(), or they will be empty. 
     // See https://docs.microsoft.com/en-us/ef/core/querying/related-data
+    
     [Route("api/[controller]")]
     public class ItemController : Controller
     {
@@ -178,6 +181,19 @@ namespace Studio1BTask.Controllers
                 // If the user is not a seller or admin, there is nothing to give them.
                 Response.StatusCode = 403;
                 return null;
+            }
+        }
+
+        [HttpGet("[action]")]
+        public IEnumerable<Item> RecommendedItems()
+        {
+            using (var context = new DbContext())
+            {
+                var items = context.Items
+                    .Include(item => item.Seller)
+                    .OrderByDescending(item => item.Views)
+                    .ToList();
+                return items;
             }
         }
 

@@ -13,6 +13,7 @@ export class ItemViewComponent implements OnInit {
   private baseUrl: string;
   viewSetting: number = 0;
   items: Item[];
+  array: number[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.httpClient = http;
