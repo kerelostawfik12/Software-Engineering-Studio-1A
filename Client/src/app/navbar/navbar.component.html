@@ -33,7 +33,7 @@
           <div id="log-out"><a (click)="logout()">Log out</a></div>
         </div>
         <div *ngIf="user.isLoggedIn && user.isAdmin" class="rainbow" id="logged-in-admin">
-          Administrator
+          <a [routerLink]="['/profile']" class="rainbow">Administrator</a>
           <div id="admin-log-out"><a (click)="logout()">Log out</a></div>
         </div>
       </div>

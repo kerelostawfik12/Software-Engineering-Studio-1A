@@ -1,5 +1,6 @@
 <br>
-<h2>{{user.firstName}}'s Profile</h2>
+<h2 *ngIf="!user.isAdmin">{{user.firstName}}'s Profile</h2>
+<h2 *ngIf="user.isAdmin">Profile</h2>
 <br>
 <div id="forms">
 
