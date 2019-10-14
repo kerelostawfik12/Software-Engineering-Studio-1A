@@ -471,8 +471,9 @@ namespace Studio1BTask.Controllers
                 var obj = new Dictionary<string, string>();
                 // Validate the user's email and old password
                 var account = _accountService.ValidateCredentials(request["email"], request["oldPassword"], context);
+                var session = _accountService.ValidateSession(Request.Cookies, context);
 
-                if (account == null)
+                if (account == null || account.Id != session.AccountId)
                 {
                     obj["error"] = "Invalid credentials.";
                     Response.StatusCode = 403;
@@ -509,8 +510,9 @@ namespace Studio1BTask.Controllers
                 var obj = new Dictionary<string, string>();
                 // Validate the user's old email and password
                 var account = _accountService.ValidateCredentials(request["oldEmail"], request["password"], context);
+                var session = _accountService.ValidateSession(Request.Cookies, context);
 
-                if (account == null)
+                if (account == null || account.Id != session.AccountId)
                 {
                     obj["error"] = "Invalid credentials.";
                     Response.StatusCode = 403;
