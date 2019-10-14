@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -464,6 +463,113 @@ namespace Studio1BTask.Controllers
             }
         }
 
+        [HttpPost("[action]")]
+        public Dictionary<string, string> ChangePassword([FromBody] Dictionary<string, string> request)
+        {
+            using (var context = new DbContext())
+            {
+                var obj = new Dictionary<string, string>();
+                // Validate the user's email and old password
+                var account = _accountService.ValidateCredentials(request["email"], request["oldPassword"], context);
+
+                if (account == null)
+                {
+                    obj["error"] = "Invalid credentials.";
+                    Response.StatusCode = 403;
+                    return obj;
+                }
+
+                var newPassword = request["newPassword"];
+                if (!_accountService.IsPasswordValid(newPassword, out var reason))
+                {
+                    obj["error"] = reason;
+                    Response.StatusCode = 403;
+                    return obj;
+                }
+
+                // Set the new password
+                var newHash = _accountService.HashPassword(request["newPassword"], account);
+                account.PasswordHash = newHash;
+
+                // Reset session token (log user out everywhere)
+                context.Sessions.Find(account.SessionId).Token = _accountService.CreateSessionToken();
+                context.SaveChanges();
+
+                // Log the user out
+                ClearCookies();
+                return obj;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public Dictionary<string, string> ChangeEmail([FromBody] Dictionary<string, string> request)
+        {
+            using (var context = new DbContext())
+            {
+                var obj = new Dictionary<string, string>();
+                // Validate the user's old email and password
+                var account = _accountService.ValidateCredentials(request["oldEmail"], request["password"], context);
+
+                if (account == null)
+                {
+                    obj["error"] = "Invalid credentials.";
+                    Response.StatusCode = 403;
+                    return obj;
+                }
+
+                var newEmail = request["newEmail"];
+                if (!_accountService.IsEmailValid(newEmail))
+                {
+                    obj["error"] = "Invalid email.";
+                    Response.StatusCode = 403;
+                    return obj;
+                }
+
+                // Set the new email
+                account.Email = newEmail;
+
+                // Set the new password hash
+                var newHash = _accountService.HashPassword(request["password"], account);
+                account.PasswordHash = newHash;
+
+                // Reset session token (log user out everywhere)
+                context.Sessions.Find(account.SessionId).Token = _accountService.CreateSessionToken();
+                context.SaveChanges();
+
+                // Log the user out
+                ClearCookies();
+                return obj;
+            }
+        }
+
+        [HttpPost("[action]")]
+        public Dictionary<string, string> ChangeName([FromBody] Dictionary<string, string> request)
+        {
+            using (var context = new DbContext())
+            {
+                var obj = new Dictionary<string, string>();
+                var customer = _accountService.ValidateCustomerSession(Request.Cookies, context);
+                var seller = _accountService.ValidateSellerSession(Request.Cookies, context);
+                if (customer != null)
+                {
+                    customer.FirstName = request["firstName"];
+                    customer.LastName = request["lastName"];
+                }
+                else if (seller != null)
+                {
+                    seller.Name = request["name"];
+                }
+                else
+                {
+                    obj["error"] = "Invalid session. Please refresh the page, and try again.";
+                    return obj;
+                }
+
+                context.SaveChanges();
+                return obj;
+            }
+        }
+
 
         private void ClearCookies()
         {
@@ -483,7 +589,7 @@ namespace Studio1BTask.Controllers
         // but probably won't be as it kinda works okay for the time being and the project is due really soon.
         // Originally the conversation stuff was handled on the backend, but I gave up after about 3 hours, which is why the code is especially strange.
         [HttpGet("[action]")]
-        public async Task<Dictionary<string, string>> StartChat([FromQuery] int? id)
+        public Dictionary<string, string> StartChat([FromQuery] int? id)
         {
             var obj = new Dictionary<string, string> {["error"] = "", ["otherId"] = ""};
 

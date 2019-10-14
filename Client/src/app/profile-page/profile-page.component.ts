@@ -28,14 +28,55 @@ export class ProfilePageComponent implements OnInit{
     this.userService.getCurrent().subscribe(x => this.user = x);
   }
 
-   removeAccount(){
-    this.httpClient.post(this.baseUrl + 'api/Account/RemoveAccount', {}).subscribe(result => {
-      console.log(result);
-      Notifications.success("Successfully removed " + User.name + "!");
+
+  changeName() {
+    this.httpClient.post(this.baseUrl + 'api/Account/ChangeName', {
+      firstName: (document.getElementById("firstName") as HTMLInputElement).value,
+      lastName: (document.getElementById("lastName") as HTMLInputElement).value,
+      name: (document.getElementById("name") as HTMLInputElement).value,
+    }).subscribe(result => {
+      Notifications.success("Successfully changed name.");
+      window.location.assign('/');
     }, error => {
       console.error(error);
-      Notifications.error("Account was not deleted");
+      if (error["error"] != null)
+        Notifications.error(error["error"]["error"]);
+      else
+        Notifications.error("An unknown error occured.");
     })
   }
 
+  changeEmail() {
+    this.httpClient.post(this.baseUrl + 'api/Account/ChangeEmail', {
+      oldEmail: (document.getElementById("oldEmail") as HTMLInputElement).value,
+      newEmail: (document.getElementById("newEmail") as HTMLInputElement).value,
+      password: (document.getElementById("password") as HTMLInputElement).value
+    }).subscribe(result => {
+      Notifications.success("Successfully changed email address.");
+      window.location.assign('/login');
+    }, error => {
+      console.error(error);
+      if (error["error"] != null)
+        Notifications.error(error["error"]["error"]);
+      else
+        Notifications.error("An unknown error occured.");
+    })
+  }
+
+  changePassword() {
+    this.httpClient.post(this.baseUrl + 'api/Account/ChangePassword', {
+      email: (document.getElementById("email") as HTMLInputElement).value,
+      oldPassword: (document.getElementById("oldPassword") as HTMLInputElement).value,
+      newPassword: (document.getElementById("newPassword") as HTMLInputElement).value
+    }).subscribe(result => {
+      Notifications.success("Successfully changed password.");
+      window.location.assign('/login');
+    }, error => {
+      console.error(error);
+      if (error["error"] != null)
+        Notifications.error(error["error"]["error"]);
+      else
+        Notifications.error("An unknown error occured.");
+    })
+  }
 }
