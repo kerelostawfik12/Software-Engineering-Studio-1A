@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
   public items: Item[];
   public totalPrice: number;
 
-  constructor(private httpClient: HttpClient, private router: Router, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService, private formatter: FormatterService) {
+  constructor(private httpClient: HttpClient, private router: Router, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService, public formatter: FormatterService) {
     this.userService.getCurrent().subscribe(x => {
       this.user = x;
     });
