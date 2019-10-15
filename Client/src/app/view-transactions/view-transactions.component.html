@@ -39,8 +39,8 @@
         </a>
       </td>
 
-      <td>Unit: ${{addTrailingZero(item.itemSalePrice.toLocaleString())}}<br>Total:
-        ${{addTrailingZero(item.customerTransaction.total.toLocaleString())}}</td>
+      <td>Unit: ${{formatter.convertToMoneyString(item.itemSalePrice)}}<br>Total:
+        ${{formatter.convertToMoneyString(item.customerTransaction.total)}}</td>
 
     </tr>
     </tbody>

@@ -9,8 +9,8 @@ import {HttpClient} from "@angular/common/http";
 export class RecommendedItemsComponent implements OnInit {
   private httpClient: HttpClient;
   private baseUrl: string;
-  mostViewed: Item[];
-  topSellers: Item[];
+  mostViewed: Item[] = [];
+  topSellers: Item[] = [];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.httpClient = http;
@@ -21,10 +21,19 @@ export class RecommendedItemsComponent implements OnInit {
   ngOnInit() {
   }
 
+  private static addToArrayWithDelay(inputArray: any[], outputArray: any[], delay: number, delayEase: number = 1, index: number = 0) {
+    if (index >= inputArray.length)
+      return;
+    outputArray.push(inputArray[index]);
+    setTimeout(function () {
+      RecommendedItemsComponent.addToArrayWithDelay(inputArray, outputArray, delay * delayEase, delayEase, index + 1);
+    }, delay * 1000);
+  }
+
   refreshItems() {
     this.httpClient.get<Item[]>(this.baseUrl + 'api/Item/FrontPageItems').subscribe(result => {
-      this.mostViewed = result["mostViewed"];
-      this.topSellers = result["topSellers"];
+      RecommendedItemsComponent.addToArrayWithDelay(result["mostViewed"], this.mostViewed, 0.3, 0.9);
+      RecommendedItemsComponent.addToArrayWithDelay(result["topSellers"], this.topSellers, 0.3, 0.9);
     }, error => console.error(error));
   }
 }

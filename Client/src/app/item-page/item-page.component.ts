@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Title} from "@angular/platform-browser";
 import {CartService} from '../cart.service';
 import {Notifications} from "../notifications";
+import {FormatterService} from '../formatter.service';
 
 @Component({
   selector: 'app-item-page',
@@ -21,6 +22,7 @@ export class ItemPageComponent implements OnInit {
               private route: ActivatedRoute,
               private cartService: CartService,
               private title: Title,
+              private formatter: FormatterService,
               private router: Router) {
     this.id = parseInt(this.route.snapshot.paramMap.get('id'));
     http.get(baseUrl + 'api/Item/GetItemPage', {params: {id: String(this.id)}}).subscribe(result => {

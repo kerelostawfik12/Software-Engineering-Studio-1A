@@ -19,7 +19,7 @@
       <td><a routerLink="/item/{{ item.id }}">{{item.name}}</a></td>
       <td>{{item.description}}</td>
       <td><a routerLink="/chat/{{ item.sellerId }}">{{item.seller.name}}</a></td>
-      <td><b>${{item.price.toLocaleString()}}</b></td>
+      <td style="float:right; text-align:right"><b>${{formatter.convertToMoneyString(item.price)}}</b></td>
       <td>
         <button (click)="remove(item)" class="btn btn-danger">Remove</button>
       </td>
@@ -35,7 +35,7 @@
 <div [hidden]="items.length == 0" id="checkout">
   <div>
     <h5>Total Price:
-      <span class="red">${{totalPrice.toLocaleString()}}</span>
+      <span class="red">${{formatter.convertToMoneyString(totalPrice)}}</span>
     </h5>
   </div>
   <br>

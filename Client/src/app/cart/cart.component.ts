@@ -5,6 +5,7 @@ import {User, UserService} from "../user.service";
 import {Router} from "@angular/router";
 import {Notifications} from "../notifications";
 import * as assert from "assert";
+import {FormatterService} from '../formatter.service';
 
 declare var paypal: any;
 
@@ -19,7 +20,7 @@ export class CartComponent implements OnInit {
   public items: Item[];
   public totalPrice: number;
 
-  constructor(private httpClient: HttpClient, private router: Router, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService) {
+  constructor(private httpClient: HttpClient, private router: Router, @Inject('BASE_URL') private baseUrl: string, private cartService: CartService, private userService: UserService, private formatter: FormatterService) {
     this.userService.getCurrent().subscribe(x => {
       this.user = x;
     });

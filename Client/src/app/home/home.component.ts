@@ -11,13 +11,12 @@ export class HomeComponent {
     // @ts-ignore
     (<any>window).mySwipe = new Swipe(document.getElementById('slider'), {
       startSlide: 0,
-      auto: 3000,
+      auto: 3600,
       draggable: true,
       autoRestart: true,
       continuous: true,
       disableScroll: true,
       stopPropagation: true,
-
     });
   }
 

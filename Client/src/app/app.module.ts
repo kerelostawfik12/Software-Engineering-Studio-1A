@@ -33,6 +33,7 @@ import {PaypalComponent} from "./paypal/paypal.component";
 import {ChatComponent} from './chat/chat.component';
 import {ThankYouComponent} from './thank-you/thank-you.component';
 import {RecommendedItemsComponent} from "./recommended-items/recommended-items.component";
+import {HelpComponent} from './help/help.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import {RecommendedItemsComponent} from "./recommended-items/recommended-items.c
     PaypalComponent,
     ChatComponent,
     ThankYouComponent,
-    RecommendedItemsComponent
+    RecommendedItemsComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
@@ -94,6 +96,7 @@ import {RecommendedItemsComponent} from "./recommended-items/recommended-items.c
       {path: 'register-admin', component: AdminRegisterComponent},
       {path: 'chat/:id', component: ChatComponent},
       {path: 'chat', component: ChatComponent},
+      {path: 'help', component: HelpComponent},
       {path: 'thank-you', component: ThankYouComponent},
       {path: 'thank-you/:loot', component: ThankYouComponent},
     ])

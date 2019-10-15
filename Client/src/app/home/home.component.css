@@ -14,6 +14,10 @@
   padding: 8px;
 }
 
+.image {
+  animation: fade-in;
+}
+
 .swipe {
   overflow: hidden;
   visibility: hidden;
@@ -35,4 +39,16 @@
 .rainbow {
   animation: rainbow-text 1s linear;
   animation-iteration-count: infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

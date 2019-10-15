@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User, UserService} from "../user.service";
+import {FormatterService} from '../formatter.service';
 
 @Component({
   selector: 'app-view-transactions',
@@ -14,7 +15,7 @@ export class ViewTransactionsComponent implements OnInit {
   private httpClient: HttpClient;
   private baseUrl: string;
 
-  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private userService: UserService) {
+  constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string, private userService: UserService, private formatter: FormatterService) {
     this.httpClient = http;
     this.baseUrl = baseUrl;
     this.userService.getCurrent().subscribe(result => {
@@ -24,6 +25,7 @@ export class ViewTransactionsComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   refreshItems() {
@@ -52,12 +54,5 @@ export class ViewTransactionsComponent implements OnInit {
     return str;
   }
 
-  addTrailingZero(input: string): string {
-    let split = input.split('.');
-    if (split.length > 1 && split[split.length - 1].length == 1)
-      return input + "0";
-    else if (split.length == 1)
-      return input + ".00";
-    return input;
-  }
+
 }

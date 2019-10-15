@@ -48,6 +48,9 @@
           <li [routerLinkActive]='["link-active"]' class="nav-item">
             <a *ngIf="user.isSeller" [routerLink]='["/new-item-form"]' class="nav-link text-white">Create New Item</a>
           </li>
+          <li [routerLinkActive]='["link-active"]' class="nav-item">
+            <a [routerLink]='["/help"]' class="nav-link text-white">Help</a>
+          </li>
         </ul>
       </div>
     </div>

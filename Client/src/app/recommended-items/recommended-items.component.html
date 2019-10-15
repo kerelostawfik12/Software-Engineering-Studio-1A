@@ -1,15 +1,15 @@
-<h2>Top sellers</h2>
+<h2 id="top-sellers">Top sellers</h2>
 <br>
 <div *ngFor="let item of topSellers; let i = index" [attr.data-index]="i" class="items-container">
   <div>
-    <app-small-item-listing [item]="item"></app-small-item-listing>
+    <app-small-item-listing [item]="item" class="item"></app-small-item-listing>
   </div>
 </div>
 <br><br><br>
-<h2>Most viewed</h2>
+<h2 id="most-viewed">Most viewed</h2>
 <br>
 <div *ngFor="let item of mostViewed; let i = index" [attr.data-index]="i" class="items-container">
   <div>
-    <app-small-item-listing [item]="item"></app-small-item-listing>
+    <app-small-item-listing [item]="item" class="item"></app-small-item-listing>
   </div>
 </div>
