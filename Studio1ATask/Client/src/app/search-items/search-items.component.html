@@ -1,0 +1,25 @@
+<div *ngIf="searchResult != null">
+  <span class="form-group sort">
+  <label for="sel1">Sort by: </label>
+  <select class="form-control" id="sel1">
+    <option (click)="refreshItems()">Relevance</option>
+    <option (click)="sortByCheapest()">Price (ascending) </option>
+    <option (click)="sortByMostExpensive()">Price (descending)</option>
+    <option (click)="sortByNewest()">Newest</option>
+    <option (click)="sortByOldest()">Oldest</option>
+  </select>
+</span>
+  <br><br><br><br>
+  <div *ngFor="let item of searchResult.items" id="items-container">
+    <app-small-item-listing [item]="item"></app-small-item-listing>
+  </div>
+  <p *ngIf="searchResult.items.length == 0">
+    No results found. :(
+  </p>
+</div>
+<div *ngIf="searchResult == null">
+  Loading...
+</div>
+
+
+

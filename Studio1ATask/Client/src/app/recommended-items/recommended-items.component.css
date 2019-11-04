@@ -1,0 +1,30 @@
+.items-container {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 5px;
+  transform: translateX(14px);
+}
+
+.item {
+  animation: fade-in 1s;
+}
+
+#top-sellers {
+
+}
+
+#most-viewed {
+  animation: fade-in 6.65s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,57 @@
+<nav>
+  <div id="content">
+
+    <a [routerLink]='["/"]'>
+    <div id="logo">
+      NotAmazon.com
+    </div>
+    </a>
+
+    <div id="search">
+      <div id="search-bar">
+        <form (submit)="search()">
+        <label for="search-input"></label>
+          <input id="search-input" type="text" placeholder="Search all items..." name="firstname">
+        <a (click)="search()">
+          <img src="assets/icons/search.svg" alt="Search" draggable="false" id="search-button"/>
+        </a>
+        <button type="submit" style="display:none">hidden submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="menu">
+      <div
+        id="cart"><a [routerLink]='["/cart"]'><img alt="Cart" src="assets/icons/cart.svg">Cart {{cartCountText}}</a>
+      </div>
+      <div *ngIf="user != null && user.isLoaded" id="login-or-register">
+        <div *ngIf="!user.isLoggedIn">
+          <a [routerLink]='["/login"]'>Login</a> or <a [routerLink]="['/register']">Register</a>
+        </div>
+        <div *ngIf="user.isLoggedIn && !user.isAdmin" id="logged-in">
+          Hi, <a [routerLink]="['/profile']"> {{user.firstName}}!</a>
+          <div id="log-out"><a (click)="logout()">Log out</a></div>
+        </div>
+        <div *ngIf="user.isLoggedIn && user.isAdmin" class="rainbow" id="logged-in-admin">
+          <a [routerLink]="['/profile']" class="rainbow">Administrator</a>
+          <div id="admin-log-out"><a (click)="logout()">Log out</a></div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div id="categories">
+      <a [routerLink]='["/search/Desktop PC"]'>Desktop PCs</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/Laptop"]'>Laptops</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/Tablet"]'>Tablets</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/Mouse Pad"]'>Mousepads</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/PC Case"]'>PC Cases</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/Graphics Card"]'>Graphics Cards</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/CPU"]'>CPUs</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/Phone Case"]'>Phone Cases</a> &nbsp;&nbsp;
+      <a [routerLink]='["/search/Fortnite"]'>Fortnite</a>
+    </div>
+  </div>
+
+</nav>
