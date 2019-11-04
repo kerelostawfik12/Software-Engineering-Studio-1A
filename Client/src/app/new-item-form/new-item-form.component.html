@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<form>
+  <div class="container">
+
+    <h2>New Item Form</h2>
+
+    <label for="name"><b>Name</b></label>
+    <br>
+    <input class="form-control" id="name" name="item_name" required type="text">
+    <br>
+
+    <label for="description"><b>Description</b></label>
+    <br>
+    <textarea class="form-control" id="description" name="item_description" required type="text" rows="5" cols="119"></textarea>
+    <br>
+
+    <label for="price"><b>Price</b></label>
+    <br>
+    <input class="form-control" id="price" name="item_price" required type="text">
+    <br>
+    <div id="image-upload">
+      <label for="file"><b>Image (JPEG/PNG, no more than 4MB)</b></label>
+      <input #uploadButton (change)="uploadImage()" accept="image/jpeg, image/png" class="form-control-file" id="file" name="pic"
+             type="file">
+      <br>
+      <img #uploadedImage alt="{{imageURL}}" src="{{imageURL}}" width="400px">
+    </div>
+    <br>
+    <br>
+
+    <button #submitButton (click)="submit()" class="btn btn-primary" type="submit">Submit</button>
+
+  </div>
+</form>

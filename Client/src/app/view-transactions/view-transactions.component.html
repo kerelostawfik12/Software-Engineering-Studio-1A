@@ -1,0 +1,49 @@
+<h1>Transaction History</h1>
+
+<div class="row">
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Item</th>
+        <th>Transaction</th>
+        <th *ngIf="!user.isCustomer">Customer</th>
+        <th *ngIf="!user.isSeller"> Seller</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{getDateString(item.customerTransaction.date)}}<br>{{getTimeString(item.customerTransaction.date)}}</td>
+      <td>
+
+        #{{ item.itemSaleId }}: {{item.itemSaleName}}
+        <a routerLink="/item/{{ item.itemSaleId }}">
+          <br>(View Page)
+        </a>
+      </td>
+      <td>Internal: #{{item.customerTransaction.id}}<br>PayPal: #{{item.customerTransaction.paypalTransactionId}}</td>
+
+      <td *ngIf="!user.isCustomer">
+        #{{item.customerTransaction.customerId}}: {{item.customerTransaction.customerName}}
+        <a *ngIf="user.isSeller" routerLink="/chat/{{ item.customerTransaction.customerId }}">
+          <br>(Send Message)
+        </a>
+      </td>
+      <td *ngIf="!user.isSeller">
+        #{{item.sellerSaleId}}: {{item.sellerSaleName}}
+        <a *ngIf="user.isCustomer" routerLink="/chat/{{ item.sellerSaleId }}">
+          <br>(Send Message)
+        </a>
+      </td>
+
+      <td>Unit: ${{formatter.convertToMoneyString(item.itemSalePrice)}}<br>Total:
+        ${{formatter.convertToMoneyString(item.customerTransaction.total)}}</td>
+
+    </tr>
+    </tbody>
+
+  </table>
+</div>
