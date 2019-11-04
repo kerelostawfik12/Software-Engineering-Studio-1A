@@ -1,0 +1,90 @@
+<br>
+<h2 *ngIf="!user.isAdmin">{{user.firstName}}'s Profile</h2>
+<h2 *ngIf="user.isAdmin">Profile</h2>
+<br>
+<div id="forms">
+
+
+  <div [hidden]="!user.isCustomer" class="profile-form">
+    <strong>Change name</strong>
+    <br><br>
+    <div>
+      <form>
+        <label for="firstName">
+          First name
+        </label>
+        <input class="form-control" id="firstName" type="text" value="{{user.data['firstName']}}">
+        <label for="firstName">
+          Last name
+        </label>
+        <input class="form-control" id="lastName" type="text" value="{{user.data['lastName']}}">
+        <br>
+        <Button (click)="changeName()" class="btn btn-primary" type="submit">Change name</Button>
+      </form>
+    </div>
+  </div>
+  <div [hidden]="!user.isSeller" class="profile-form">
+    <strong>Change name</strong>
+    <br><br>
+    <div>
+      <form>
+        <label for="name">
+          Name
+        </label>
+        <input class="form-control" id="name" type="text" value="{{user.data['name']}}">
+        <br>
+        <Button (click)="changeName()" class="btn btn-primary" type="submit">Change name</Button>
+      </form>
+    </div>
+  </div>
+
+  <div class="profile-form">
+    <strong>Change email address</strong>
+    <br><br>
+    <div>
+      <form>
+        <label for="oldEmail">
+          Old email address
+        </label>
+        <input class="form-control" id="oldEmail" placeholder="Email@example.com" type="text">
+        <label for="newEmail">
+          New email address
+        </label>
+        <input class="form-control" id="newEmail" placeholder="Email@example.com" type="text">
+        <label for="password">
+          Password
+        </label>
+        <input class="form-control" id="password" placeholder="Password" type="password">
+
+        <br>
+        <Button (click)="changeEmail()" class="btn btn-primary" type="submit">Change email address</Button>
+      </form>
+    </div>
+  </div>
+
+  <div class="profile-form">
+    <strong>Change password</strong>
+    <br><br>
+    <div>
+      <form>
+        <label for="email">
+          Email address
+        </label>
+        <input class="form-control" id="email" placeholder="Email@example.com" type="text">
+        <label for="oldPassword">
+          Old password
+        </label>
+        <input class="form-control" id="oldPassword" placeholder="Password" type="password">
+
+        <label for="newPassword">
+          New password
+        </label>
+        <input class="form-control" id="newPassword" placeholder="Password" type="password">
+        <br>
+        <Button (click)="changePassword()" class="btn btn-primary" type="submit">Change password</Button>
+      </form>
+    </div>
+  </div>
+
+
+</div>

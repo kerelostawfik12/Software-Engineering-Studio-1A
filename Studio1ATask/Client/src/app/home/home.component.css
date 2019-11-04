@@ -1,0 +1,54 @@
+#image-text-2 {
+  position: absolute;
+  bottom: 5%;
+  left: 30%;
+}
+
+#image-text-3 {
+  position: absolute;
+  bottom: 50%;
+  left: 36%;
+  font-size: 24px;
+  background-color: black;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.image {
+  animation: fade-in;
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.swipe-wrap > div {
+  float: left;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.rainbow {
+  animation: rainbow-text 1s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

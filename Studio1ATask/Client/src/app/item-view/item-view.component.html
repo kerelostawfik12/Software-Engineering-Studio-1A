@@ -1,0 +1,31 @@
+<h1>All Item View</h1>
+<div class="row">
+  <table class='table table-striped'>
+    <thead>
+    <tr>
+      <th>Item ID</th>
+      <th>Item Name</th>
+      <th>Item Description</th>
+      <th>Item Price</th>
+      <th>Seller</th>
+      <th>Actions</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of items">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+      <td>{{ item.price.toLocaleString() }}</td>
+      <td>{{ item.seller.name }}</td>
+      <td><a routerLink="/item/{{ item.id }}">View Page</a></td>
+      <td>
+        <button (click)="delete(item)" class="btn btn-danger">Delete</button>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

@@ -1,0 +1,105 @@
+<strong>
+
+  <h1>Component test zone</h1>
+  <br>
+  Use this area to test your new components out without messing up the other parts of the app!
+  <br><br>
+</strong>
+
+<!-- add your component to the bottom of this page like so: <app-cart/> or <app-cart></app-cart> -->
+
+<app-chat></app-chat>
+
+<!--Basic Payment-->
+<form action="https://www.sandbox.spaypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick" />
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com"  /> <!--Buisness(sandbox) Email in value-->
+
+  <input type="hidden" name="item_name" value="My painting" />
+  <input type="hidden" name="amount" value="10.00" />
+  <input type="submit" value="Buy!" />
+</form>
+
+<!--shipping and handling-->
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick" />
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com" /> <!--Buisness(sandbox) Email in value-->
+
+  <input type="hidden" name="item_name" value="My painting" />
+  <input type="hidden" name="amount" value="10.00" />
+
+  <input type="hidden" name="shipping" value="3.00" />
+  <input type="hidden" name="handling" value="2.00" />
+
+  <input type="submit" value="Buy with additional parameters!" />
+</form>
+
+<!--Recurring Payments-->
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick-subscriptions"/>
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com"/>
+  <input type="hidden" name="item_name" value="Something"/>
+  <input type="submit" value="Subscribe!" />
+
+  <input type="hidden" name="a1" value="0"/>
+  <input type="hidden" name="p1" value="3"/>
+  <input type="hidden" name="t1" value="D"/>
+  <input type="hidden" name="a3" value="10.00"/>
+  <input type="hidden" name="p3" value="1"/>
+  <input type="hidden" name="t3" value="M"/>
+  <input type="hidden" name="src" value="1"/>
+  <input type="hidden" name="srt" value="0"/>
+  <input type="hidden" name="sra" value="1"/>
+</form>
+
+<!--Cart-item-paypal-->
+My Cart Item :
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+
+  <input type="hidden" name="cmd" value="_cart">
+  <input type="hidden" name="add" value="1">
+
+  <input type="hidden" name="business" value="sb-z043j237615@business.example.com"> <!--Buisness(sandbox) Email in value-->
+  <input type="hidden" name="item_name" value="My Cart Item 1">
+
+  <input type="hidden" name="amount" value="10.00">
+  <input type="hidden" name="shopping_url"
+
+         value="http://www.yourwebsite.com/shoppingpage.html">  <!--change the url to not amazon one-->
+
+  <input type="hidden" name="return" value="http://www.yourwebsite.com/success.html"> <!--change the url to not amazon one success-->
+  <input type="hidden" name="cancel_return" value="http://www.yourwebsite.com/cancel.html"> <!--change the url to not amazon one cancel-->
+
+  <input type="hidden" name="bn" value="PP-ShopCartBF:x-click-but22.gif:NonHosted">
+  <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but22.gif" border="0"
+
+
+
+         name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+  <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+
+
+
+       height="1">
+</form>
+<!--View Cart-->
+View Cart:
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="paypal">
+  <input type="hidden" name="cmd" value="_cart">
+
+  <input type="hidden" name="display" value="1">
+  <input type="hidden" name="business" value="youremailaddress@yourdomain.com">
+
+  <input type="hidden" name="shopping_url"
+
+         value="http://www.yourwebsite.com/shoppingpage.html">
+  <input type="image" src="https://www.paypal.com/en_US/i/btn/view_cart_02.gif"
+
+         name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+
+</form>
+<app-counter-component></app-counter-component>
+<br><br>
+<app-cart></app-cart>
+<br><br>
+<app-recommended-items></app-recommended-items>

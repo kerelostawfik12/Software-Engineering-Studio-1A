@@ -1,0 +1,22 @@
+#items-container {
+  display: inline-flex;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.sort {
+  z-index: 999999;
+  position: relative;
+  display: inline-flex;
+  float: right;
+  right: 48px;
+  align-content: end;
+  margin-right: 0;
+  white-space: nowrap;
+  padding: 20px;
+}
+
+label {
+  padding-right: 20px;
+  padding-top: 5px
+}

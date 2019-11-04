@@ -1,0 +1,243 @@
+nav {
+
+  height: 89px;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+
+  background: #1A263F;
+}
+
+#content {
+  overflow-x: hidden;
+  left: 24px;
+  top: 18px;
+}
+
+#categories {
+
+  position: relative;
+  height: 22px;
+  margin: 36px;
+
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #FFFFFF;
+  pointer-events: none;
+}
+
+
+a {
+  color: white;
+  pointer-events: auto;
+}
+
+#logo {
+  /* NotAmazon.com */
+
+  position: absolute;
+  width: 183px;
+  height: 29px;
+  left: 24px;
+  top: 19px;
+
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  letter-spacing: 0.04em;
+
+  color: #FFFFFF;
+
+}
+
+#search {
+
+
+}
+
+#search-bar {
+  position: absolute;
+  /* Search */
+  height: 30px;
+  left: 220px;
+  right: 285px;
+  top: 18px;
+
+  background: #F1F1F1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+#search-input {
+  padding-left: 8px;
+}
+
+input[type="text"] {
+
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+::placeholder {
+  font-style: italic;
+}
+
+input:focus, textarea:focus, select:focus {
+
+  outline: none;
+
+}
+
+#menu {
+  width: 221px;
+  height: 24px;
+  left: 1669px;
+  top: 21px;
+}
+
+#cart {
+  position: absolute;
+  width: 96px;
+  height: 22px;
+  right: 30px;
+  top: 23px;
+
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: right;
+
+  color: #FFFFFF;
+}
+
+#cart img {
+  width: 26px;
+  right: 90px;
+  padding-right: 7px;
+  top: 21px;
+}
+
+#login-or-register {
+  /* Login or Register */
+
+  position: absolute;
+  width: 124px;
+  height: 22px;
+  right: 126px;
+  top: 23px;
+
+  font-family: Noto Sans, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+
+  color: #FFFFFF;
+}
+
+#logged-in {
+  text-align: center;
+}
+
+#logged-in-admin {
+  text-align: center;
+  font-size: 18px
+}
+
+#logged-in a {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#log-out {
+  font-size: 10px;
+}
+
+#admin-log-out {
+  font-size: 10px;
+}
+
+
+#log-out a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#admin-log-out a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#login-or-register a {
+  color: white;
+}
+
+#search-button {
+  -webkit-user-drag: none;
+  user-select: none;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 4px;
+  top: 6px;
+}
+
+#search-bar a:hover {
+  cursor: pointer;
+}
+
+#search-button img {
+  -webkit-user-drag: none;
+  user-select: none;
+
+}
+
+.rainbow {
+  animation: rainbow-text 3.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-text {
+  100%, 0% {
+    color: rgb(255, 78, 73);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+
+  75% {
+    color: rgb(191, 129, 255);
+  }
+  83% {
+    color: rgb(255, 54, 229);
+  }
+  91% {
+    color: rgb(255, 128, 187);
+  }
+}

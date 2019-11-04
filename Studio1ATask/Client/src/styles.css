@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+
+}
+
+h1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rainbow {
+  animation: rainbow-text 3.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-text {
+  100%, 0% {
+    color: rgb(255, 78, 73);
+  }
+  8% {
+    color: rgb(255, 127, 0);
+  }
+  16% {
+    color: rgb(255, 255, 0);
+  }
+  25% {
+    color: rgb(127, 255, 0);
+  }
+  33% {
+    color: rgb(0, 255, 0);
+  }
+  41% {
+    color: rgb(0, 255, 127);
+  }
+  50% {
+    color: rgb(0, 255, 255);
+  }
+
+  75% {
+    color: rgb(191, 129, 255);
+  }
+  83% {
+    color: rgb(255, 54, 229);
+  }
+  91% {
+    color: rgb(255, 128, 187);
+  }
+}

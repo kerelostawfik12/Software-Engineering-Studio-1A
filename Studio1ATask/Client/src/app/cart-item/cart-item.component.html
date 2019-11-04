@@ -1,0 +1,22 @@
+<!--//product-1//-->
+<div class = "item">
+
+  <button (click)="remove()" class="btn btn-danger">Remove</button>
+
+
+  <!--//add image-->
+  <div id="name">
+    {{item.name}}
+  </div>
+  <!--//product-discription//-->
+  <div class = "Description">
+    <!--// could use some more discription make sure to use the proper syntax for adding discription-->
+    {{item.description}} <br> {{item.seller.name}}
+  </div>
+
+</div>
+
+<!--<app-cart-item></app-cart-item>-->
+<div class="total-price">{{item.price}}</div>
+
+
