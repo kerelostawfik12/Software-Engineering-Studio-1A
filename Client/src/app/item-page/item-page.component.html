@@ -1,0 +1,48 @@
+<!--<h1>Item Page</h1>-->
+<br>
+<div *ngIf="item == null && errorText == ''" id="loading">
+  Loading...
+</div>
+<div *ngIf="item != null" id="container">
+  <div class="split left">
+    <img alt="{{item.name}}" draggable="true" id="image" src="{{item.imageURL}}">
+  </div>
+
+  <div class="split right">
+    <h3>{{item.name}}</h3>
+
+    <p>By {{item.seller.name}} <a routerLink="/chat/{{ item.sellerId }}">(Send Message)</a></p>
+    <p></p>
+    <h5>
+      Price:
+      <span class="item-price">${{formatter.convertToMoneyString(item.price)}}</span>
+    </h5>
+    <br>
+    <h6>Product description: </h6>
+    <p>{{item.description}}</p>
+    <br>
+    <div id="add-to-cart">
+      <div (click)="addToCart()" id="add-to-cart-button">
+        <span id="add-to-cart-text">Add to Cart</span>
+      </div>
+    </div>
+    <br>
+    <br>
+    <strong>This item has been viewed {{item.views}} times.</strong>
+
+  </div>
+
+</div>
+
+<br>
+<div [hidden]="boughtTogether.length == 0" id="boughtTogetherHeading">
+  <strong>Customers who bought this item also bought:</strong>
+</div>
+<br>
+<div *ngFor="let item of boughtTogether" id="items-container">
+  <app-small-item-listing [item]="item"></app-small-item-listing>
+</div>
+
+<div>
+  {{errorText}}
+</div>
